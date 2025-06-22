@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="VmT9bDtOKMpKR3lioo1vMFWG_vXs7LpRDaYpz093RBU" />
+  <title>Jieyu Yuan</title>
+  <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+  <link rel="shortcut icon" type="image/x-icon" href="images/misc/logo.jpg">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- Bulma Version 0.7.5-->
+  <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
+  <link href='css/style.css?_t=20200916' rel='stylesheet' type='text/css'>
+  <script defer src="font-awesome/js/brands.min.js"></script>
+  <script defer src="font-awesome/js/regular.min.js"></script>
+  <script defer src="font-awesome/js/fontawesome.min.js"></script>
+    <style>
+      .red {
+        color: rgb(238, 76, 44);
+        font-style: normal;
+      }
+      .blue {
+        color: rgb(238, 76, 44);
+        font-style: normal;
+      }
+       
+      #intro {
+       margin-top: 0em !important;
+      }
+      
+      .content h3 {
+       margin-bottom: 1em!important;
+       margin-top: 2em!important;
+      }
+
+      .content figure {
+       width: 90%;
+       display: flex;
+       align-items: center;
+       overflow: hidden;
+       margin-left: auto!important;
+       margin-right: auto!important;
+      }
+      
+      .columns:not(:last-child) {
+       margin-bottom: 1.75rem!important;
+      }
+
+      /* Reduce spacing for publications */
+      #publications .columns:not(:last-child) {
+       margin-bottom: 1rem!important;
+      }
+
+      /* Publication filter buttons */
+      .filter-btn {
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(200, 200, 200, 0.5);
+        border-radius: 20px;
+        padding: 6px 12px;
+        margin-right: 10px;
+        cursor: pointer;
+        display: inline-block;
+        margin-bottom: 5px;
+        color: #666;
+        font-size: 0.9rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      
+      .filter-btn:hover {
+        background: rgba(255, 255, 255, 0.9) !important;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+      
+      .filter-btn.active {
+        background: linear-gradient(135deg, rgba(74, 85, 104, 0.8), rgba(45, 55, 72, 0.8)) !important;
+        color: white !important;
+        font-weight: bold;
+        border: 1px solid rgba(74, 85, 104, 0.8);
+        box-shadow: 0 4px 12px rgba(74, 85, 104, 0.3);
+        transform: translateY(-1px);
+      }
+
+      /* Highlight first-author papers - 增强效果 */
+      .first-author-paper {
+        background: linear-gradient(135deg, rgba(74, 85, 104, 0.08) 0%, rgba(45, 55, 72, 0.06) 100%) !important;
+        border-left: 4px solid rgba(74, 85, 104, 0.7) !important;
+        border-radius: 15px !important;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .first-author-paper::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(74, 85, 104, 0.4), rgba(45, 55, 72, 0.4));
+        opacity: 0.8;
+      }
+
+      /* News scrollable styling */
+      .news-container {
+        max-height: 200px;
+        overflow-y: auto;
+        border: 1px solid #e1e8ed;
+        border-radius: 8px;
+        padding: 15px;
+      }
+
+      .news-container::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .news-container::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 3px;
+      }
+
+      #sidebar {
+        width: 100%;
+      }
+
+      /* 调整侧边栏宽度 */
+      @media screen and (min-width: 769px), print {
+        .column.is-2_5, .column.is-2-tablet {
+          flex: none;
+          width: 25%;
+        }
+      }
+
+      /* 毛玻璃效果 - 只在每个主要栏目添加 */
+      .glass-section {
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 20px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 
+          0 8px 32px rgba(45, 55, 72, 0.15),
+          0 1px 0 rgba(255, 255, 255, 0.2) inset;
+        transition: all 0.3s ease;
+      }
+
+      .glass-section:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+          0 12px 40px rgba(45, 55, 72, 0.2),
+          0 1px 0 rgba(255, 255, 255, 0.3) inset;
+      }
+
+      /* 侧边栏毛玻璃效果 */
+      .sidebar-glass {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 25px;
+        padding: 2rem;
+        box-shadow: 
+          0 8px 32px rgba(45, 55, 72, 0.15),
+          0 1px 0 rgba(255, 255, 255, 0.3) inset;
+        position: sticky;
+        top: 2rem;
+      }
+
+      /* News容器毛玻璃效果 - 移除顶部空白 */
+      .news-glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        padding: 15px;
+        max-height: 200px;
+        overflow-y: auto;
+        margin: 0;
+      }
+
+      .news-glass ul {
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none;
+      }
+
+      .news-glass li {
+        margin-bottom: 8px;
+        line-height: 1.4;
+        padding: 8px 12px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.2s ease;
+      }
+
+      .news-glass li:hover {
+        background: rgba(255, 255, 255, 0.12);
+        transform: translateX(2px);
+      }
+
+      .news-glass::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      .news-glass::-webkit-scrollbar-thumb {
+        background: rgba(193, 193, 193, 0.5);
+        border-radius: 3px;
+      }
+
+      /* 发表论文项目毛玻璃效果 */
+      .publication-glass {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .publication-glass:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateX(3px);
+      }
+
+      /* 研究工作项目毛玻璃效果 */
+      .research-glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .research-glass:hover {
+        background: rgba(255, 255, 255, 0.18);
+        transform: scale(1.01);
+      }
+
+      /* Research work text justification */
+      .research-glass .content p {
+        text-align: justify;
+        line-height: 1.6;
+      }
+
+      /* 教育经历项目毛玻璃效果 */
+      .education-glass {
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 18px;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .education-glass:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+
+      /* 调整侧边栏布局 */
+      .sidebar-glass figure.image {
+        width: 12rem !important;
+        margin: 0 auto 1rem auto !important;
+        overflow-y: auto;  
+      }
+      
+
+      .social {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .social a {
+        transition: all 0.3s ease;
+      }
+
+      .social a:hover {
+        transform: translateY(-3px);
+      }
+
+      /* Quick Links 样式修复 */
+      .menu-list a {
+        color: #333;
+        padding: 0.5rem 0.75rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        display: block;
+        text-decoration: none;
+        margin-bottom: 2px;
+      }
+
+      .menu-list a:hover {
+        background-color: rgba(74, 85, 104, 0.1);
+        color: #333;
+        transform: translateX(3px);
+        text-decoration: none;
+      }
+
+      .menu-list a.is-active {
+        background-color: rgba(74, 85, 104, 0.15);
+        color: #333;
+        font-weight: bold;
+        border-left: 3px solid rgba(74, 85, 104, 0.8);
+      }
+
+      /* 平滑滚动 */
+      html {
+        scroll-behavior: smooth;
+      }
+
+       /* Google彩色logo效果 */
+       .google-hover {
+          color: #4285F4;
+          transition: all 0.3s ease;
+        }
+
+        .google-hover:hover {
+          color: #EA4335;
+          transform: scale(1.1);
+        }
+        /* Publications section styling */
+        #publications .publication-glass a {
+          color: #666 !important;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        #publications .publication-glass a:hover {
+          color: #888 !important;
+          text-decoration: underline;
+        }
+
+        /* First author name styling */
+        #publications .publication-glass b:first-of-type {
+          color: #2563eb !important;
+        }
+
+        /* Ensure title links in publications are gray */
+        #publications .publication-glass p > b > a {
+          color: #666 !important;
+        }
+
+        #publications .publication-glass p > b > a:hover {
+          color: #888 !important;
+        }
+
+        /* Research work links styling */
+        .research-links {
+          margin-top: 8px;
+        }
+
+        .research-links a {
+          display: inline-block;
+          margin-right: 12px;
+          padding: 4px 10px;
+          background: rgba(74, 85, 104, 0.1);
+          border: 1px solid rgba(74, 85, 104, 0.2);
+          border-radius: 15px;
+          color: #4a5568;
+          text-decoration: none;
+          font-size: 0.85rem;
+          transition: all 0.3s ease;
+          font-weight: 500;
+        }
+
+        .research-links a:hover {
+          background: rgba(74, 85, 104, 0.15);
+          transform: translateY(-1px);
+          box-shadow: 0 2px 8px rgba(74, 85, 104, 0.2);
+          color: #2d3748;
+        }
+
+        /* BibTeX modal styling */
+        .bibtex-modal {
+          display: none;
+          position: fixed;
+          z-index: 1000;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.5);
+          backdrop-filter: blur(5px);
+        }
+
+        .bibtex-content {
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(15px);
+          margin: 5% auto;
+          padding: 20px;
+          border: none;
+          border-radius: 15px;
+          width: 70%;
+          max-width: 800px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+          position: relative;
+        }
+
+        .bibtex-close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+          cursor: pointer;
+          position: absolute;
+          right: 15px;
+          top: 10px;
+        }
+
+        .bibtex-close:hover {
+          color: #000;
+        }
+
+        .bibtex-text {
+          background: #f8f9fa;
+          border: 1px solid #e9ecef;
+          border-radius: 8px;
+          padding: 15px;
+          font-family: 'Courier New', monospace;
+          font-size: 0.9rem;
+          white-space: pre-wrap;
+          max-height: 400px;
+          overflow-y: auto;
+          margin-top: 15px;
+        }
+
+        .copy-btn {
+          background: #4a5568;
+          color: white;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: 10px;
+          transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+          background: #2d3748;
+        }
+      
+</style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+  <!-- Top background section -->
+  <div style="width: 100%; height: 200px; background: url('images/misc/background.jpg'); background-size: cover; background-position: center 52.5%; margin-bottom: -20px;"></div>
+  
+  <section class="section">
+    <!-- Top gradient background -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 1000px; background: linear-gradient(to bottom, rgba(74, 85, 104, 0.15) 0%, rgba(45, 55, 72, 0.08) 40%, rgba(26, 32, 44, 0.02) 80%, rgba(26, 32, 44, 0) 100%); pointer-events: none; z-index: 0;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
+      <div class="columns">
+        <div class="column is-2_5">
+          <div class="sticky sidebar-glass">
+            <figure class="image">
+              <img src="images/misc/profile.jpg">
+            </figure>
+            <div class="content">
+              <h2 style="margin-top: 0.5em; text-align: left;">Jieyu Yuan <br/>  袁捷禹</h2>
+              <p style="text-align: left;">
+                🏢 <b>VCIP@NKU</b><br/> 
+                📍 Tianjin, China<br/>
+                📧 Contact<br/>
+                <span class="email-line"><a href="mailto:jieyuyuan.cn@gmail.com">jieyuyuan.cn@gmail.com</a></span>
+                <span class="email-line"><a href="mailto:jieyuyuan.cn@nankai.edu.cn">jieyuyuan.cn@nankai.edu.cn</a></span>
+            </p>
+            </div>
+            <!-- social network icons -->
+            <div class="social">
+              <a href="https://github.com/bilityniu" target="_blank">
+                <span class="fab fa-github fa-2x" style="color: #333;"></span>
+              </a>
+              <a href="https://scholar.google.com/citations?authuser=2&user=451OzVIAAAAJ" target="_blank">
+                <span class="fab fa-google fa-2x google-hover"></span>
+              </a>
+              <a href="https://www.researchgate.net/profile/Jieyu-Yuan?ev=hdr_xprf" target="_blank">
+                <span class="fab fa-researchgate fa-2x" style="color: #00D0B7;"></span>
+              </a>
+              <a href="https://orcid.org/0000-0002-9736-0920" target="_blank">
+                <span class="fab fa-orcid fa-2x" style="color: #A6CE39;"></span>
+              </a>
+            </div>
+            
+            <div id="sidebar" class="menu is-hidden-mobile" style="margin-bottom: 20px;">
+              <p class="menu-label" style="font-size: 1.2rem; font-weight: 700; color: #2d3748;"><b>Quick Links</b></p>
+              <ul class="menu-list">
+                <li><a href="#intro">About Me </a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#research">Research Work</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#services">Services</a></li>
+              </ul>
+            </div>
+
+            <div class="slogon" style="margin-top: 10px; text-align: center;">
+              <p>Welcome to my homepage!</p> 
+            </div>
+            <div style="margin-top: 10px; text-align: center;">
+              <img src="images/misc/logo.jpg" alt="Logo" style="width: 120px;">
+            </div>
+          </div>
+        </div>
+        
+        <div class="column right-panel">
+          <div class="content">
+
+            <!--About Me-->
+            <div class="glass-section" id="intro">
+              <h2>About Me 👋</h2>
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
+              <p style="text-indent: 2em; text-align: justify; line-height: 1.6;">
+                 I am currently Post-Doctoral Researcher in <a href="https://pi-lab.xyz/index.html" target="_blank">π Research Group@Nankai University</a>, worked with
+                <a href="https://li-chongyi.github.io/" target="_blank">Prof. Chongyi Li</a>. Before that, I obtained my PhD degree from Macau University of Science and Technology under the supervision of <a href="https://fie.must.edu.mo/id-1444/person/view/id-11446.html/" target="_blank">Prof. Zhanchuan Cai</a>. 
+              </p>
+              <p style="text-indent: 2em; text-align: justify; line-height: 1.6;">
+                I am interested in Low-level Vision, 3D Vision, and Multimodal Large Language Models. Specifically, my research interests focus on underwater image enhancement and its applications in downstream tasks, underwater scene restoration, and remote sensing image processing. 
+                My current work mainly focuses on underwater 3D reconstruction and multimodal visual perception.
+              </p>
+            </div>
+
+            <!--News-->
+            <div class="glass-section" id="news">
+              <h2>📰 News</h2>
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
+              <div class="news-glass">
+                <ul>
+                  <li>➤ [05/2025]: Our work "3D-UIR" is available on arXiv!</li>
+                  <li>➤ [01/2025]: Selected as <strong>Outstanding Reviewer</strong> of IEEE JOE 2024!</li>
+                  <li>➤ [12/2024]: One paper accepted by IEEE TGRS 2024.</li>
+                  <li>➤ [07/2024]: Joined π Research Group at Nankai University as a postdoc!</li>
+                  <li>➤ [06/2024]: ✨ Successfully defended my PhD thesis on June 5th! </li>
+                  <li>➤ [03/2024]: One paper accepted by IEEE TII 2024.</li>
+                  <li>➤ [12/2023]: One paper accepted by IEEE TGRS 2024.</li>
+                  <li>➤ [08/2023]: One paper accepted by IEEE TGRS 2023.</li>
+                  <li>➤ [06/2023]: One paper accepted by IEEE J.STARS 2023.</li>
+                  <li>➤ [03/2023]: One paper accepted by IEEE TII 2023.</li>
+                  <li>➤ [09/2021]: One paper accepted by IEEE TGRS 2021.</li>
+                  <li>➤ [10/2020]: One paper accepted by IEEE TGRS 2020.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!--Education-->
+            <div class="glass-section" id="education">
+              <h2 style="margin-bottom: 25px;">🎓 Education</h2>
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 15px;">
+
+              <div class="education-glass">
+                <article class="columns is-vcentered">
+                  <div class="column is-2" >
+                     <div class="image" style="width: 100px; margin: 0 auto;">
+                      <img src="images/misc/nku.jpg" >
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>Post-Doctoral Researcher</b> | π Research Group, Nankai University, China<br>
+                        Time: Jul 2024 - Present. Working with <a href="https://li-chongyi.github.io/" target="_blank">Prof. Chongyi Li</a>
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              
+              <div class="education-glass">
+                <article class="columns is-vcentered">
+                  <div class="column is-2" >
+                     <div class="image" style="width: 100px; margin: 0 auto;">
+                      <img src="images/misc/must.png" >
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>PhD</b> | Computer Technology and Applications, Faculty of Innovation Engineering, MUST<br>
+                        Time: Sep 2021 - Jun 2024. 
+                      </p>
+                      <p>
+                        <b>Master</b> | Computer and Information Systems, Faculty of Information Technology, MUST<br>
+                        Time: Sep 2019 - Jun 2021. 
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- <div class="education-glass">
+                <article class="columns is-vcentered">
+                  <div class="column is-2" >
+                    <div class="image" style="width: 100px; margin: 0 auto;">           
+                      <img src="images/misc/bitzh.png" >
+                    </div>
+                  </div>      
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>Bachelor</b> | Automation, School of Information, Beijing Institute of Technology, Zhuhai<br>
+                        Time: Sep 2015 - Jun 2019.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div> -->
+            </div>
+
+            <!--Research Work-->
+            <div class="glass-section" id="research">
+              <h2>🎯 Research Work</h2>
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
+
+              <div class="research-glass">
+                <article class="columns is-vcentered">
+                  <div class="column is-4">
+                    <figure class="image">
+                      <img src=".\images\research\3duir.gif" style="width: 100%; height: auto; border-radius: 8px;">
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>3D-UIR: 3D Gaussian for Underwater 3D Scene Reconstruction via Physics Based Appearance-Medium Decoupling</b><br>
+                        3D-UIR is an underwater novel view synthesis method that tackles water medium interference and floating artifacts in underwater scene representation through physics-based appearance-medium decoupling. Disentangles object appearance from water medium effects using tailored Gaussian modeling with appearance embeddings and distance-guided optimization.
+                      </p>
+                      <div class="research-links">
+                        <a href="https://arxiv.org/abs/2505.21238" target="_blank">[Paper]</a>
+                        <a href="https://bilityniu.github.io/3D-UIR/" target="_blank">[Project]</a>
+                        <a href="https://github.com/bilityniu/3D-UIR" target="_blank">[Code]</a>  
+                        <a href="#" onclick="showBibTeX('3duir'); return false;">[BibTeX]</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="research-glass">
+                <article class="columns is-vcentered">
+                  <div class="column is-4">
+                    <figure class="image">
+                      <img src=".\images\research\cdef.gif" style="width: 100%; height: auto; border-radius: 8px;">
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>Color Discrimination Multi-Scale Exposure Fusion for Underwater Image Enhancement</b><br>
+                        We propose a multi-space processing pipeline that achieves robust enhancement performance across diverse challenging underwater scenarios without relying on reference image. CDEF employs color discrimination and multi-space fusion to significantly improve contrast, saturation, and sharpness while maintaining consistent performance without artifacts or over-exposure.
+                      </p>
+                      <div class="research-links">
+                        <a href="" target="_blank">[Paper]</a>
+                        <a href="https://bilityniu.github.io/CDEF/" target="_blank">[Project]</a>
+                        <a href="https://github.com/bilityniu/CDEF" target="_blank">[Code]</a>
+                        <a href="#" onclick="showBibTeX('cdef'); return false;">[BibTeX]</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="research-glass">
+                <article class="columns is-vcentered">
+                  <div class="column is-4">
+                    <figure class="image">
+                      <img src=".\images\research\udmdet.png">
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>Underwater Blurred Object Detection via Distraction Mining</b><br>
+                        UDMDet tackles underwater object detection challenges by exploring degradation mechanisms rather than image enhancement, mining target-background differences through distraction-aware feature fusion and task-aligned detection heads to progressively separate confusing features and improve detection performance in blurry underwater environments.
+                      </p>
+                      <div class="research-links">
+                        <a href="https://doi.org/10.1109/TII.2024.3383537" target="_blank">[Paper]</a>
+                        <a href="https://github.com/bilityniu/UDMDet_tgrs" target="_blank">[Code]</a>
+                        <a href="#" onclick="showBibTeX('udmdet'); return false;">[BibTeX]</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="research-glass">
+                <article class="columns is-vcentered">
+                  <div class="column is-4">
+                    <figure class="image">
+                      <img src=".\images\research\mfprn.png">
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>Multi-type Feature Perception and Refined Network for Spaceborne Infrared Ship Detection</b><br>                
+                        MFPRN addresses satellite infrared ship detection challenges by enhancing information interaction during feature extraction through dual-branch feature fusion combining Fast Fourier convolution for comprehensive receptive fields and lightweight MLP for long-range dependencies, coupled with cascaded RPN to reduce false alarms in low SNR infrared imagery.
+                      </p>
+                      <div class="research-links">
+                        <a href="https://doi.org/10.1109/TGRS.2023.3341215" target="_blank">[Paper]</a>
+                        <a href="https://github.com/bilityniu/MFPRN_TGRS" target="_blank">[Code]</a>
+                        <a href="#" onclick="showBibTeX('mfprn'); return false;">[BibTeX]</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="research-glass">
+                <article class="columns is-vcentered">
+                  <div class="column is-4">
+                    <figure class="image">
+                      <img src=".\images\research\tebcf.png">
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>Real-World Underwater Image Texture Enhancement Based on Blurriness and Color Fusion</b><br>                 
+                        TEBCF focuses on underwater texture degradation caused by light scattering and absorption through multi-scale fusion of RGB contrast dehazing and CIELAB morphological enhancement, effectively recovering both global and local texture details while adaptively improving contrast, saturation, and sharpness.
+                      </p>
+                      <div class="research-links">
+                        <a href="https://doi.org/10.1109/TGRS.2021.3110575" target="_blank">[Paper]</a>
+                        <a href="https://github.com/bilityniu/TEBCF_tgrs" target="_blank">[Code]</a>
+                        <a href="#" onclick="showBibTeX('tebcf'); return false;">[BibTeX]</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="research-glass">
+                <article class="columns is-vcentered">
+                  <div class="column is-4">
+                    <figure class="image">
+                      <img src=".\images\research\cbm.png">
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>Underwater Image Vision Enhancement Based on Contour Bougie Morphology</b><br>               
+                        CBM addresses underwater texture degradation caused by forward scattering through multi-step morphological operations with dual-sized contour structure elements, enhancing underwater image visibility without requiring scene priors.
+                      </p>
+                      <div class="research-links">
+                        <a href="https://doi.org/10.1109/TGRS.2020.3033407" target="_blank">[Paper]</a>
+                        <a href="https://github.com/bilityniu/cbm_tgrs" target="_blank">[Code]</a>
+                        <a href="#" onclick="showBibTeX('cbm'); return false;">[BibTeX]</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+           <!--Publications-->
+           <div class="glass-section" id="publications">
+            <h2>
+              📄 Publications
+              <span style="font-size: 1rem;margin-left: 1rem;position: relative;bottom: .2rem;">
+                <a href="https://scholar.google.com/citations?authuser=2&user=451OzVIAAAAJ" target="_blank" style="font-size: 20px;">
+                  [Google Scholar]
+                </a>
+              </span>
+            </h2>
+            <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
+            
+            <!-- Year filter buttons -->
+            <div class="publication-filters" style="margin-bottom: 20px;">
+              <button class="filter-btn active" data-year="all">All</button>
+              <button class="filter-btn" data-year="2025">2025</button>
+              <button class="filter-btn" data-year="2024">2024</button>
+              <button class="filter-btn" data-year="2023">2023</button>
+              <button class="filter-btn" data-year="before2023">Before 2023</button>
+            </div>
+
+            <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">
+              <!-- * Equal contribution.  -->
+              # Corresponding author. <span style="background: linear-gradient(135deg, rgba(74, 85, 104, 0.1), rgba(45, 55, 72, 0.1)); color: #666; padding: 3px 6px; border-radius: 8px; font-weight: 600;">Representative papers are highlighted.</span>
+            </p>
+
+            <!--List of publications-->
+
+            <div class="publication-glass publication-item first-author-paper" data-year="2025">
+              <div class="content">
+                <p>
+                  <b><a href="" target="_blank">Underwater Scene Enhancement via Adaptive Color Analysis and Multi-Space Fusion</a></b><br>
+                  IEEE Journal of Oceanic Engineering (IF=5.3, JCR Q1), 2025<br>
+                  <b style="color: #2563eb;">Jieyu Yuan</b>, Yuhan Zhang, <b>Zhanchuan Cai</b><sup>#</sup>.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item first-author-paper" data-year="2025">
+              <div class="content">
+                <p>
+                  <b><a href="https://arxiv.org/abs/2505.21238" target="_blank">3D-UIR: 3D Gaussian for Underwater 3D Scene Reconstruction via Physics Based Appearance-Medium Decoupling</a></b><br>
+                  arXiv preprint arXiv:2505.21238, 2025<br>
+                  <b style="color: #2563eb;">Jieyu Yuan</b>, Yujun Li, Yuanlin Zhang, Chunle Guo, Xiongxin Tang, Ruixing Wang, <b>Chongyi Li</b><sup>#</sup>.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item" data-year="2024">
+              <div class="content">
+                <p>
+                  <b><a href="https://ieeexplore.ieee.org/document/10816000" target="_blank">DCGF: Diffusion-Color Guided Framework for Underwater Image Enhancement</a></b><br>
+                  IEEE Transactions on Geoscience and Remote Sensing (IF=7.5, JCR Q1), 2024<br>
+                  Yuhan Zhang, <b style="color: #2563eb;">Jieyu Yuan</b>, <b>Zhanchuan Cai</b><sup>#</sup>.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item first-author-paper" data-year="2024">
+              <div class="content">
+                <p>
+                  <b><a href="https://doi.org/10.1109/TII.2024.3383537" target="_blank">A Novel Underwater Detection Method for Ambiguous Object Finding via Distraction Mining</a></b><br>
+                  IEEE Transactions on Industrial Informatics (IF=11.7, JCR Q1), 2024<br>
+                  <b style="color: #2563eb;">Jieyu Yuan</b>, <b>Zhanchuan Cai</b><sup>#</sup>, Wei Cao.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item first-author-paper" data-year="2023">
+              <div class="content">
+                <p>
+                  <b><a href="https://doi.org/10.1109/TGRS.2023.3341215" target="_blank">A Multitype Feature Perception and Refined Network for Spaceborne Infrared Ship Detection</a></b><br>
+                  IEEE Transactions on Geoscience and Remote Sensing (IF=7.5, JCR Q1), 2023<br>
+                  <b style="color: #2563eb;">Jieyu Yuan</b>, <b>Zhanchuan Cai</b><sup>#</sup>, Shiyu Wang, Xiaoxi Kong.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item" data-year="2023">
+              <div class="content">
+                <p>
+                  <b><a href="https://doi.org/10.1109/TGRS.2023.3293912" target="_blank">UGIF-Net: An Efficient Fully Guided Information Flow Network for Underwater Image Enhancement</a></b><br>
+                  IEEE Transactions on Geoscience and Remote Sensing (IF=7.5, JCR Q1), <b style="color: red;">ESI Highly Cited Paper</b>, 2023<br> 
+                  Jingchun Zhou, Boshen Li, Dehuan Zhang, <b style="color: #2563eb;">Jieyu Yuan</b>, Weishi Zhang, <b>Zhanchuan Cai</b><sup>#</sup>, Jinyu Shi.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item" data-year="2023">
+              <div class="content">
+                <p>
+                  <b><a href="https://doi.org/10.1109/TGRS.2023.3339216" target="_blank">ACCE: An Adaptive Color Compensation and Enhancement Algorithm for Underwater Image</a></b><br>
+                  IEEE Transactions on Geoscience and Remote Sensing (IF=7.5, JCR Q1), 2023<br>
+                  Yuyun Chen, <b style="color: #2563eb;">Jieyu Yuan</b>, <b>Zhanchuan Cai</b><sup>#</sup>.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item" data-year="2023">
+              <div class="content">
+                <p>
+                  <b><a href="https://doi.org/10.1109/TII.2023.3249794" target="_blank">UIESC: An Underwater Image Enhancement Framework via Self-attention and Contrastive Learning</a></b><br>
+                  IEEE Transactions on Industrial Informatics (IF=11.7, JCR Q1), 2023<br>
+                  Renzhang Chen, <b>Zhanchuan Cai</b><sup>#</sup>, <b style="color: #2563eb;">Jieyu Yuan</b>.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item" data-year="2023">
+              <div class="content">
+                <p>
+                  <b><a href="https://doi.org/10.1109/TGRS.2023.3267495" target="_blank">Automatic SAR Ship Detection Based on Multifeature Fusion Network in Spatial and Frequency Domains</a></b><br>
+                  IEEE Transactions on Geoscience and Remote Sensing (IF=7.5, JCR Q1), 2023<br>
+                  Shiyu Wang, <b>Zhanchuan Cai</b><sup>#</sup>, <b style="color: #2563eb;">Jieyu Yuan</b>.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item" data-year="2023">
+              <div class="content">
+                <p>
+                  <b><a href="https://doi.org/10.1109/JSTARS.2023.3236384" target="_blank">A Novel Dense-Attention Network for Thick Cloud Removal by Reconstructing Semantic Information</a></b><br>
+                  IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (IF=4.7, JCR Q1), 2023<br>
+                  Yuyun Chen, <b>Zhanchuan Cai</b><sup>#</sup>, <b style="color: #2563eb;">Jieyu Yuan</b>, Lianghai Wu.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item first-author-paper" data-year="before2023">
+              <div class="content">
+                <p>
+                  <b><a href="https://doi.org/10.1109/TGRS.2021.3110575" target="_blank">TEBCF: Real-World Underwater Image Texture Enhancement Model Based on Blurriness and Color Fusion</a></b><br>
+                  IEEE Transactions on Geoscience and Remote Sensing (IF=7.5, JCR Q1), 2021<br>
+                  <b style="color: #2563eb;">Jieyu Yuan</b>, <b>Zhanchuan Cai</b><sup>#</sup>, Wei Cao.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item first-author-paper" data-year="before2023">
+              <div class="content">
+                <p>
+                  <b><a href="https://doi.org/10.1109/TGRS.2020.3033407" target="_blank">An Underwater Image Vision Enhancement Algorithm Based on Contour Bougie Morphology</a></b><br>
+                  IEEE Transactions on Geoscience and Remote Sensing (IF=7.5, JCR Q1), 2020<br>
+                  <b style="color: #2563eb;">Jieyu Yuan</b>, Wei Cao, <b>Zhanchuan Cai</b><sup>#</sup>, Binghua Su.
+                </p>
+              </div>
+            </div>
+            </div>
+
+            <!--Research Projects-->
+            <div class="glass-section" id="projects">
+              <h2>💰 Research Projects</h2>
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
+              <ul>
+                <li>2021/09-2023/06: Research on Spaceborne Infrared Imaging Target Detection and Recognition Technology. Macau Science and Technology Development Fund. Project Number: 0052/2020/AFJ. Co-Investigator.</li>
+                <li>2019/09-2021/06: Theoretical Methods and Application Research in Visual Media Processing. Macau Science and Technology Development Fund. Project Number: 0069/2019/A2. Co-Investigator.</li>
+                <li>2019/09-2021/06: Several Methods in Visual Media Intelligent Computing. State Key Laboratory of Virtual Reality Technology and Systems. Project Number: VRLAB2019C02. Co-Investigator.</li>
+              </ul>
+            </div>
+
+            <!--Awards-->
+            <div class="glass-section" id="awards">
+              <h2>🏆 Awards and Honors</h2>
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
+              <ul>
+                <li>2024 Outstanding Reviewers of JOE</li>
+                <li>2023 First Prize, "Huawei Cup" 20th China Graduate Mathematical Contest in Modeling</li>
+                <li>2022 Future Technology Star, Zhuhai Computer Society</li>
+                <li>2021 Postgraduate Scholarship (PGS), Macau University of Science and Technology</li>
+                <li>2019 Outstanding Student and Outstanding Graduate, Beijing Institute of Technology, Zhuhai</li>
+                <li>2018 Everbright Scholarship </li>
+                <li>2018 Anlingruishi Scholarship </li>
+                <li>2018 Second Prize, Blue Bridge Cup National Software and Information Technology Professional Talent Competition</li>
+                <li>2017 Second Prize, National Undergraduate Electronic Design Contest (Guangdong Division)</li>
+                <li>2017 Third Prize, 19th National Robot Competition</li>
+                <li>2017 Third Prize, China Robot Competition Martial Arts Arena - Unlimited 2vs2</li>
+              </ul>
+            </div>
+
+            <div class="glass-section" id="services">
+              <h2>📚 Academic Services</h2>
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
+              <b>Journal Reviewer</b>: TIP, IJCV, TMM, TCSVT, TGRS, TIM, EAAl and JoE
+              <!-- <b>Journal Reviewer</b>:
+              <ul>
+                <li>TIP, IJCV, TMM, TCSVT, TGRS, TIM, EAAl and JoE</li>
+              </ul>
+              <b>Conference Reviewer</b>:
+              <ul>
+                <li>ACM MM, AAAI</li>
+              </ul>              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container" >
+      <br><hr>
+      <div class="row" style="text-align: center">
+        <b style="color: #666;"> © 2025 Jieyu Yuan</b>
+      </div>
+    </footer>
+  </section>
+
+  <!-- Bottom background section -->
+  <div style="width: 100%; height: 120px; background: url('images/misc/background.jpg'); background-size: cover; background-position: center 75%; margin-top: -95px;"></div>
+
+  <!-- BibTeX Modal -->
+  <div id="bibtexModal" class="bibtex-modal">
+    <div class="bibtex-content">
+      <span class="bibtex-close">&times;</span>
+      <h3 id="bibtexTitle">BibTeX Citation</h3>
+      <div id="bibtexText" class="bibtex-text"></div>
+      <button class="copy-btn" onclick="copyBibTeX()">Copy to Clipboard</button>
+    </div>
+  </div>
+
+  <script>
+
+    var $hashList = $('.menu-list a'), offsetList, maxScrollHeight;
+
+    $('#sidebar').on('click', 'a', function(){
+      activate($(this))
+    });
+
+    $(window).on('resize', debounce(calculateBoundary, 300));
+
+    $(document).on('scroll', debounce(judgeScroll, 300));
+
+    calculateBoundary();
+    judgeScroll();
+
+    function  calculateBoundary() {
+      offsetList = $hashList.map(function(idx, ele){
+        return $(ele.hash).offset().top
+      });
+      maxScrollHeight = $(document).height() - $(window).height()
+    }
+
+    function judgeScroll() {
+      var tps = $("html").scrollTop()
+              ? $("html").scrollTop()
+              : $("body").scrollTop(),
+              len = offsetList.length;
+      if(tps >= maxScrollHeight-10){
+        activate($hashList.eq(len-1));
+        return
+      }
+      for(var i=0; i<len; i++){
+      if(tps+50<offsetList[i]){
+          activate($hashList.eq(Math.max(0,i-1)));
+          return
+        }
+      }
+    }
+
+    function activate(ele){
+      $hashList.removeClass('is-active');
+      ele.addClass('is-active');
+    }
+
+
+    function debounce(fn, delay) {
+      var timeout = null;
+      return function () {
+        var args = arguments;
+        var context = this;
+        if (!timeout) {
+          timeout = setTimeout(function () {
+            timeout = 0;
+            return fn.apply(context, args);
+          }, delay);
+        }
+      };
+    }
+
+    // Publication filter functionality
+    $(document).ready(function() {
+      $('.filter-btn').click(function() {
+        const selectedYear = $(this).data('year');
+        
+        // Update button styles
+        $('.filter-btn').removeClass('active');
+        $(this).addClass('active');
+        
+        // Filter publications
+        if (selectedYear === 'all') {
+          $('.publication-item').show();
+        } else {
+          $('.publication-item').hide();
+          $(`.publication-item[data-year="${selectedYear}"]`).show();
+        }
+      });
+
+      // 平滑滚动到指定位置
+      $('.menu-list a').click(function(e) {
+        e.preventDefault();
+        const target = $(this.getAttribute('href'));
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top - 80
+          }, 800);
+        }
+      });
+    });
+
+    // BibTeX functionality
+    const bibtexData = {
+      '3duir': `@article{yuan20253duir,
+  title={3D-UIR: 3D Gaussian for Underwater 3D Scene Reconstruction via Physics Based Appearance-Medium Decoupling},
+  author={Yuan, Jieyu and Li, Yujun and Zhang, Yuanlin and Guo, Chunle and Tang, Xiongxin and Wang, Ruixing and Li, Chongyi},
+  journal={arXiv preprint arXiv:2505.21238},
+  year={2025}
+}`,
+      'cdef': `@article{yuan2024cdef,
+  title={Color Discrimination Multi-Scale Exposure Fusion for Underwater Image Enhancement},
+  author={Yuan, Jieyu and Li, Chongyi and Cai, Zhanchuan},
+  journal={arXiv preprint},
+  year={2024}
+}`,
+      'udmdet': `@article{yuan2024udmdet,
+  title={A Novel Underwater Detection Method for Ambiguous Object Finding via Distraction Mining},
+  author={Yuan, Jieyu and Cai, Zhanchuan and Cao, Wei},
+  journal={IEEE Transactions on Industrial Informatics},
+  volume={20},
+  number={8},
+  pages={10485--10496},
+  year={2024},
+  publisher={IEEE}
+}`,
+      'mfprn': `@article{yuan2023mfprn,
+  title={A Multitype Feature Perception and Refined Network for Spaceborne Infrared Ship Detection},
+  author={Yuan, Jieyu and Cai, Zhanchuan and Wang, Shiyu and Kong, Xiaoxi},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={62},
+  pages={1--15},
+  year={2023},
+  publisher={IEEE}
+}`,
+      'tebcf': `@article{yuan2021tebcf,
+  title={TEBCF: Real-World Underwater Image Texture Enhancement Model Based on Blurriness and Color Fusion},
+  author={Yuan, Jieyu and Cai, Zhanchuan and Cao, Wei},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={60},
+  pages={1--15},
+  year={2021},
+  publisher={IEEE}
+}`,
+      'cbm': `@article{yuan2020cbm,
+  title={An Underwater Image Vision Enhancement Algorithm Based on Contour Bougie Morphology},
+  author={Yuan, Jieyu and Cao, Wei and Cai, Zhanchuan and Su, Binghua},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={59},
+  number={10},
+  pages={8861--8874},
+  year={2020},
+  publisher={IEEE}
+}`
+    };
+
+    function showBibTeX(paperKey) {
+      const modal = document.getElementById('bibtexModal');
+      const bibtexText = document.getElementById('bibtexText');
+      const bibtexTitle = document.getElementById('bibtexTitle');
+      
+      if (bibtexData[paperKey]) {
+        bibtexText.textContent = bibtexData[paperKey];
+        bibtexTitle.textContent = 'BibTeX Citation - ' + paperKey.toUpperCase();
+        modal.style.display = 'block';
+      }
+    }
+
+    function copyBibTeX() {
+      const bibtexText = document.getElementById('bibtexText');
+      navigator.clipboard.writeText(bibtexText.textContent).then(function() {
+        const btn = document.querySelector('.copy-btn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.style.background = '#48bb78';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '#4a5568';
+        }, 2000);
+      });
+    }
+
+    // Close modal functionality
+    $(document).ready(function() {
+      $('.bibtex-close').click(function() {
+        $('#bibtexModal').hide();
+      });
+
+      $(window).click(function(event) {
+        if (event.target.id === 'bibtexModal') {
+          $('#bibtexModal').hide();
+        }
+      });
+    });
+
+  </script>
+
+
+</body>
+
+</html>
