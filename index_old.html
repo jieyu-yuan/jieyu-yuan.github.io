@@ -13,256 +13,10 @@
   <!-- Bulma Version 0.7.5-->
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
   <link href='css/style.css?_t=20200916' rel='stylesheet' type='text/css'>
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script defer src="font-awesome/js/brands.min.js"></script>
   <script defer src="font-awesome/js/regular.min.js"></script>
   <script defer src="font-awesome/js/fontawesome.min.js"></script>
     <style>
-      :root {
-        /* Light mode colors */
-        --bg-primary: #ffffff;
-        --bg-secondary: rgba(255, 255, 255, 0.12);
-        --bg-glass: rgba(255, 255, 255, 0.15);
-        --text-primary: #2d3748;
-        --text-secondary: #666;
-        --text-muted: #888;
-        --border-color: rgba(255, 255, 255, 0.25);
-        --shadow-color: rgba(45, 55, 72, 0.15);
-        --accent-color: #4a5568;
-        --gradient-start: rgba(74, 85, 104, 0.15);
-        --gradient-end: rgba(26, 32, 44, 0.02);
-        --hover-bg: rgba(255, 255, 255, 0.18);
-        --card-bg: rgba(255, 255, 255, 0.08);
-        --scrollbar-thumb: rgba(193, 193, 193, 0.5);
-        --menu-hover-bg: rgba(74, 85, 104, 0.1);
-        --menu-active-bg: rgba(74, 85, 104, 0.15);
-      }
-
-      [data-theme="dark"] {
-        /* Dark mode colors */
-        --bg-primary: #1a202c;
-        --bg-secondary: rgba(45, 55, 72, 0.15);
-        --bg-glass: rgba(45, 55, 72, 0.25);
-        --text-primary: #e2e8f0;
-        --text-secondary: #cbd5e0;
-        --text-muted: #a0aec0;
-        --border-color: rgba(255, 255, 255, 0.5);
-        --shadow-color: rgba(0, 0, 0, 0.3);
-        --accent-color: #718096;
-        --gradient-start: rgba(26, 32, 44, 0.8);
-        --gradient-end: rgba(45, 55, 72, 0.2);
-        --hover-bg: rgba(45, 55, 72, 0.3);
-        --card-bg: rgba(45, 55, 72, 0.15);
-        --scrollbar-thumb: rgba(100, 116, 139, 0.6);
-        --menu-hover-bg: rgba(45, 55, 72, 0.2);
-        --menu-active-bg: rgba(45, 55, 72, 0.3);
-      }
-
-      /* Smooth transitions for theme switching */
-      * {
-        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      body {
-        background: var(--bg-primary);
-        color: var(--text-primary);
-        overflow-x: hidden;
-      }
-
-      /* Progress bar */
-      .progress-bar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0%;
-        height: 3px;
-        background: linear-gradient(90deg, #667eea, #764ba2);
-        z-index: 10000;
-        transition: width 0.1s ease;
-      }
-
-      /* Theme toggle button */
-      .theme-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-        background: var(--bg-glass);
-        backdrop-filter: blur(10px);
-        border: 1px solid var(--border-color);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px var(--shadow-color);
-      }
-
-      .theme-toggle:hover {
-        transform: scale(1.1) rotate(180deg);
-        box-shadow: 0 6px 20px var(--shadow-color);
-      }
-
-      .theme-toggle i {
-        font-size: 20px;
-        color: var(--text-primary);
-      }
-
-      /* Animated particles */
-      .particles {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      .particle {
-        position: absolute;
-        border-radius: 50%;
-        pointer-events: none;
-        animation: seawaterFloat 18s infinite linear;
-      }
-
-      /* 海水泡泡效果 */
-      .particle:nth-child(odd) {
-        width: 8px;
-        height: 8px;
-        background: radial-gradient(circle at 30% 30%, rgba(135, 206, 235, 0.8), rgba(70, 130, 180, 0.4), transparent);
-        box-shadow: 
-          0 0 10px rgba(135, 206, 235, 0.6),
-          inset 2px 2px 4px rgba(255, 255, 255, 0.3);
-        opacity: 0.7;
-      }
-
-      .particle:nth-child(even) {
-        width: 5px;
-        height: 5px;
-        background: radial-gradient(circle at 40% 20%, rgba(173, 216, 230, 0.9), rgba(100, 149, 237, 0.5), transparent);
-        box-shadow: 0 0 8px rgba(173, 216, 230, 0.4);
-        opacity: 0.5;
-      }
-
-      .particle:nth-child(3n) {
-        width: 12px;
-        height: 12px;
-        background: radial-gradient(circle at 25% 25%, rgba(176, 224, 230, 0.6), rgba(95, 158, 160, 0.3), transparent);
-        box-shadow: 
-          0 0 15px rgba(176, 224, 230, 0.5),
-          inset 3px 3px 6px rgba(255, 255, 255, 0.2);
-        opacity: 0.4;
-      }
-
-      .particle:nth-child(5n) {
-        width: 6px;
-        height: 6px;
-        background: radial-gradient(circle at 35% 35%, rgba(30, 144, 255, 0.7), rgba(65, 105, 225, 0.4), transparent);
-        box-shadow: 0 0 12px rgba(30, 144, 255, 0.3);
-        opacity: 0.6;
-      }
-
-      @keyframes seawaterFloat {
-        0% {
-          transform: translateY(100vh) translateX(0px) rotate(0deg) scale(0.5);
-          opacity: 0;
-        }
-        5% {
-          opacity: 0.8;
-          transform: translateY(95vh) translateX(15px) rotate(10deg) scale(1);
-        }
-        25% {
-          transform: translateY(75vh) translateX(-20px) rotate(-15deg) scale(1.3);
-        }
-        45% {
-          transform: translateY(55vh) translateX(25px) rotate(20deg) scale(0.9);
-        }
-        65% {
-          transform: translateY(35vh) translateX(-15px) rotate(-10deg) scale(1.1);
-        }
-        85% {
-          transform: translateY(15vh) translateX(30px) rotate(25deg) scale(0.7);
-          opacity: 0.6;
-        }
-        95% {
-          opacity: 0.3;
-        }
-        100% {
-          transform: translateY(-5vh) translateX(0px) rotate(0deg) scale(0.2);
-          opacity: 0;
-        }
-      }
-
-      /* Scroll animations */
-      .fade-in-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
-      }
-
-      .fade-in-up.animate {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .fade-in-left {
-        opacity: 0;
-        transform: translateX(-30px);
-        transition: all 0.6s ease;
-      }
-
-      .fade-in-left.animate {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      /* Scroll to top button */
-      .scroll-to-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: var(--bg-glass);
-        backdrop-filter: blur(10px);
-        border: 1px solid var(--border-color);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        opacity: 0;
-        transform: translateY(100px);
-        z-index: 1000;
-      }
-
-      .scroll-to-top.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .scroll-to-top:hover {
-        transform: scale(1.1) translateY(-3px);
-        box-shadow: 0 6px 20px var(--shadow-color);
-      }
-
-      .scroll-to-top i {
-        color: var(--text-primary);
-        font-size: 18px;
-        line-height: 1;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
       .red {
         color: rgb(238, 76, 44);
         font-style: normal;
@@ -302,54 +56,41 @@
       /* Publication filter buttons */
       .filter-btn {
         transition: all 0.3s ease;
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(200, 200, 200, 0.5);
         border-radius: 20px;
         padding: 6px 12px;
         margin-right: 10px;
         cursor: pointer;
         display: inline-block;
         margin-bottom: 5px;
-        color: var(--text-secondary);
+        color: #666;
         font-size: 0.9rem;
-        box-shadow: 0 2px 4px var(--shadow-color);
-        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       }
       
       .filter-btn:hover {
-        background: var(--hover-bg) !important;
+        background: rgba(255, 255, 255, 0.9) !important;
         transform: translateY(-1px);
-        box-shadow: 0 4px 8px var(--shadow-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
       }
       
       .filter-btn.active {
-        background: linear-gradient(135deg, var(--accent-color), #2d3748) !important;
+        background: linear-gradient(135deg, rgba(74, 85, 104, 0.8), rgba(45, 55, 72, 0.8)) !important;
         color: white !important;
         font-weight: bold;
-        border: 1px solid var(--accent-color);
-        box-shadow: 0 4px 12px var(--shadow-color);
+        border: 1px solid rgba(74, 85, 104, 0.8);
+        box-shadow: 0 4px 12px rgba(74, 85, 104, 0.3);
         transform: translateY(-1px);
       }
 
-      /* Highlight first-author papers */
+      /* Highlight first-author papers - 增强效果 */
       .first-author-paper {
-        background: var(--card-bg) !important;
+        background: linear-gradient(135deg, rgba(74, 85, 104, 0.08) 0%, rgba(45, 55, 72, 0.06) 100%) !important;
         border-left: 4px solid rgba(74, 85, 104, 0.7) !important;
         border-radius: 15px !important;
         position: relative;
         overflow: hidden;
-      }
-
-      /* Enhanced highlight for light mode */
-      [data-theme="light"] .first-author-paper {
-        background: linear-gradient(135deg, rgba(74, 85, 104, 0.08) 0%, rgba(45, 55, 72, 0.06) 100%) !important;
-        border-left: 4px solid rgba(74, 85, 104, 0.8) !important;
-      }
-
-      /* Enhanced highlight for dark mode */
-      [data-theme="dark"] .first-author-paper {
-        background: linear-gradient(135deg, rgba(74, 85, 104, 0.25) 0%, rgba(45, 55, 72, 0.15) 100%) !important;
-        border-left: 4px solid rgba(147, 197, 253, 0.8) !important;
       }
 
       .first-author-paper::before {
@@ -363,18 +104,13 @@
         opacity: 0.8;
       }
 
-      [data-theme="dark"] .first-author-paper::before {
-        background: linear-gradient(90deg, rgba(147, 197, 253, 0.6), rgba(59, 130, 246, 0.4));
-      }
-
       /* News scrollable styling */
       .news-container {
         max-height: 200px;
         overflow-y: auto;
-        border: 1px solid var(--border-color);
+        border: 1px solid #e1e8ed;
         border-radius: 8px;
         padding: 15px;
-        background: var(--card-bg);
       }
 
       .news-container::-webkit-scrollbar {
@@ -382,15 +118,12 @@
       }
 
       .news-container::-webkit-scrollbar-thumb {
-        background: var(--scrollbar-thumb);
+        background: #c1c1c1;
         border-radius: 3px;
       }
 
-      /* 修复侧边栏宽度 */
       #sidebar {
         width: 100%;
-        display: block !important; /* 强制显示 */
-        visibility: visible !important; /* 确保可见 */
       }
 
       /* 调整侧边栏宽度 */
@@ -403,152 +136,52 @@
 
       /* 毛玻璃效果 - 只在每个主要栏目添加 */
       .glass-section {
-        background: var(--bg-glass);
+        background: rgba(255, 255, 255, 0.12);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid var(--border-color);
+        border: 1px solid rgba(255, 255, 255, 0.25);
         border-radius: 20px;
         padding: 2rem;
         margin-bottom: 2rem;
         box-shadow: 
-          0 8px 32px var(--shadow-color),
-          0 1px 0 rgba(255, 255, 255, 0.1) inset;
+          0 8px 32px rgba(45, 55, 72, 0.15),
+          0 1px 0 rgba(255, 255, 255, 0.2) inset;
         transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .glass-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-        transition: left 0.6s ease;
-      }
-
-      .glass-section:hover::before {
-        left: 100%;
       }
 
       .glass-section:hover {
         transform: translateY(-2px);
         box-shadow: 
-          0 12px 40px var(--shadow-color),
-          0 1px 0 rgba(255, 255, 255, 0.2) inset;
+          0 12px 40px rgba(45, 55, 72, 0.2),
+          0 1px 0 rgba(255, 255, 255, 0.3) inset;
       }
 
-      /* 侧边栏毛玻璃效果 - 改为绝对定位实现浮动跟随 */
+      /* 侧边栏毛玻璃效果 */
       .sidebar-glass {
-        background: var(--bg-glass);
+        background: rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
-        border: 1px solid var(--border-color);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 25px;
-        padding: 1.8rem; /* 稍微减少padding */
+        padding: 2rem;
         box-shadow: 
-          0 8px 32px var(--shadow-color),
-          0 1px 0 rgba(255, 255, 255, 0.1) inset;
-        position: absolute;
-        top: 0;
-        transition: all 0.3s ease;
-        display: block !important; /* 确保显示 */
-        visibility: visible !important; /* 确保可见 */
-        width: calc(100% - 3rem); /* 稍微减少宽度 */
-        box-sizing: border-box; /* 确保padding计算正确 */
+          0 8px 32px rgba(45, 55, 72, 0.15),
+          0 1px 0 rgba(255, 255, 255, 0.3) inset;
+        position: sticky;
+        top: 2rem;
       }
 
-      .sidebar-glass:hover {
-        transform: scale(1.01);
-      }
-
-      /* 恢复原来的column布局 */
-      @media screen and (min-width: 769px) {
-        .column.is-2_5 {
-          flex: none;
-          width: 28%;
-          position: relative; /* 为侧边栏绝对定位提供参考 */
-        }
-        
-        .right-panel {
-          margin-left: 0;
-          width: auto;
-          padding-left: 0.75rem;
-        }
-      }
-
-      /* 移动端保持响应式，但不隐藏Quick Links */
-      @media (max-width: 768px) {
-        .sidebar-glass {
-          margin: 1rem;
-          padding: 1.8rem; /* 与桌面端保持一致 */
-          position: static !important; /* 移动端强制使用静态定位 */
-          top: auto !important;
-          width: auto !important;
-        }
-        
-        .right-panel {
-          margin-left: 0;
-          padding-left: 0.75rem;
-        }
-        
-        /* 移动端显示Quick Links */
-        #sidebar {
-          display: block !important;
-          visibility: visible !important;
-        }
-        
-        /* 移动端Quick Links样式优化 */
-        .menu-list {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 5px;
-        }
-        
-        .menu-list li {
-          flex: 0 0 auto;
-        }
-        
-        .menu-list a {
-          padding: 8px 12px;
-          font-size: 0.85rem;
-          border-radius: 15px;
-          background: var(--card-bg);
-          border: 1px solid var(--border-color);
-        }
-        
-        /* 移动端侧边栏容器 */
-        .column.is-2_5 {
-          position: static !important;
-        }
-      }
-
-      /* News容器毛玻璃效果 */
+      /* News容器毛玻璃效果 - 移除顶部空白 */
       .news-glass {
-        background: var(--card-bg);
+        background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-        border: 1px solid var(--border-color);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 15px;
         padding: 15px;
         max-height: 200px;
         overflow-y: auto;
         margin: 0;
-        position: relative;
-      }
-
-      .news-glass::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 20px;
-        background: linear-gradient(to bottom, var(--card-bg), transparent);
-        pointer-events: none;
-        z-index: 1;
       }
 
       .news-glass ul {
@@ -561,49 +194,15 @@
         margin-bottom: 8px;
         line-height: 1.4;
         padding: 8px 12px;
-        background: var(--hover-bg);
+        background: rgba(255, 255, 255, 0.08);
         border-radius: 8px;
-        border: 1px solid var(--border-color);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         transition: all 0.2s ease;
-        position: relative;
-        overflow: hidden;
-        color: var(--text-secondary);
-      }
-
-      /* News items styling for different themes */
-      [data-theme="light"] .news-glass li {
-        background: var(--card-bg) !important; /* 使用统一的卡片背景 */
-        border: 1px solid var(--border-color) !important; /* 使用统一的边框色 */
-        color: var(--text-secondary);
-      }
-
-      [data-theme="dark"] .news-glass li {
-        background: var(--hover-bg);
-        border: 1px solid var(--border-color);
-        color: var(--text-secondary);
-      }
-
-      .news-glass li::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 4px;
-        height: 100%;
-        background: var(--accent-color); 
-        transition: width 0.3s ease;
-        opacity: 0.6;
-      }
-
-      .news-glass li:hover::before {
-        width: 100%;
-        opacity: 0.08;
       }
 
       .news-glass li:hover {
-        background: var(--menu-hover-bg) !important; /* 使用统一的hover背景 */
+        background: rgba(255, 255, 255, 0.12);
         transform: translateX(2px);
-        border-color: var(--accent-color); /* hover时边框变为主题色 */
       }
 
       .news-glass::-webkit-scrollbar {
@@ -611,16 +210,16 @@
       }
 
       .news-glass::-webkit-scrollbar-thumb {
-        background: var(--scrollbar-thumb);
+        background: rgba(193, 193, 193, 0.5);
         border-radius: 3px;
       }
 
       /* 发表论文项目毛玻璃效果 */
       .publication-glass {
-        background: var(--card-bg);
+        background: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
-        border: 1px solid var(--border-color);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 12px;
         padding: 1rem;
         margin-bottom: 1rem;
@@ -628,16 +227,16 @@
       }
 
       .publication-glass:hover {
-        background: var(--hover-bg);
+        background: rgba(255, 255, 255, 0.15);
         transform: translateX(3px);
       }
 
       /* 研究工作项目毛玻璃效果 */
       .research-glass {
-        background: var(--card-bg);
+        background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-        border: 1px solid var(--border-color);
+        border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 15px;
         padding: 1rem;
         margin-bottom: 1rem;
@@ -645,7 +244,7 @@
       }
 
       .research-glass:hover {
-        background: var(--hover-bg);
+        background: rgba(255, 255, 255, 0.18);
         transform: scale(1.01);
       }
 
@@ -657,10 +256,10 @@
 
       /* 教育经历项目毛玻璃效果 */
       .education-glass {
-        background: var(--card-bg);
+        background: rgba(255, 255, 255, 0.12);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        border: 1px solid var(--border-color);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 18px;
         padding: 0.5rem;
         margin-bottom: 0.5rem;
@@ -668,7 +267,7 @@
       }
 
       .education-glass:hover {
-        background: var(--hover-bg);
+        background: rgba(255, 255, 255, 0.2);
         transform: translateY(-2px);
       }
 
@@ -678,12 +277,7 @@
         margin: 0 auto 1rem auto !important;
         overflow-y: auto;  
       }
-
-      /* Profile container - simplified without animation */
-      .profile-container {
-        position: relative;
-        display: inline-block;
-      }
+      
 
       .social {
         display: flex;
@@ -696,106 +290,35 @@
 
       .social a {
         transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .social a::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: var(--accent-color);
-        border-radius: 50%;
-        opacity: 0.2;
-        transform: translate(-50%, -50%);
-        transition: all 0.4s ease;
-        z-index: -1;
-      }
-
-      .social a:hover::before {
-        width: 40px;
-        height: 40px;
       }
 
       .social a:hover {
-        transform: translateY(-3px) scale(1.1);
+        transform: translateY(-3px);
       }
 
-      /* Social icons color adjustments for dark mode */
-      [data-theme="dark"] .social .fa-github {
-        color: #f7fafc !important;
-      }
-
-      [data-theme="light"] .social .fa-github {
-        color: #333 !important;
-      }
-
-      /* Quick Links 样式修复 - 增强可见性 */
-      .menu-label {
-        color: var(--text-primary) !important;
-        font-weight: 700 !important;
-        font-size: 1.2rem !important;
-        margin-bottom: 1rem !important;
-        text-shadow: 0 1px 2px var(--shadow-color);
-      }
-      
-      .menu-list {
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-
+      /* Quick Links 样式修复 */
       .menu-list a {
-        color: var(--text-secondary) !important;
-        padding: 0.7rem 0.9rem !important;
-        border-radius: 12px !important;
-        transition: all 0.3s ease !important;
-        display: block !important;
-        text-decoration: none !important;
-        margin-bottom: 4px !important;
-        position: relative !important;
-        overflow: hidden !important;
-        font-weight: 500 !important;
-        font-size: 0.95rem !important;
-        background: var(--card-bg) !important;
-        border: 1px solid var(--border-color) !important;
-        backdrop-filter: blur(5px) !important;
-      }
-
-      .menu-list a::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 0;
-        height: 100%;
-        background: linear-gradient(90deg, var(--accent-color), transparent);
-        transition: width 0.3s ease;
-        opacity: 0.15;
-        z-index: -1;
-      }
-
-      .menu-list a:hover::before,
-      .menu-list a.is-active::before {
-        width: 100%;
+        color: #333;
+        padding: 0.5rem 0.75rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        display: block;
+        text-decoration: none;
+        margin-bottom: 2px;
       }
 
       .menu-list a:hover {
-        background-color: var(--menu-hover-bg) !important;
-        color: var(--text-primary) !important;
-        transform: translateX(5px) !important;
-        text-decoration: none !important;
-        box-shadow: 0 4px 12px var(--shadow-color) !important;
+        background-color: rgba(74, 85, 104, 0.1);
+        color: #333;
+        transform: translateX(3px);
+        text-decoration: none;
       }
 
       .menu-list a.is-active {
-        background-color: var(--menu-active-bg) !important;
-        color: var(--text-primary) !important;
-        font-weight: 700 !important;
-        border-left: 4px solid var(--accent-color) !important;
-        transform: translateX(3px) !important;
-        box-shadow: 0 4px 15px var(--shadow-color) !important;
+        background-color: rgba(74, 85, 104, 0.15);
+        color: #333;
+        font-weight: bold;
+        border-left: 3px solid rgba(74, 85, 104, 0.8);
       }
 
       /* 平滑滚动 */
@@ -815,13 +338,13 @@
         }
         /* Publications section styling */
         #publications .publication-glass a {
-          color: var(--text-secondary) !important;
+          color: #666 !important;
           text-decoration: none;
           transition: color 0.3s ease;
         }
 
         #publications .publication-glass a:hover {
-          color: var(--text-primary) !important;
+          color: #888 !important;
           text-decoration: underline;
         }
 
@@ -832,11 +355,11 @@
 
         /* Ensure title links in publications are gray */
         #publications .publication-glass p > b > a {
-          color: var(--text-secondary) !important;
+          color: #666 !important;
         }
 
         #publications .publication-glass p > b > a:hover {
-          color: var(--text-primary) !important;
+          color: #888 !important;
         }
 
         /* Research work links styling */
@@ -848,10 +371,10 @@
           display: inline-block;
           margin-right: 12px;
           padding: 4px 10px;
-          background: var(--card-bg);
-          border: 1px solid var(--border-color);
+          background: rgba(74, 85, 104, 0.1);
+          border: 1px solid rgba(74, 85, 104, 0.2);
           border-radius: 15px;
-          color: var(--text-secondary);
+          color: #4a5568;
           text-decoration: none;
           font-size: 0.85rem;
           transition: all 0.3s ease;
@@ -859,10 +382,10 @@
         }
 
         .research-links a:hover {
-          background: var(--hover-bg);
+          background: rgba(74, 85, 104, 0.15);
           transform: translateY(-1px);
-          box-shadow: 0 2px 8px var(--shadow-color);
-          color: var(--text-primary);
+          box-shadow: 0 2px 8px rgba(74, 85, 104, 0.2);
+          color: #2d3748;
         }
 
         /* BibTeX modal styling */
@@ -879,7 +402,7 @@
         }
 
         .bibtex-content {
-          background: var(--bg-glass);
+          background: rgba(255, 255, 255, 0.95);
           backdrop-filter: blur(15px);
           margin: 5% auto;
           padding: 20px;
@@ -887,21 +410,12 @@
           border-radius: 15px;
           width: 70%;
           max-width: 800px;
-          box-shadow: 0 10px 30px var(--shadow-color);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
           position: relative;
         }
 
-        .bibtex-content h3 {
-          color: var(--text-primary) !important;
-        }
-
-        /* BibTeX title specifically white in light mode */
-        [data-theme="light"] .bibtex-content h3 {
-          color: white !important;
-        }
-
         .bibtex-close {
-          color: var(--text-muted);
+          color: #aaa;
           float: right;
           font-size: 28px;
           font-weight: bold;
@@ -912,12 +426,12 @@
         }
 
         .bibtex-close:hover {
-          color: var(--text-primary);
+          color: #000;
         }
 
         .bibtex-text {
-          background: var(--card-bg);
-          border: 1px solid var(--border-color);
+          background: #f8f9fa;
+          border: 1px solid #e9ecef;
           border-radius: 8px;
           padding: 15px;
           font-family: 'Courier New', monospace;
@@ -926,25 +440,10 @@
           max-height: 400px;
           overflow-y: auto;
           margin-top: 15px;
-          color: var(--text-primary);
-        }
-
-        /* Special styling for BibTeX text in light mode */
-        [data-theme="light"] .bibtex-text {
-          background: #f8f9fa;
-          color: #2d3748;
-          border: 1px solid #e9ecef;
-        }
-
-        /* Special styling for BibTeX text in dark mode */
-        [data-theme="dark"] .bibtex-text {
-          background: rgba(45, 55, 72, 0.3);
-          color: #e2e8f0;
-          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .copy-btn {
-          background: var(--accent-color);
+          background: #4a5568;
           color: white;
           border: none;
           padding: 8px 16px;
@@ -957,135 +456,6 @@
         .copy-btn:hover {
           background: #2d3748;
         }
-
-        /* Representative papers 标签样式 */
-        .representative-tag {
-          padding: 4px 10px;
-          border-radius: 12px;
-          font-weight: 600;
-          font-size: 0.85rem;
-          box-shadow: 0 2px 6px var(--shadow-color);
-          transition: all 0.3s ease;
-          /* border: 1px solid; */
-        }
-
-        /* 浅色模式下的标签 - 与论文底纹对应 */
-        [data-theme="light"] .representative-tag {
-          background: linear-gradient(135deg, rgba(74, 85, 104, 0.15) 0%, rgba(45, 55, 72, 0.12) 100%);
-          /* border-color: rgba(74, 85, 104, 0.8); */
-          color: rgba(74, 85, 104, 0.9); /* 深色文字确保可读性 */
-        }
-
-        /* 深色模式下的标签 - 与论文底纹对应 */
-        [data-theme="dark"] .representative-tag {
-          background: linear-gradient(135deg, rgba(74, 85, 104, 0.35) 0%, rgba(45, 55, 72, 0.25) 100%);
-          /* border-color: rgba(147, 197, 253, 0.8); */
-          color: rgba(147, 197, 253, 0.95); /* 浅蓝色文字 */
-        }
-
-        /* Text color adjustments */
-        h2, h3 {
-          color: var(--text-primary) !important;
-        }
-
-        p {
-          color: var(--text-secondary);
-        }
-
-        /* 分割线样式修复 */
-        hr {
-          border: none !important;
-          margin-bottom: 20px !important;
-        }
-
-        /* 浅色模式下的分割线 */
-        [data-theme="light"] hr,
-        [data-theme="light"] .glass-section hr {
-          border-top: 1px solid #d1d5db !important; /* 深灰色 */
-        }
-
-        /* 深色模式下的分割线 */
-        [data-theme="dark"] hr,
-        [data-theme="dark"] .glass-section hr {
-          border-top: 1px solid rgba(255, 255, 255, 0.2) !important; /* 白色透明 */
-        }
-
-        /* Strong and bold text visibility */
-        strong, b {
-          color: var(--text-primary) !important;
-          font-weight: 700;
-        }
-
-        /* Special styling for red text like "ESI Highly Cited Paper" */
-        b[style*="color: red"], strong[style*="color: red"] {
-          color: #f56565 !important;
-        }
-
-        [data-theme="dark"] b[style*="color: red"], 
-        [data-theme="dark"] strong[style*="color: red"] {
-          color: #fc8181 !important;
-        }
-
-        /* Links */
-        a {
-          color: var(--text-secondary);
-          transition: color 0.3s ease;
-        }
-
-        a:hover {
-          color: var(--text-primary);
-        }
-
-        /* Scrollbars */
-        ::-webkit-scrollbar {
-          width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-          background: var(--card-bg);
-          border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-          background: var(--scrollbar-thumb);
-          border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-          background: var(--accent-color);
-        }
-
-        /* Image dark mode adjustments - exclude transparent images */
-        [data-theme="dark"] img {
-          filter: brightness(0.9) contrast(1.1);
-        }
-
-        /* Keep transparent images in Education and Research sections natural */
-        [data-theme="dark"] .sidebar-glass img,
-        [data-theme="dark"] .education-glass img,
-        [data-theme="dark"] .research-glass img {
-          filter: none;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-          .glass-section {
-            margin: 1rem;
-            padding: 1.5rem;
-          }
-          
-          .sidebar-glass {
-            margin: 1rem;
-            position: static;
-          }
-          
-          .theme-toggle {
-            top: 10px;
-            right: 10px;
-            width: 45px;
-            height: 45px;
-          }
-        }
       
 </style>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
@@ -1093,40 +463,22 @@
 
 
 <body>
-  <!-- Progress bar -->
-  <div class="progress-bar" id="progressBar"></div>
-  
-  <!-- Theme toggle button -->
-  <div class="theme-toggle" id="themeToggle">
-    <i class="fas fa-moon" id="themeIcon"></i>
-  </div>
-  
-  <!-- Scroll to top button -->
-  <div class="scroll-to-top" id="scrollToTop">
-    <i class="fas fa-arrow-up"></i>
-  </div>
-  
-  <!-- Animated particles -->
-  <div class="particles" id="particles"></div>
-
   <!-- Top background section -->
   <div style="width: 100%; height: 200px; background: url('images/misc/background.jpg'); background-size: cover; background-position: center 52.5%; margin-bottom: -20px;"></div>
   
   <section class="section">
     <!-- Top gradient background -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 1000px; background: linear-gradient(to bottom, var(--gradient-start) 0%, rgba(45, 55, 72, 0.08) 40%, rgba(26, 32, 44, 0.02) 80%, rgba(26, 32, 44, 0) 100%); pointer-events: none; z-index: 0;"></div>
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 1000px; background: linear-gradient(to bottom, rgba(74, 85, 104, 0.15) 0%, rgba(45, 55, 72, 0.08) 40%, rgba(26, 32, 44, 0.02) 80%, rgba(26, 32, 44, 0) 100%); pointer-events: none; z-index: 0;"></div>
     
     <div class="container" style="position: relative; z-index: 2;">
       <div class="columns">
         <div class="column is-2_5">
           <div class="sticky sidebar-glass">
-              <figure class="image">
-                <img src="images/misc/profile.jpg">
-              </figure>
+            <figure class="image">
+              <img src="images/misc/profile.jpg">
+            </figure>
             <div class="content">
-              <h2 style="margin-top: 0.5em; text-align: left;">
-                <span class="typing-text">Jieyu Yuan 袁捷禹</span>
-              </h2>
+              <h2 style="margin-top: 0.5em; text-align: left;">Jieyu Yuan <br/>  袁捷禹</h2>
               <p style="text-align: left;">
                 🏢 <b>VCIP@NKU</b><br/> 
                 📍 Tianjin, China<br/>
@@ -1138,7 +490,7 @@
             <!-- social network icons -->
             <div class="social">
               <a href="https://github.com/bilityniu" target="_blank">
-                <span class="fab fa-github fa-2x"></span>
+                <span class="fab fa-github fa-2x" style="color: #333;"></span>
               </a>
               <a href="https://scholar.google.com/citations?authuser=2&user=451OzVIAAAAJ" target="_blank">
                 <span class="fab fa-google fa-2x google-hover"></span>
@@ -1151,9 +503,8 @@
               </a>
             </div>
             
-            <!-- 修复Quick Links显示 -->
-            <div id="sidebar" class="menu" style="margin-bottom: 20px;">
-              <p class="menu-label"><b>Quick Links</b></p>
+            <div id="sidebar" class="menu is-hidden-mobile" style="margin-bottom: 20px;">
+              <p class="menu-label" style="font-size: 1.2rem; font-weight: 700; color: #2d3748;"><b>Quick Links</b></p>
               <ul class="menu-list">
                 <li><a href="#intro">About Me </a></li>
                 <li><a href="#news">News</a></li>
@@ -1179,9 +530,9 @@
           <div class="content">
 
             <!--About Me-->
-            <div class="glass-section fade-in-up" id="intro">
+            <div class="glass-section" id="intro">
               <h2>About Me 👋</h2>
-              <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
               <p style="text-indent: 2em; text-align: justify; line-height: 1.6;">
                  I am currently Post-Doctoral Researcher in <a href="https://pi-lab.xyz/index.html" target="_blank">π Research Group@Nankai University</a>, worked with
                 <a href="https://li-chongyi.github.io/" target="_blank">Prof. Chongyi Li</a>. Before that, I obtained my PhD degree from Macau University of Science and Technology under the supervision of <a href="https://fie.must.edu.mo/id-1444/person/view/id-11446.html/" target="_blank">Prof. Zhanchuan Cai</a>. 
@@ -1193,9 +544,9 @@
             </div>
 
             <!--News-->
-            <div class="glass-section fade-in-up" id="news">
+            <div class="glass-section" id="news">
               <h2>📰 News</h2>
-              <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
               <div class="news-glass">
                 <ul>
                   <li>➤ [05/2025]: Our work "3D-UIR" is available on arXiv!</li>
@@ -1215,9 +566,9 @@
             </div>
 
             <!--Education-->
-            <div class="glass-section fade-in-up" id="education">
+            <div class="glass-section" id="education">
               <h2 style="margin-bottom: 25px;">🎓 Education</h2>
-              <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 15px;">
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 15px;">
 
               <div class="education-glass">
                 <article class="columns is-vcentered">
@@ -1279,9 +630,9 @@
             </div>
 
             <!--Research Work-->
-            <div class="glass-section fade-in-up" id="research">
+            <div class="glass-section" id="research">
               <h2>🎯 Research Work</h2>
-              <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
 
               <div class="research-glass">
                 <article class="columns is-vcentered">
@@ -1427,7 +778,7 @@
             </div>
 
            <!--Publications-->
-           <div class="glass-section fade-in-up" id="publications">
+           <div class="glass-section" id="publications">
             <h2>
               📄 Publications
               <span style="font-size: 1rem;margin-left: 1rem;position: relative;bottom: .2rem;">
@@ -1436,7 +787,7 @@
                 </a>
               </span>
             </h2>
-            <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
+            <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
             
             <!-- Year filter buttons -->
             <div class="publication-filters" style="margin-bottom: 20px;">
@@ -1447,10 +798,9 @@
               <button class="filter-btn" data-year="before2023">Before 2023</button>
             </div>
 
-            <p style="font-size: 0.9em; color: var(--text-muted); margin-bottom: 20px;">
+            <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">
               <!-- * Equal contribution.  -->
-              # Corresponding author. <span class="representative-tag">✨ Representative papers are highlighted</span>
-            </p>
+              # Corresponding author. <span style="background: linear-gradient(135deg, rgba(74, 85, 104, 0.1), rgba(45, 55, 72, 0.1)); color: #666; padding: 3px 6px; border-radius: 8px; font-weight: 600;">Representative papers are highlighted.</span>
             </p>
 
             <!--List of publications-->
@@ -1577,9 +927,9 @@
             </div>
 
             <!--Research Projects-->
-            <div class="glass-section fade-in-up" id="projects">
+            <div class="glass-section" id="projects">
               <h2>💰 Research Projects</h2>
-              <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
               <ul>
                 <li>2021/09-2023/06: Research on Spaceborne Infrared Imaging Target Detection and Recognition Technology. Macau Science and Technology Development Fund. Project Number: 0052/2020/AFJ. Co-Investigator.</li>
                 <li>2019/09-2021/06: Theoretical Methods and Application Research in Visual Media Processing. Macau Science and Technology Development Fund. Project Number: 0069/2019/A2. Co-Investigator.</li>
@@ -1588,9 +938,9 @@
             </div>
 
             <!--Awards-->
-            <div class="glass-section fade-in-up" id="awards">
+            <div class="glass-section" id="awards">
               <h2>🏆 Awards and Honors</h2>
-              <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
               <ul>
                 <li>2024 Outstanding Reviewers of JOE</li>
                 <li>2023 First Prize, "Huawei Cup" 20th China Graduate Mathematical Contest in Modeling</li>
@@ -1606,9 +956,9 @@
               </ul>
             </div>
 
-            <div class="glass-section fade-in-up" id="services">
+            <div class="glass-section" id="services">
               <h2>📚 Academic Services</h2>
-              <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
+              <hr style="border: none; border-top: 1px solid #ddd; margin-bottom: 20px;">
               <b>Journal Reviewer</b>: TIP, IJCV, TMM, TCSVT, TGRS, TIM, EAAl and JoE
               <!-- <b>Journal Reviewer</b>:
               <ul>
@@ -1628,7 +978,7 @@
     <footer class="container" >
       <br><hr>
       <div class="row" style="text-align: center">
-        <b style="color: #ffffff !important ;"> © 2025 Jieyu Yuan</b>
+        <b style="color: #666;"> © 2025 Jieyu Yuan</b>
       </div>
     </footer>
   </section>
@@ -1648,174 +998,20 @@
 
   <script>
 
-    // Theme switching functionality
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const body = document.body;
-
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    body.setAttribute('data-theme', currentTheme);
-    updateThemeIcon(currentTheme);
-
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = body.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
-
-    function updateThemeIcon(theme) {
-      themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
-    }
-
-    // Animated particles
-    function createParticles() {
-      const particlesContainer = document.getElementById('particles');
-      const particleCount = window.innerWidth > 768 ? 80 : 30; // Fewer particles on mobile
-
-      for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 20 + 's';
-        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-        particlesContainer.appendChild(particle);
-      }
-    }
-
-    // Scroll animations
-    function handleScrollAnimations() {
-      const elements = document.querySelectorAll('.fade-in-up, .fade-in-left');
-      
-      elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          element.classList.add('animate');
-        }
-      });
-    }
-
-    // Progress bar
-    function updateProgressBar() {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById('progressBar').style.width = scrolled + '%';
-    }
-
-    // Scroll to top button
-    function handleScrollToTop() {
-      const scrollToTop = document.getElementById('scrollToTop');
-      const scrollPosition = window.pageYOffset;
-      
-      if (scrollPosition > 300) {
-        scrollToTop.classList.add('show');
-      } else {
-        scrollToTop.classList.remove('show');
-      }
-    }
-
-    // Scroll to top functionality
-    document.getElementById('scrollToTop').addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-
-    // 修复滚动跟随效果 - 减少debounce延迟并改进逻辑
     var $hashList = $('.menu-list a'), offsetList, maxScrollHeight;
-    var sidebarElement, aboutMeElement, servicesElement;
-    var sidebarHeight;
 
     $('#sidebar').on('click', 'a', function(){
       activate($(this))
     });
 
-    $(window).on('resize', debounce(function() {
-      calculateBoundary();
-      calculateSidebarBounds();
-      updateSidebarPosition();
-    }, 100));
+    $(window).on('resize', debounce(calculateBoundary, 300));
 
-    $(document).on('scroll', debounce(function() {
-      judgeScroll();
-      updateSidebarPosition();
-    }, 10)); // 进一步减少延迟以实现平滑跟随
+    $(document).on('scroll', debounce(judgeScroll, 300));
 
-    // 初始化侧边栏浮动跟随
-    initSidebarFloat();
     calculateBoundary();
-    calculateSidebarBounds();
     judgeScroll();
-    updateSidebarPosition();
 
-    function initSidebarFloat() {
-      sidebarElement = document.querySelector('.sidebar-glass');
-      aboutMeElement = document.querySelector('#intro');
-      servicesElement = document.querySelector('#services');
-      
-      if (sidebarElement && aboutMeElement && servicesElement) {
-        // 设置侧边栏容器为相对定位
-        const sidebarContainer = document.querySelector('.column.is-2_5');
-        if (sidebarContainer) {
-          sidebarContainer.style.position = 'relative';
-        }
-      }
-    }
-
-    function calculateSidebarBounds() {
-      if (!sidebarElement || !aboutMeElement || !servicesElement) return;
-      
-      // 只需要获取侧边栏高度，其他位置实时计算更准确
-      sidebarHeight = sidebarElement.offsetHeight;
-    }
-
-    function updateSidebarPosition() {
-      if (!sidebarElement || window.innerWidth <= 768) {
-        // 移动端不使用浮动效果
-        if (sidebarElement) {
-          sidebarElement.style.position = 'static';
-          sidebarElement.style.top = 'auto';
-        }
-        return;
-      }
-
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
-      // 重新获取元素位置，确保准确性
-      const aboutMeRect = aboutMeElement.getBoundingClientRect();
-      const servicesRect = servicesElement.getBoundingClientRect();
-      const containerRect = document.querySelector('.container').getBoundingClientRect();
-      
-      // 计算相对于页面的绝对位置
-      const aboutMeAbsoluteTop = aboutMeRect.top + scrollTop;
-      const servicesAbsoluteBottom = servicesRect.bottom + scrollTop;
-      const containerAbsoluteTop = containerRect.top + scrollTop;
-      
-      // 计算侧边栏应该的位置（相对于容器）
-      let targetTop = scrollTop - containerAbsoluteTop + 20; // 20px的顶部边距
-      
-      // 限制最高位置：与About Me顶部平行
-      const minTop = aboutMeAbsoluteTop - containerAbsoluteTop;
-      
-      // 限制最低位置：与Academic Services底部平行
-      const maxTop = servicesAbsoluteBottom - containerAbsoluteTop - sidebarHeight;
-      
-      // 应用边界限制
-      targetTop = Math.max(minTop, Math.min(targetTop, maxTop));
-      
-      // 平滑应用位置
-      sidebarElement.style.position = 'absolute';
-      sidebarElement.style.top = targetTop + 'px';
-    }
-
-    function calculateBoundary() {
+    function  calculateBoundary() {
       offsetList = $hashList.map(function(idx, ele){
         return $(ele.hash).offset().top
       });
@@ -1827,29 +1023,23 @@
               ? $("html").scrollTop()
               : $("body").scrollTop(),
               len = offsetList.length;
-      
-      // 增加容差范围，提高精确度
       if(tps >= maxScrollHeight-10){
         activate($hashList.eq(len-1));
         return
       }
-      
       for(var i=0; i<len; i++){
-        // 减小偏移量，使高亮更精确
-        if(tps + 100 < offsetList[i]){
+      if(tps+50<offsetList[i]){
           activate($hashList.eq(Math.max(0,i-1)));
           return
         }
       }
-      
-      // 如果没有匹配到，激活最后一个
-      activate($hashList.eq(len-1));
     }
 
     function activate(ele){
       $hashList.removeClass('is-active');
       ele.addClass('is-active');
     }
+
 
     function debounce(fn, delay) {
       var timeout = null;
@@ -1986,34 +1176,6 @@
           $('#bibtexModal').hide();
         }
       });
-    });
-
-    // Initialize everything
-    document.addEventListener('DOMContentLoaded', () => {
-      createParticles();
-      handleScrollAnimations();
-      
-      // 延迟初始化侧边栏位置，确保所有元素都已渲染
-      setTimeout(() => {
-        calculateSidebarBounds();
-        updateSidebarPosition();
-      }, 100);
-      
-      // Remove typing cursor after animation completes
-      setTimeout(() => {
-        const typingElement = document.querySelector('.typing-text');
-        if (typingElement) {
-          typingElement.style.borderRight = 'none';
-          typingElement.style.animation = 'none';
-        }
-      }, 6000); // 1s delay + 4s animation + 1s buffer
-    });
-
-    // Event listeners
-    window.addEventListener('scroll', () => {
-      handleScrollAnimations();
-      updateProgressBar();
-      handleScrollToTop();
     });
 
   </script>
