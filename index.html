@@ -109,7 +109,11 @@
 
       .theme-toggle i {
         font-size: 20px;
-        color: var(--text-primary);
+        color: #fbbf24 !important;  /* 统一黄色 */
+      }
+      .theme-toggle:hover i {
+        transform: scale(1.1) rotate(15deg);  /* 悬停旋转 */
+        text-shadow: 0 0 10px rgba(251, 191, 36, 0.6);  /* 发光 */
       }
 
       /* Animated particles */
@@ -674,7 +678,7 @@
 
       /* 调整侧边栏布局 */
       .sidebar-glass figure.image {
-        width: 12rem !important;
+        width: 80% !important;
         margin: 0 auto 1rem auto !important;
         overflow-y: auto;  
       }
@@ -1125,7 +1129,8 @@
               </figure>
             <div class="content">
               <h2 style="margin-top: 0.5em; text-align: left;">
-                <span class="typing-text">Jieyu Yuan 袁捷禹</span>
+                <span class="typing-text">Jieyu Yuan</span><br/>
+                <span class="typing-text">袁捷禹</span>
               </h2>
               <p style="text-align: left;">
                 🏢 <b>VCIP@NKU</b><br/> 
