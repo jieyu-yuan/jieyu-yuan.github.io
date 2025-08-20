@@ -468,6 +468,8 @@
         transform: scale(1.01);
       }
 
+      
+
       /* 恢复原来的column布局 */
       @media screen and (min-width: 769px) {
         .column.is-2_5 {
@@ -1203,6 +1205,7 @@
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
               <div class="news-glass">
                 <ul>
+                  <li>➤ [08/2025]: Our work "ViDA-UGC" is available on arXiv!</li>
                   <li>➤ [07/2025]: One paper accepted by IEEE JOE 2025!</li>
                   <li>➤ [05/2025]: Our work "3D-UIR" is available on arXiv!</li>
                   <li>➤ [01/2025]: Selected as <strong>Outstanding Reviewer</strong> of IEEE JOE 2024!</li>
@@ -1293,6 +1296,31 @@
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
+                      <img src=".\images\research\ViDA.png" style="width: 100%; height: auto; border-radius: 8px;">
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>ViDA-UGC: Detailed Image Quality Analysis via Visual Distortion Assessment for UGC Images</b><br>
+                        To tackle the limitations of current explainable IQA methods in distinguishing UGC from AIGC and providing fine-grained quality analysis, we construct ViDA-UGC, the first large-scale UGC distortion assessment dataset with a distortion-oriented CoT annotation pipeline, and release ViDA-UGC-Bench as a reliable benchmark.
+                      </p>
+                      <div class="research-links">
+                        <a href="https://arxiv.org/abs/2508.12605" target="_blank">[Paper]</a>
+                        <a href="https://whycantfindaname.github.io/ViDA-UGC/" target="_blank">[Project]</a>
+                        <a href="https://github.com/DYEvaLab/ViDA-MIPI-code" target="_blank">[Code]</a>
+                        <a href="https://huggingface.co/datasets/DY-Evalab/ViDA-MIPI-dataset" target="_blank">[Data]</a>   
+                        <a href="#" onclick="showBibTeX('ViDA-UGC'); return false;">[BibTeX]</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="research-glass">
+                <article class="columns is-vcentered">
+                  <div class="column is-4">
+                    <figure class="image">
                       <img src=".\images\research\3duir.gif" style="width: 100%; height: auto; border-radius: 8px;">
                     </figure>
                   </div>
@@ -1300,7 +1328,7 @@
                     <div class="content">
                       <p>
                         <b>3D-UIR: 3D Gaussian for Underwater 3D Scene Reconstruction via Physics Based Appearance-Medium Decoupling</b><br>
-                        3D-UIR is an underwater novel view synthesis method that tackles water medium interference and floating artifacts in underwater scene representation through physics-based appearance-medium decoupling. Disentangles object appearance from water medium effects using tailored Gaussian modeling with appearance embeddings and distance-guided optimization.
+                        3D-UIR is an underwater NVS method that tackles water medium interference and floating artifacts in underwater scene representation through physics-based appearance-medium decoupling. Disentangles object appearance from water medium effects using tailored Gaussian modeling with appearance embeddings and distance-guided optimization.
                       </p>
                       <div class="research-links">
                         <a href="https://arxiv.org/abs/2505.21238" target="_blank">[Paper]</a>
@@ -1324,7 +1352,8 @@
                     <div class="content">
                       <p>
                         <b>Color Discrimination Multi-Scale Exposure Fusion for Underwater Image Enhancement</b><br>
-                        We propose a multi-space processing pipeline that achieves robust enhancement performance across diverse challenging underwater scenarios without relying on reference image. CDEF employs color discrimination and multi-space fusion to significantly improve contrast, saturation, and sharpness while maintaining consistent performance without artifacts or over-exposure.
+                       We propose CDEF, a reference-free multi-space pipeline that enhances underwater images by leveraging color discrimination and multi-scale fusion, achieving robust contrast, saturation, and sharpness improvements without artifacts or over-exposure.
+                        
                       </p>
                       <div class="research-links">
                         <a href="" target="_blank">[Paper]</a>
@@ -1458,6 +1487,15 @@
             </p>
 
             <!--List of publications-->
+              <div class="publication-glass publication-item first-author-paper" data-year="2025">
+              <div class="content">
+                <p>
+                  <b><a href="https://arxiv.org/abs/2508.12605" target="_blank">ViDA-UGC: Detailed Image Quality Analysis via Visual Distortion Assessment for UGC Images</a></b><br>
+                  arXiv preprint arXiv:2508.12605, 2025<br>
+                  Wenjie Liao, <b style="color: #2563eb;">Jieyu Yuan</b>, Yifang Xu, Chunle Guo, Zilong Zhang, Jihong Li, Jiachen Fu, Haotian Fan, Tao Li, Junhui Cui, <b>Chongyi Li</b><sup>#</sup>.
+                </p>
+              </div>
+            </div>
 
             <div class="publication-glass publication-item first-author-paper" data-year="2025">
               <div class="content">
@@ -1901,6 +1939,12 @@
 
     // BibTeX functionality
     const bibtexData = {
+            'ViDA-UGC': `@article{Liao2025vidaugc,
+  title={ViDA-UGC: Detailed Image Quality Analysis via Visual Distortion Assessment for UGC Images},
+  author={Wenjie Liao and Jieyu Yuan and Yifang Xu and Chunle Guo and Zilong Zhang and Jihong Li and Jiachen Fu and Haotian Fan and Tao Li and Junhui Cui and Chongyi Li},
+  journal={arXiv preprint arXiv:2508.12605},
+  year={2025}
+}`,
       '3duir': `@article{yuan20253duir,
   title={3D-UIR: 3D Gaussian for Underwater 3D Scene Reconstruction via Physics Based Appearance-Medium Decoupling},
   author={Yuan, Jieyu and Li, Yujun and Zhang, Yuanlin and Guo, Chunle and Tang, Xiongxin and Wang, Ruixing and Li, Chongyi},
