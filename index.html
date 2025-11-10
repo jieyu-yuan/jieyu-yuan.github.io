@@ -1205,6 +1205,7 @@
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
               <div class="news-glass">
                 <ul>
+                  <li>➤ [10/2025]: One paper accepted by IEEE TGRS 2025!</li>
                   <li>➤ [08/2025]: Our work "ViDA-UGC" is available on arXiv!</li>
                   <li>➤ [07/2025]: One paper accepted by IEEE JOE 2025!</li>
                   <li>➤ [05/2025]: Our work "3D-UIR" is available on arXiv!</li>
@@ -1291,6 +1292,31 @@
             <div class="glass-section fade-in-up" id="research">
               <h2>🎯 Research Work</h2>
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
+
+              <div class="research-glass">
+                <article class="columns is-vcentered">
+                  <div class="column is-4">
+                    <figure class="image">
+                      <img src=".\images\research\w2wdiff.png" style="width: 100%; height: auto; border-radius: 8px;">
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>W2WDiff: Generalizing Underwater Diffusion Model via Unsupervised Underwater Conversion</b><br>
+                        W2WDiff is a diffusion-based underwater image enhancement (UIE) framework that integrates water-to-water domain aggregation with latent space operations to achieve superior generalization and enhancement performance. This design effectively addresses critical limitations of existing diffusion-based UIE methods, particularly their susceptibility to distribution shifts and semantic inconsistencies.
+                      </p>
+                      <div class="research-links">
+                        <a href="https://ieeexplore.ieee.org/document/11230813" target="_blank">[Paper]</a>
+                        <a href="https://c-pupil.github.io/projects/W2WDiff/index.html" target="_blank">[Project]</a>
+                        <a href="https://github.com/c-pupil/W2WDiff" target="_blank">[Code]</a>
+                        <!-- <a href="https://huggingface.co/datasets/DY-Evalab/ViDA-MIPI-dataset" target="_blank">[Data]</a>    -->
+                        <a href="#" onclick="showBibTeX('w2wdiff'); return false;">[BibTeX]</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
 
               <div class="research-glass">
                 <article class="columns is-vcentered">
@@ -1487,6 +1513,16 @@
 
             <!--List of publications-->
 
+              <div class="publication-glass publication-item first-author-paper" data-year="2025">
+              <div class="content">
+                <p>
+                  <b><a href="https://ieeexplore.ieee.org/document/11230813" target="_blank">W2WDiff: Generalizing Underwater Diffusion Model via Unsupervised Underwater Conversion</a></b><br>
+                  IEEE Transactions on Geoscience and Remote Sensing (IF=7.5, JCR Q1), 2025<br>
+                  Yuhan Zhang, <b style="color: #2563eb;">Jieyu Yuan</b><sup>*</sup>,  <b>Xiao Chen</b><sup>#</sup>, <b>Xiongxin Tang</b><sup>#</sup>, Qiao Chen, Yiquan Wang, Chongyi Li.
+                </p>
+              </div>
+            </div>
+
               <div class="publication-glass publication-item" data-year="2025">
               <div class="content">
                 <p>
@@ -1521,7 +1557,7 @@
             <div class="publication-glass publication-item first-author-paper" data-year="2025">
               <div class="content">
                 <p>
-                  <b><a href="" target="_blank">Underwater Scene Enhancement via Adaptive Color Analysis and Multi-Space Fusion</a></b><br>
+                  <b><a href="https://ieeexplore.ieee.org/document/11142469" target="_blank">Underwater Scene Enhancement via Adaptive Color Analysis and Multi-Space Fusion</a></b><br>
                   IEEE Journal of Oceanic Engineering (IF=5.3, JCR Q1), 2025<br>
                   <b style="color: #2563eb;">Jieyu Yuan</b>, Yuhan Zhang, <b>Zhanchuan Cai</b><sup>#</sup>.
                 </p>
@@ -1657,6 +1693,7 @@
               <h2>🏆 Awards and Honors</h2>
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
               <ul>
+                <li>2025 Technical Committee Member to 17th ICSPS</li>
                 <li>2024 Outstanding Reviewers of JOE</li>
                 <li>2023 First Prize, "Huawei Cup" 20th China Graduate Mathematical Contest in Modeling</li>
                 <li>2022 Future Technology Star, Zhuhai Computer Society</li>
@@ -1674,7 +1711,7 @@
             <div class="glass-section fade-in-up" id="services">
               <h2>📚 Academic Services</h2>
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
-              <b>Journal Reviewer</b>: TIP, IJCV, TMM, TCSVT, TGRS, TIM, EAAl and JoE
+              <b>Journal Reviewer</b>: TIP, IJCV, TGRS, TMM, TCSVT, TIM, EAAl and JoE
               <!-- <b>Journal Reviewer</b>:
               <ul>
                 <li>TIP, IJCV, TMM, TCSVT, TGRS, TIM, EAAl and JoE</li>
@@ -1962,6 +1999,16 @@
 
     // BibTeX functionality
     const bibtexData = {
+          'w2wdiff': `@article{yuan2025w2wdiff,
+    author={Zhang, Yuanlin and Yuan, Jieyu and Chen, Xiao and Tang, Xiongxin and Chen, Qiao and Wang, Yiquan and Li, Chongyi},
+    journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+    title={W2WDiff: Generalizing Underwater Diffusion Model via Unsupervised Underwater Conversion}, 
+    year={2025},
+    volume={},
+    number={},
+    pages={1-1},
+    doi={10.1109/TGRS.2025.3629979}
+}`,
             'ViDA-UGC': `@article{Liao2025vidaugc,
   title={ViDA-UGC: Detailed Image Quality Analysis via Visual Distortion Assessment for UGC Images},
   author={Wenjie Liao and Jieyu Yuan and Yifang Xu and Chunle Guo and Zilong Zhang and Jihong Li and Jiachen Fu and Haotian Fan and Tao Li and Junhui Cui and Chongyi Li},
@@ -1975,11 +2022,14 @@
   year={2025}
 }`,
        'cdef': `@article{yuan2025cdef,
-   title={Color Discrimination Multi-Scale Exposure Fusion for Underwater Image Enhancement},
-   author={Yuan, Jieyu and Zhang,Yuhan and Cai, Zhanchuan},
-   journal={IEEE Journal of Oceanic Engineering},
-   doi={10.1109/JOE.2025.3591405},
-   year={2025}
+  author={Yuan, Jieyu and Zhang, Yuhan and Cai, Zhanchuan},
+  journal={IEEE Journal of Oceanic Engineering}, 
+  title={Underwater Scene Enhancement via Adaptive Color Analysis and Multispace Fusion}, 
+  year={2025},
+  volume={50},
+  number={4},
+  pages={2516-2528},
+  doi={10.1109/JOE.2025.3591405}
  }`,
       'udmdet': `@article{yuan2024udmdet,
   title={A Novel Underwater Detection Method for Ambiguous Object Finding via Distraction Mining},
