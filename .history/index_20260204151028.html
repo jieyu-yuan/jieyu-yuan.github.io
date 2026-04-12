@@ -20,47 +20,43 @@
   <script defer src="font-awesome/js/fontawesome.min.js"></script>
     <style>
       :root {
-        --bg-primary: #faf9f7;
-        --bg-secondary: rgba(250, 249, 247, 0.82);
-        --bg-glass: rgba(255, 255, 255, 0.72);
-        --text-primary: #3d3929;
-        --text-secondary: #5d5646;
-        --text-muted: #8c8577;
-        --border-color: rgba(194, 113, 79, 0.2);
-        --shadow-color: rgba(194, 113, 79, 0.15);
-        --accent-color: #c2714f;
-        --gradient-start: rgba(194, 113, 79, 0.14);
-        --gradient-end: rgba(194, 113, 79, 0.02);
-        --page-gradient-top: rgba(255, 255, 255, 0.06);
-        --page-gradient-mid: rgba(194, 113, 79, 0.11);
-        --page-gradient-bottom: rgba(83, 62, 49, 0.2);
-        --hover-bg: rgba(194, 113, 79, 0.08);
-        --card-bg: rgba(255, 255, 255, 0.7);
-        --scrollbar-thumb: rgba(194, 113, 79, 0.35);
-        --menu-hover-bg: rgba(194, 113, 79, 0.12);
-        --menu-active-bg: rgba(194, 113, 79, 0.18);
+        /* Light mode colors */
+        --bg-primary: #ffffff;
+        --bg-secondary: rgba(255, 255, 255, 0.12);
+        --bg-glass: rgba(255, 255, 255, 0.15);
+        --text-primary: #2d3748;
+        --text-secondary: #666;
+        --text-muted: #888;
+        --border-color: rgba(255, 255, 255, 0.25);
+        --shadow-color: rgba(45, 55, 72, 0.15);
+        --accent-color: #4a5568;
+        --gradient-start: rgba(74, 85, 104, 0.15);
+        --gradient-end: rgba(26, 32, 44, 0.02);
+        --hover-bg: rgba(255, 255, 255, 0.18);
+        --card-bg: rgba(255, 255, 255, 0.08);
+        --scrollbar-thumb: rgba(193, 193, 193, 0.5);
+        --menu-hover-bg: rgba(74, 85, 104, 0.1);
+        --menu-active-bg: rgba(74, 85, 104, 0.15);
       }
 
       [data-theme="dark"] {
-        --bg-primary: #172338;
-        --bg-secondary: rgba(23, 35, 56, 0.9);
-        --bg-glass: rgba(36, 53, 82, 0.78);
-        --text-primary: #e7eefb;
-        --text-secondary: #c5d4ea;
-        --text-muted: #a5b6cf;
-        --border-color: rgba(130, 165, 215, 0.3);
-        --shadow-color: rgba(10, 18, 32, 0.36);
-        --accent-color: #82a8dd;
-        --gradient-start: rgba(130, 168, 221, 0.2);
-        --gradient-end: rgba(23, 35, 56, 0.08);
-        --page-gradient-top: rgba(23, 35, 56, 0.05);
-        --page-gradient-mid: rgba(130, 168, 221, 0.14);
-        --page-gradient-bottom: rgba(10, 18, 32, 0.3);
-        --hover-bg: rgba(130, 168, 221, 0.12);
-        --card-bg: rgba(36, 53, 82, 0.62);
-        --scrollbar-thumb: rgba(130, 168, 221, 0.42);
-        --menu-hover-bg: rgba(130, 168, 221, 0.16);
-        --menu-active-bg: rgba(130, 168, 221, 0.24);
+        /* Dark mode colors */
+        --bg-primary: #1a202c;
+        --bg-secondary: rgba(45, 55, 72, 0.15);
+        --bg-glass: rgba(45, 55, 72, 0.25);
+        --text-primary: #e2e8f0;
+        --text-secondary: #cbd5e0;
+        --text-muted: #a0aec0;
+        --border-color: rgba(255, 255, 255, 0.5);
+        --shadow-color: rgba(0, 0, 0, 0.3);
+        --accent-color: #718096;
+        --gradient-start: rgba(26, 32, 44, 0.8);
+        --gradient-end: rgba(45, 55, 72, 0.2);
+        --hover-bg: rgba(45, 55, 72, 0.3);
+        --card-bg: rgba(45, 55, 72, 0.15);
+        --scrollbar-thumb: rgba(100, 116, 139, 0.6);
+        --menu-hover-bg: rgba(45, 55, 72, 0.2);
+        --menu-active-bg: rgba(45, 55, 72, 0.3);
       }
 
       /* Smooth transitions for theme switching */
@@ -72,42 +68,6 @@
         background: var(--bg-primary);
         color: var(--text-primary);
         overflow-x: hidden;
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        padding-top: 76px;
-      }
-
-      .quick-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1200;
-        background: var(--bg-secondary);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--border-color);
-        box-shadow: 0 4px 16px var(--shadow-color);
-      }
-
-      .quick-nav .quick-nav-inner {
-        max-width: 1152px;
-        width: 100%;
-        margin: 0 auto;
-        min-height: 56px;
-        padding: 8px 16px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .quick-nav .nav-name {
-        margin: 0 !important;
-        font-size: 1.15rem !important;
-        font-weight: 700;
-        color: var(--text-primary) !important;
-        white-space: nowrap;
-        text-decoration: none;
-        flex: 0 0 auto;
       }
 
       /* Progress bar */
@@ -375,86 +335,6 @@
         transform: translateY(-1px);
       }
 
-      .publications-toolbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        margin-bottom: 12px;
-      }
-
-      .selected-caption {
-        color: var(--text-muted);
-        font-size: 0.95rem;
-        font-weight: 600;
-      }
-
-      .view-all-btn {
-        border: 1px solid var(--border-color);
-        background: var(--card-bg);
-        color: var(--text-primary);
-        border-radius: 999px;
-        padding: 6px 14px;
-        font-size: 0.88rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.25s ease;
-      }
-
-      .view-all-btn:hover {
-        transform: translateY(-1px);
-        background: var(--hover-bg);
-        box-shadow: 0 4px 10px var(--shadow-color);
-      }
-
-      .section-header-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-      }
-
-      .glass-section {
-        scroll-margin-top: 96px;
-      }
-
-      #intro.glass-section {
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        padding: 0.25rem 0.25rem 1rem 0.25rem !important;
-      }
-
-      #intro p {
-        color: var(--text-primary) !important;
-      }
-
-      #intro a {
-        color: var(--text-secondary) !important;
-        font-weight: 500;
-        text-decoration: none;
-      }
-
-      #intro hr {
-        border-top: 1.5px solid rgba(106, 72, 52, 0.42) !important;
-      }
-
-      #intro a:hover {
-        color: var(--text-primary) !important;
-        text-decoration: underline;
-        text-underline-offset: 2px;
-      }
-
-      [data-theme="dark"] #intro hr {
-        border-top: 1.5px solid rgba(226, 138, 103, 0.46) !important;
-      }
-
-      #publications.publications-collapsed {
-        display: none !important;
-      }
-
       /* Highlight first-author papers */
       .first-author-paper {
         background: var(--card-bg) !important;
@@ -659,8 +539,8 @@
         border: 1px solid var(--border-color);
         border-radius: 15px;
         padding: 15px;
-        max-height: none;
-        overflow: visible;
+        max-height: 200px;
+        overflow-y: auto;
         margin: 0;
         position: relative;
       }
@@ -675,19 +555,6 @@
         background: linear-gradient(to bottom, var(--card-bg), transparent);
         pointer-events: none;
         z-index: 1;
-      }
-
-      #news .news-glass::before {
-        display: none;
-      }
-
-      /* Show only manually pinned news items on homepage */
-      #news .news-glass li {
-        display: none;
-      }
-
-      #news .news-glass li[data-pinned="true"] {
-        display: block;
       }
 
       .news-glass ul {
@@ -811,36 +678,11 @@
         transform: translateY(-2px);
       }
 
-      /* Subtle hierarchy for all modules: outer section vs inner content cards */
-      [data-theme="light"] .glass-section:not(#intro) {
-        background: rgba(255, 255, 255, 0.62) !important;
-      }
-
-      [data-theme="light"] #news .news-glass,
-      [data-theme="light"] #education .education-glass,
-      [data-theme="light"] #research .research-glass,
-      [data-theme="light"] #publications .publication-glass:not(.first-author-paper) {
-        background: rgba(255, 255, 255, 0.86) !important;
-        border-color: rgba(186, 148, 124, 0.24) !important;
-      }
-
-      [data-theme="dark"] .glass-section:not(#intro) {
-        background: rgba(28, 43, 68, 0.52) !important;
-      }
-
-      [data-theme="dark"] #news .news-glass,
-      [data-theme="dark"] #education .education-glass,
-      [data-theme="dark"] #research .research-glass,
-      [data-theme="dark"] #publications .publication-glass:not(.first-author-paper) {
-        background: rgba(42, 61, 92, 0.78) !important;
-        border-color: rgba(130, 165, 215, 0.34) !important;
-      }
-
       /* 调整侧边栏布局 */
       .sidebar-glass figure.image {
         width: 80% !important;
         margin: 0 auto 1rem auto !important;
-        overflow: hidden;
+        overflow-y: auto;  
       }
 
       /* Profile container - simplified without animation */
@@ -1250,318 +1092,6 @@
             height: 45px;
           }
         }
-
-        /* ===== PRISM-style layout + Luka tone overrides ===== */
-        .quick-nav .menu-list {
-          margin: 0 !important;
-          padding: 0 !important;
-          display: flex;
-          align-items: center;
-          flex-wrap: nowrap;
-          gap: 6px;
-          margin-left: auto !important;
-          justify-content: flex-end;
-          flex: 0 1 auto;
-          width: fit-content;
-          max-width: calc(100% - 20px);
-          min-width: 0;
-          overflow-x: auto;
-          overflow-y: hidden;
-          white-space: nowrap;
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-          -webkit-overflow-scrolling: touch;
-          scroll-behavior: smooth;
-          padding-bottom: 0 !important;
-        }
-
-        .quick-nav .menu-list::-webkit-scrollbar {
-          display: none;
-        }
-
-        .quick-nav .menu-list li {
-          margin: 0 !important;
-          list-style: none;
-          flex: 0 0 auto;
-        }
-
-        .quick-nav .menu-list a {
-          color: var(--text-secondary) !important;
-          padding: 0.45rem 0.85rem !important;
-          border-radius: 999px !important;
-          transition: all 0.3s ease !important;
-          display: inline-block !important;
-          text-decoration: none !important;
-          margin-bottom: 0 !important;
-          font-weight: 500 !important;
-          font-size: 0.9rem !important;
-          white-space: nowrap !important;
-          background: var(--card-bg) !important;
-          border: 1px solid var(--border-color) !important;
-          backdrop-filter: blur(5px) !important;
-        }
-
-        .quick-nav .menu-list a:hover {
-          background-color: var(--menu-hover-bg) !important;
-          color: var(--text-primary) !important;
-          transform: translateY(-1px) !important;
-          box-shadow: 0 4px 12px var(--shadow-color) !important;
-        }
-
-        .quick-nav .menu-list a.is-active {
-          background-color: var(--menu-active-bg) !important;
-          color: var(--text-primary) !important;
-          font-weight: 700 !important;
-          border-color: var(--accent-color) !important;
-          transform: translateY(-1px) !important;
-          box-shadow: 0 4px 15px var(--shadow-color) !important;
-        }
-
-        #sidebar {
-          display: none !important;
-          visibility: hidden !important;
-        }
-
-        .particles {
-          display: none !important;
-        }
-
-        .theme-toggle {
-          top: 82px !important;
-        }
-
-        :root {
-          --sidebar-fixed-width: clamp(248px, 20vw, 292px);
-          --sidebar-column-gap: clamp(68px, 9vw, 170px);
-        }
-
-        .container > .columns {
-          display: block !important;
-        }
-
-        .column.is-2_5 {
-          width: var(--sidebar-fixed-width) !important;
-          position: fixed !important;
-          top: 92px !important;
-          left: max(16px, calc((100vw - 1152px) / 2 + 12px));
-          max-height: none;
-          z-index: 20;
-        }
-
-        .sidebar-glass {
-          position: static !important;
-          width: 100% !important;
-          max-height: none;
-          overflow: visible;
-          background: transparent !important;
-          border: none !important;
-          box-shadow: none !important;
-          backdrop-filter: none !important;
-          -webkit-backdrop-filter: none !important;
-          padding: 0.25rem 0.4rem !important;
-        }
-
-        .sidebar-glass > figure.image {
-          width: 220px !important;
-          height: 220px;
-          margin: 0 auto 1.2rem auto !important;
-          border-radius: 18px;
-          overflow: hidden;
-          box-shadow: 0 10px 28px var(--shadow-color);
-        }
-
-        .sidebar-glass > figure.image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: 32% center;
-        }
-
-        .right-panel {
-          margin-left: calc(var(--sidebar-fixed-width) + var(--sidebar-column-gap)) !important;
-          width: auto !important;
-          min-width: 0;
-          padding-left: clamp(1rem, 1.8vw, 1.5rem) !important;
-        }
-
-        .right-panel .content {
-          max-width: 860px;
-        }
-
-        #research .research-glass .content p {
-          text-align: justify;
-          text-justify: inter-word;
-          line-height: 1.6;
-          padding-right: 0.3rem;
-        }
-
-        #research .research-glass .selected-title {
-          display: inline-block;
-          margin-bottom: 0.35rem;
-          font-size: 1rem;
-          line-height: 1.45;
-          color: var(--text-primary) !important;
-          font-weight: 700;
-        }
-
-        #research .research-glass .selected-meta {
-          margin-bottom: 0.28rem;
-          color: var(--text-primary);
-          font-size: 0.93rem;
-          line-height: 1.45;
-          font-weight: 700;
-          text-align: justify;
-          text-justify: inter-word;
-          padding-right: 0.3rem;
-        }
-
-        #research .research-glass .selected-meta-label {
-          color: var(--text-primary);
-          font-weight: 600;
-          margin-right: 6px;
-        }
-
-        #research .research-glass .selected-tldr {
-          margin-top: 0.2rem;
-          color: var(--text-secondary);
-          font-size: 0.93rem;
-          line-height: 1.55;
-          text-align: justify;
-          text-justify: inter-word;
-          padding-right: 0.3rem;
-        }
-
-        #research .research-glass .selected-tldr .selected-meta-label {
-          color: var(--accent-color);
-        }
-
-        /* Make transparent thumbnails readable with a white backing card */
-        #research .research-glass .column.is-4 .image {
-          background: #ffffff;
-          border: 1px solid rgba(20, 30, 48, 0.12);
-          border-radius: 10px;
-          padding: 6px;
-          box-sizing: border-box;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        #research .research-glass .column.is-4 .image img {
-          display: block;
-          width: 100%;
-          height: auto;
-          border-radius: 6px;
-          background: #ffffff;
-        }
-
-        [data-theme="dark"] #research .research-glass .column.is-4 .image {
-          background: #ffffff !important;
-          border-color: rgba(40, 56, 84, 0.22) !important;
-        }
-
-        [data-theme="dark"] #research .research-glass .column.is-4 .image img {
-          background: #ffffff !important;
-        }
-
-        #research .research-links {
-          margin-top: 8px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-        }
-
-        #research .research-links a {
-          margin-right: 0;
-          padding: 0;
-          border: none;
-          border-radius: 0;
-          background: transparent;
-          box-shadow: none;
-          color: var(--accent-color);
-          font-size: 0.86rem;
-          font-weight: 600;
-        }
-
-        #research .research-links a:hover {
-          transform: none;
-          background: transparent;
-          box-shadow: none;
-          text-decoration: underline;
-          color: var(--text-primary);
-        }
-
-        .section {
-          padding-top: 0;
-        }
-
-        @media (max-width: 900px) {
-          body {
-            padding-top: 120px;
-          }
-
-          .quick-nav .quick-nav-inner {
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            gap: 8px;
-            padding: 10px 14px;
-          }
-
-          .quick-nav .menu-list {
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            white-space: nowrap;
-            width: 100%;
-            justify-content: flex-start;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-          }
-
-          .quick-nav .menu-list::-webkit-scrollbar {
-            display: none;
-          }
-
-          .quick-nav .nav-name {
-            font-size: 1rem !important;
-          }
-
-          .quick-nav .menu-list a {
-            font-size: 0.82rem !important;
-            padding: 0.35rem 0.65rem !important;
-          }
-
-          .section-header-row {
-            flex-wrap: wrap;
-          }
-
-          .column.is-2_5 {
-            position: static !important;
-            left: auto !important;
-            width: auto !important;
-            top: auto !important;
-            max-height: none;
-            z-index: auto;
-          }
-
-          .sidebar-glass {
-            position: static !important;
-            top: auto !important;
-            max-height: none;
-            overflow: visible;
-          }
-
-          .right-panel {
-            margin-left: 0 !important;
-            width: auto !important;
-            padding-left: 0.75rem !important;
-          }
-
-          .theme-toggle {
-            top: 128px !important;
-            right: 10px;
-          }
-        }
       
 </style>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
@@ -1569,22 +1099,6 @@
 
 
 <body>
-  <nav class="quick-nav" id="topQuickNav">
-    <div class="quick-nav-inner">
-      <a href="#intro" class="nav-name">Jieyu Yuan（袁捷禹）</a>
-      <ul class="menu-list">
-        <li><a href="#intro">About Me</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#research">Selected</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#awards">Awards</a></li>
-        <li><a href="#services">Services</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <!-- Progress bar -->
   <div class="progress-bar" id="progressBar"></div>
   
@@ -1601,8 +1115,12 @@
   <!-- Animated particles -->
   <div class="particles" id="particles"></div>
 
+  <!-- Top background section -->
+  <div style="width: 100%; height: 200px; background: url('images/misc/background.jpg'); background-size: cover; background-position: center 52.5%; margin-bottom: -20px;"></div>
+  
   <section class="section">
-    <!-- Top gradient background removed -->
+    <!-- Top gradient background -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 1000px; background: linear-gradient(to bottom, var(--gradient-start) 0%, rgba(45, 55, 72, 0.08) 40%, rgba(26, 32, 44, 0.02) 80%, rgba(26, 32, 44, 0) 100%); pointer-events: none; z-index: 0;"></div>
     
     <div class="container" style="position: relative; z-index: 2;">
       <div class="columns">
@@ -1687,15 +1205,14 @@
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
               <div class="news-glass">
                 <ul>
-                  <li><li data-pinned="true">➤ [03/2026]: One paper accepted by IEEE TCSVT 2026!</li>
-                  <li><li data-pinned="true">➤ [02/2026]: Our work "MarkCleaner" is available on arXiv!</li>
-                  <li><li data-pinned="true">➤ [10/2025]: One paper accepted by IEEE TGRS 2025!</li>
+                  <li>➤ [02/2026]: Our work "ViDA-UGC" is available on arXiv!</li>
+                  <li>➤ [10/2025]: One paper accepted by IEEE TGRS 2025!</li>
                   <li>➤ [08/2025]: Our work "ViDA-UGC" is available on arXiv!</li>
                   <li>➤ [07/2025]: One paper accepted by IEEE JOE 2025!</li>
-                  <li><li data-pinned="true">➤ [05/2025]: Our work "3D-UIR" is available on arXiv!</li>
+                  <li>➤ [05/2025]: Our work "3D-UIR" is available on arXiv!</li>
                   <li>➤ [01/2025]: Selected as <strong>Outstanding Reviewer</strong> of IEEE JOE 2024!</li>
                   <li>➤ [12/2024]: One paper accepted by IEEE TGRS 2024.</li>
-                  <li><li data-pinned="true">➤ [07/2024]: Joined π Research Group at Nankai University as a postdoc!</li>
+                  <li>➤ [07/2024]: Joined π Research Group at Nankai University as a postdoc!</li>
                   <li>➤ [06/2024]: ✨ Successfully defended my PhD thesis on June 5th! </li>
                   <li>➤ [03/2024]: One paper accepted by IEEE TII 2024.</li>
                   <li>➤ [12/2023]: One paper accepted by IEEE TGRS 2024.</li>
@@ -1774,40 +1291,14 @@
 
             <!--Research Work-->
             <div class="glass-section fade-in-up" id="research">
-              <div class="section-header-row">
-                <h2>📚 Representative Works</h2>
-                <a class="view-all-btn" href="#publications">View All →</a>
-              </div>
+              <h2>🎯 Research Work</h2>
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
 
               <div class="research-glass">
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
-                      <img src="./images/research/markcleaner.png" style="width: 100%; height: auto; border-radius: 8px;">
-                    </figure>
-                  </div>
-                  <div class="column">
-                    <div class="content">
-                      <p>
-                        <b>MarkCleaner: High-Fidelity Watermark Removal via Imperceptible Micro-Geometric Perturbation</b><br>
-                        MarkCleaner achieves high-fidelity watermark removal by exploiting the geometric vulnerability of semantic watermarks via micro-geometric perturbations and 2D Gaussian Splatting.
-                      </p>
-                      <div class="research-links">
-                        <a href="https://arxiv.org/abs/2602.01513" target="_blank">[Paper]</a>
-                        <a href="https://xiaoxikong.github.io/MarkCleaner/" target="_blank">[Project]</a>
-                        <a href="https://github.com/XiaoxiKong/MarkCleaner" target="_blank">[Code]</a>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-
-              <div class="research-glass">
-                <article class="columns is-vcentered">
-                  <div class="column is-4">
-                    <figure class="image">
-                      <img src="./images/research/w2wdiff.png" style="width: 100%; height: auto; border-radius: 8px;">
+                      <img src=".\images\research\w2wdiff.png" style="width: 100%; height: auto; border-radius: 8px;">
                     </figure>
                   </div>
                   <div class="column">
@@ -1832,7 +1323,7 @@
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
-                      <img src="./images/research/ViDA.png" style="width: 100%; height: auto; border-radius: 8px;">
+                      <img src=".\images\research\ViDA.png" style="width: 100%; height: auto; border-radius: 8px;">
                     </figure>
                   </div>
                   <div class="column">
@@ -1857,7 +1348,7 @@
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
-                      <img src="./images/research/3duir.gif" style="width: 100%; height: auto; border-radius: 8px;">
+                      <img src=".\images\research\3duir.gif" style="width: 100%; height: auto; border-radius: 8px;">
                     </figure>
                   </div>
                   <div class="column">
@@ -1881,13 +1372,13 @@
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
-                      <img src="./images/research/cdef.gif" style="width: 100%; height: auto; border-radius: 8px;">
+                      <img src=".\images\research\cdef.gif" style="width: 100%; height: auto; border-radius: 8px;">
                     </figure>
                   </div>
                   <div class="column">
                     <div class="content">
                       <p>
-                        <b>Underwater Scene Enhancement via Adaptive Color Analysis and Multi-Space Fusion</b><br>
+                        <b>Color Discrimination Multi-Scale Exposure Fusion for Underwater Image Enhancement</b><br>
                        We propose CDEF, a reference-free multi-space pipeline that enhances underwater images by leveraging color discrimination and multi-scale fusion, achieving robust contrast, saturation, and sharpness improvements without artifacts or over-exposure.
                         
                       </p>
@@ -1906,7 +1397,7 @@
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
-                      <img src="./images/research/udmdet.png">
+                      <img src=".\images\research\udmdet.png">
                     </figure>
                   </div>
                   <div class="column">
@@ -1929,7 +1420,7 @@
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
-                      <img src="./images/research/mfprn.png">
+                      <img src=".\images\research\mfprn.png">
                     </figure>
                   </div>
                   <div class="column">
@@ -1952,7 +1443,7 @@
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
-                      <img src="./images/research/tebcf.png">
+                      <img src=".\images\research\tebcf.png">
                     </figure>
                   </div>
                   <div class="column">
@@ -1975,7 +1466,7 @@
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
-                      <img src="./images/research/cbm.png">
+                      <img src=".\images\research\cbm.png">
                     </figure>
                   </div>
                   <div class="column">
@@ -1996,7 +1487,7 @@
             </div>
 
            <!--Publications-->
-           <div class="glass-section fade-in-up publications-collapsed" id="publications">
+           <div class="glass-section fade-in-up" id="publications">
             <h2>
               📄 Publications
               <span style="font-size: 1rem;margin-left: 1rem;position: relative;bottom: .2rem;">
@@ -2006,6 +1497,7 @@
               </span>
             </h2>
             <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
+            
             <!-- Year filter buttons -->
             <div class="publication-filters" style="margin-bottom: 20px;">
               <button class="filter-btn active" data-year="all">All</button>
@@ -2015,21 +1507,12 @@
               <button class="filter-btn" data-year="before2024">Before 2024</button>
             </div>
 
-            <p class="publications-note" style="font-size: 0.9em; color: var(--text-muted); margin-bottom: 20px;">
+            <p style="font-size: 0.9em; color: var(--text-muted); margin-bottom: 20px;">
               * Equal contribution.  # Corresponding author. <span class="representative-tag">✨ Representative papers are highlighted</span>
+            </p>
             </p>
 
             <!--List of publications-->
-
-            <div class="publication-glass publication-item" data-year="2026">
-              <div class="content">
-                <p>
-                  <b><a href="https://doi.org/10.1109/TCSVT.2026.3676184" target="_blank">SLIM: Stable Latent Integration for Robust Watermark in Diffusion Model</a></b><br>
-                  IEEE Transactions on Circuits and Systems for Video Technology, 2026<br>
-                  Xiaoxi Kong, Pengdi Chen, <b>Bin Li</b><sup>#</sup>, <b style="color: #2563eb;">Jieyu Yuan</b>, Zhanchuan Cai, Hao Wu, Lifeng Liang.
-                </p>
-              </div>
-            </div>
 
             <div class="publication-glass publication-item first-author-paper" data-year="2026">
               <div class="content">
@@ -2268,10 +1751,13 @@
     <footer class="container" >
       <br><hr>
       <div class="row" style="text-align: center">
-        <b style="color: var(--text-secondary) !important;">&copy; Jieyu Yuan | Last updated: April 2026</b>
+        <b style="color: #ffffff !important ;"> © Jieyu Yuan | Last updated: July 2025</b>
       </div>
     </footer>
   </section>
+
+  <!-- Bottom background section -->
+  <div style="width: 100%; height: 120px; background: url('images/misc/background.jpg'); background-size: cover; background-position: center 75%; margin-top: -95px;"></div>
 
   <!-- BibTeX Modal -->
   <div id="bibtexModal" class="bibtex-modal">
@@ -2337,128 +1823,6 @@
       });
     }
 
-    function normalizeSelectedSectionHeader() {
-      const headerRow = document.querySelector('#research .section-header-row');
-      if (!headerRow) return;
-      headerRow.innerHTML = '<h2>📚 Representative Works</h2><a class="view-all-btn" href="#publications">View All &rarr;</a>';
-    }
-
-    function initializePinnedNews() {
-      const newsItems = Array.from(document.querySelectorAll('#news .news-glass li'));
-      if (!newsItems.length) return;
-
-      const hasManualPinned = newsItems.some((item) => item.getAttribute('data-pinned') === 'true');
-      if (hasManualPinned) return;
-
-      // Default: if nothing is pinned manually, keep the latest 5 visible.
-      newsItems.forEach((item, index) => {
-        if (index < 5) {
-          item.setAttribute('data-pinned', 'true');
-        } else {
-          item.removeAttribute('data-pinned');
-        }
-      });
-    }
-
-    function normalizeTitleKey(title) {
-      return (title || '')
-        .toLowerCase()
-        .replace(/[^a-z0-9]/g, '');
-    }
-
-    function escapeHtml(text) {
-      return (text || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
-    }
-
-    function extractFirstSentence(text) {
-      const normalized = (text || '').replace(/\s+/g, ' ').trim();
-      if (!normalized) return '-';
-      const match = normalized.match(/(.+?[.!?。！？])(\s|$)/);
-      return match ? match[1] : normalized;
-    }
-
-    function simplifyVenueText(text) {
-      return (text || '')
-        .replace(/\s*\((?=[^)]*(IF|JCR))[^)]*\)/gi, '')
-        .replace(/\s+,/g, ',')
-        .replace(/\s{2,}/g, ' ')
-        .trim();
-    }
-
-    function formatSelectedPublicationsText() {
-      const publicationMapByUrl = new Map();
-      const publicationMetaList = [];
-
-      document.querySelectorAll('#publications .publication-item .content p').forEach((paragraph) => {
-        const titleLink = paragraph.querySelector('b a');
-        const titleText = (titleLink ? titleLink.textContent : (paragraph.querySelector('b') || {}).textContent || '').trim();
-        if (!titleText) return;
-
-        const lines = paragraph.innerHTML
-          .split(/<br\s*\/?>/i)
-          .map((line) => line.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim())
-          .filter(Boolean);
-
-        const meta = {
-          title: titleText,
-          titleKey: normalizeTitleKey(titleText),
-          venue: lines[1] || '-'
-        };
-
-        publicationMetaList.push(meta);
-
-        const href = titleLink ? titleLink.getAttribute('href') : '';
-        if (href) publicationMapByUrl.set(href, meta);
-      });
-
-      document.querySelectorAll('#research .research-glass').forEach((card) => {
-        const summaryParagraph = card.querySelector('.content p');
-        if (!summaryParagraph) return;
-        if (summaryParagraph.dataset.formatted === 'true') return;
-
-        const titleNode = summaryParagraph.querySelector('b');
-        const titleText = titleNode ? titleNode.textContent.trim() : '';
-        if (!titleText) return;
-
-        const paperLink = Array.from(card.querySelectorAll('.research-links a')).find((link) => {
-          return /\[paper\]/i.test((link.textContent || '').trim());
-        });
-
-        const paperHref = paperLink ? (paperLink.getAttribute('href') || '') : '';
-
-        let matchedMeta = paperHref ? publicationMapByUrl.get(paperHref) : null;
-        if (!matchedMeta) {
-          const titleKey = normalizeTitleKey(titleText);
-          matchedMeta = publicationMetaList.find((item) => {
-            return item.titleKey === titleKey || item.titleKey.includes(titleKey) || titleKey.includes(item.titleKey);
-          }) || null;
-        }
-
-        const descriptionText = summaryParagraph.innerHTML
-          .split(/<br\s*\/?>/i)
-          .slice(1)
-          .join(' ')
-          .replace(/<[^>]*>/g, ' ')
-          .replace(/\s+/g, ' ')
-          .trim();
-
-        const tldrText = extractFirstSentence(descriptionText);
-        const venueText = matchedMeta ? simplifyVenueText(matchedMeta.venue) : '-';
-
-        summaryParagraph.innerHTML = `
-          <span class="selected-title">${escapeHtml(titleText)}</span>
-          <div class="selected-meta">${escapeHtml(venueText)}</div>
-          <div class="selected-tldr"><span class="selected-meta-label">TL;DR:</span>${escapeHtml(tldrText)}</div>
-        `;
-        summaryParagraph.dataset.formatted = 'true';
-      });
-    }
-
     // Progress bar
     function updateProgressBar() {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -2488,7 +1852,7 @@
     });
 
     // 修复滚动跟随效果 - 减少debounce延迟并改进逻辑
-    var $hashList = $('.quick-nav .menu-list a'), offsetList, maxScrollHeight;
+    var $hashList = $('.menu-list a'), offsetList, maxScrollHeight;
     var sidebarElement, aboutMeElement, servicesElement;
     var sidebarHeight;
 
@@ -2595,7 +1959,7 @@
       
       for(var i=0; i<len; i++){
         // 减小偏移量，使高亮更精确
-        if(tps + 140 < offsetList[i]){
+        if(tps + 100 < offsetList[i]){
           activate($hashList.eq(Math.max(0,i-1)));
           return
         }
@@ -2624,107 +1988,8 @@
       };
     }
 
-    // Disable old sidebar-follow behavior and keep only top-nav highlighting
-    initSidebarFloat = function() {};
-    calculateSidebarBounds = function() {};
-    updateSidebarPosition = function() {};
-
-    $(window).off('resize');
-    $(document).off('scroll');
-    $(window).on('resize', debounce(function() {
-      calculateBoundary();
-      judgeScroll();
-    }, 100));
-    $(document).on('scroll', debounce(function() {
-      judgeScroll();
-    }, 10));
-    calculateBoundary();
-    judgeScroll();
-
-    // Desktop sidebar: fixed while scrolling, then dock to the bottom of right content
-    var sidebarDockingConfig = {
-      desktopBreakpoint: 900,
-      fixedTop: 92,
-      fixedMinLeft: 16,
-      absoluteLeft: 12,
-      desktopWidth: 'var(--sidebar-fixed-width)'
-    };
-
-    function updateSidebarDockingLayout() {
-      var sidebarContainer = document.querySelector('.column.is-2_5');
-      var sidebarCard = document.querySelector('.sidebar-glass');
-      var rightPanel = document.querySelector('.right-panel');
-      var mainContainer = document.querySelector('.section .container');
-
-      if (!sidebarContainer || !sidebarCard || !rightPanel || !mainContainer) return;
-
-      if (window.innerWidth <= sidebarDockingConfig.desktopBreakpoint) {
-        sidebarContainer.style.setProperty('position', 'static', 'important');
-        sidebarContainer.style.setProperty('top', 'auto', 'important');
-        sidebarContainer.style.setProperty('left', 'auto', 'important');
-        sidebarContainer.style.setProperty('width', 'auto', 'important');
-        sidebarContainer.style.setProperty('z-index', 'auto', 'important');
-        return;
-      }
-
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
-      var containerRect = mainContainer.getBoundingClientRect();
-      var rightPanelRect = rightPanel.getBoundingClientRect();
-      var sidebarHeight = sidebarCard.offsetHeight;
-
-      var containerTopAbsolute = containerRect.top + scrollTop;
-      var rightBottomAbsolute = rightPanelRect.bottom + scrollTop;
-      var fixedLeft = Math.max(sidebarDockingConfig.fixedMinLeft, containerRect.left + sidebarDockingConfig.absoluteLeft);
-      var shouldDock = scrollTop + sidebarDockingConfig.fixedTop + sidebarHeight >= rightBottomAbsolute;
-
-      if (shouldDock) {
-        var absoluteTop = Math.max(0, rightBottomAbsolute - containerTopAbsolute - sidebarHeight);
-        sidebarContainer.style.setProperty('position', 'absolute', 'important');
-        sidebarContainer.style.setProperty('top', absoluteTop + 'px', 'important');
-        sidebarContainer.style.setProperty('left', sidebarDockingConfig.absoluteLeft + 'px', 'important');
-      } else {
-        sidebarContainer.style.setProperty('position', 'fixed', 'important');
-        sidebarContainer.style.setProperty('top', sidebarDockingConfig.fixedTop + 'px', 'important');
-        sidebarContainer.style.setProperty('left', fixedLeft + 'px', 'important');
-      }
-
-      sidebarContainer.style.setProperty('width', sidebarDockingConfig.desktopWidth, 'important');
-      sidebarContainer.style.setProperty('z-index', '20', 'important');
-    }
-
-    $(window).on('resize.sidebarDocking', debounce(function() {
-      updateSidebarDockingLayout();
-    }, 60));
-
-    $(document).on('scroll.sidebarDocking', debounce(function() {
-      updateSidebarDockingLayout();
-    }, 10));
-
-    $(window).on('load.sidebarDocking', function() {
-      updateSidebarDockingLayout();
-    });
-
-    updateSidebarDockingLayout();
-
     // Publication filter functionality
     $(document).ready(function() {
-      const publicationsSection = $('#publications');
-
-      function applyPublicationFilter(selectedYear) {
-        if (selectedYear === 'all') {
-          $('.publication-item').show();
-        } else {
-          $('.publication-item').hide();
-          $(`.publication-item[data-year="${selectedYear}"]`).show();
-        }
-      }
-
-      function expandPublications() {
-        if (!publicationsSection.hasClass('publications-collapsed')) return;
-        publicationsSection.removeClass('publications-collapsed');
-        const selectedYear = $('.filter-btn.active').data('year') || 'all';
-        applyPublicationFilter(selectedYear);
-      }
       $('.filter-btn').click(function() {
         const selectedYear = $(this).data('year');
         
@@ -2732,32 +1997,22 @@
         $('.filter-btn').removeClass('active');
         $(this).addClass('active');
         
-        expandPublications();
-        applyPublicationFilter(selectedYear);
+        // Filter publications
+        if (selectedYear === 'all') {
+          $('.publication-item').show();
+        } else {
+          $('.publication-item').hide();
+          $(`.publication-item[data-year="${selectedYear}"]`).show();
+        }
       });
 
       // 平滑滚动到指定位置
-      $('.quick-nav .menu-list a').click(function(e) {
+      $('.menu-list a').click(function(e) {
         e.preventDefault();
-        const href = this.getAttribute('href');
-        if (href === '#publications') {
-          expandPublications();
-        }
-        const target = $(href || '');
+        const target = $(this.getAttribute('href'));
         if (target.length) {
           $('html, body').animate({
-            scrollTop: target.offset().top - 96
-          }, 800);
-        }
-      });
-
-      $('#research').on('click', '.view-all-btn', function(e) {
-        e.preventDefault();
-        expandPublications();
-        const target = $('#publications');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top - 96
+            scrollTop: target.offset().top - 80
           }, 800);
         }
       });
@@ -2878,18 +2133,13 @@
 
     // Initialize everything
     document.addEventListener('DOMContentLoaded', () => {
+      createParticles();
       handleScrollAnimations();
-      normalizeSelectedSectionHeader();
-      initializePinnedNews();
-      formatSelectedPublicationsText();
       
       // 延迟初始化侧边栏位置，确保所有元素都已渲染
       setTimeout(() => {
-        calculateBoundary();
-        judgeScroll();
-        if (typeof updateSidebarDockingLayout === 'function') {
-          updateSidebarDockingLayout();
-        }
+        calculateSidebarBounds();
+        updateSidebarPosition();
       }, 100);
       
       // Remove typing cursor after animation completes
