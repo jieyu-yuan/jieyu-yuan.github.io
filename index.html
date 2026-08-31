@@ -400,7 +400,8 @@
         right: 0;
         z-index: 1200;
         background: var(--bg-secondary);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
         border-bottom: 1px solid var(--border-color);
         box-shadow: 0 4px 16px var(--shadow-color);
       }
@@ -455,11 +456,13 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 0%;
+        width: 100%;
         height: 3px;
         background: linear-gradient(90deg, var(--accent-color), var(--project-source-color));
         z-index: 10000;
-        transition: width 0.1s ease;
+        transform: scaleX(0);
+        transform-origin: left center;
+        will-change: transform;
       }
 
       /* Theme toggle button */
@@ -2356,7 +2359,8 @@
           white-space: nowrap !important;
           background: var(--card-bg) !important;
           border: 1px solid var(--border-color) !important;
-          backdrop-filter: blur(5px) !important;
+          backdrop-filter: none !important;
+          -webkit-backdrop-filter: none !important;
         }
 
         .quick-nav .menu-list a:hover {
@@ -3685,18 +3689,28 @@
       }
     }
 
-    // Scroll animations
-    function handleScrollAnimations() {
+    // Reveal sections without doing layout reads on every scroll event.
+    function initializeScrollAnimations() {
       const elements = document.querySelectorAll('.fade-in-up, .fade-in-left');
-      
-      elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          element.classList.add('animate');
-        }
+      if (!elements.length) return;
+
+      if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        elements.forEach((element) => element.classList.add('animate'));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        });
+      }, {
+        rootMargin: '0px 0px -120px 0px',
+        threshold: 0.01
       });
+
+      elements.forEach((element) => observer.observe(element));
     }
 
     function formatNewsItems() {
@@ -3920,7 +3934,7 @@
         requestAnimationFrame(() => {
           calculateBoundary();
           judgeScroll();
-          if (typeof updateSidebarDockingLayout === 'function') updateSidebarDockingLayout();
+          if (typeof updateSidebarDockingLayout === 'function') updateSidebarDockingLayout(true);
         });
       };
 
@@ -3963,8 +3977,8 @@
     function updateProgressBar() {
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      document.getElementById('progressBar').style.width = scrolled + '%';
+      const progress = height > 0 ? Math.min(1, Math.max(0, winScroll / height)) : 0;
+      document.getElementById('progressBar').style.transform = `scaleX(${progress})`;
     }
 
     // Scroll to top button
@@ -4001,11 +4015,6 @@
       calculateSidebarBounds();
       updateSidebarPosition();
     }, 100));
-
-    $(document).on('scroll', debounce(function() {
-      judgeScroll();
-      updateSidebarPosition();
-    }, 10)); // 进一步减少延迟以实现平滑跟随
 
     // 初始化侧边栏浮动跟随
     initSidebarFloat();
@@ -4106,6 +4115,7 @@
     }
 
     function activate(ele){
+      if (!ele || !ele.length || ele.hasClass('is-active')) return;
       $hashList.removeClass('is-active');
       ele.addClass('is-active');
     }
@@ -4135,9 +4145,6 @@
       calculateBoundary();
       judgeScroll();
     }, 100));
-    $(document).on('scroll', debounce(function() {
-      judgeScroll();
-    }, 10));
     calculateBoundary();
     judgeScroll();
 
@@ -4150,61 +4157,144 @@
       desktopWidth: 'var(--sidebar-fixed-width)'
     };
 
-    function updateSidebarDockingLayout() {
+    var sidebarDockingMetrics = null;
+    var sidebarDockingMode = null;
+    var sidebarDockingResizeFrame = 0;
+    var sidebarDockingAlignmentFrame = 0;
+
+    function measureSidebarDockingLayout() {
       var sidebarContainer = document.querySelector('.column.is-2_5');
       var sidebarCard = document.querySelector('.sidebar-glass');
-      var rightPanel = document.querySelector('.right-panel');
+      var servicesCard = document.querySelector('#services .section-content-glass');
       var mainContainer = document.querySelector('.section .container');
+      var mainSection = document.querySelector('.section');
 
-      if (!sidebarContainer || !sidebarCard || !rightPanel || !mainContainer) return;
+      if (!sidebarContainer || !sidebarCard || !servicesCard || !mainContainer || !mainSection) return null;
 
       if (window.innerWidth <= sidebarDockingConfig.desktopBreakpoint) {
+        return { sidebarContainer: sidebarContainer, isMobile: true };
+      }
+
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var containerRect = mainContainer.getBoundingClientRect();
+      var sectionRect = mainSection.getBoundingClientRect();
+      var sidebarContainerRect = sidebarContainer.getBoundingClientRect();
+      var sidebarCardRect = sidebarCard.getBoundingClientRect();
+      var servicesCardRect = servicesCard.getBoundingClientRect();
+      var sectionTopAbsolute = sectionRect.top + scrollTop;
+      var servicesBottomAbsolute = servicesCardRect.bottom + scrollTop;
+      var sidebarBottomOffset = sidebarCardRect.bottom - sidebarContainerRect.top;
+
+      return {
+        sidebarContainer: sidebarContainer,
+        isMobile: false,
+        fixedLeft: Math.max(sidebarDockingConfig.fixedMinLeft, containerRect.left + sidebarDockingConfig.absoluteLeft),
+        absoluteTop: Math.max(0, servicesBottomAbsolute - sectionTopAbsolute - sidebarBottomOffset),
+        dockAt: servicesBottomAbsolute - sidebarDockingConfig.fixedTop - sidebarBottomOffset
+      };
+    }
+
+    function updateSidebarDockingLayout(forceMeasure) {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var maxScrollTop = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+
+      // Browser zoom and late-loading content can change the page height without
+      // invalidating an older docking threshold. Re-measure once at the real end.
+      if (!forceMeasure && scrollTop >= maxScrollTop - 2 && sidebarDockingMode !== 'docked') {
+        forceMeasure = true;
+      }
+
+      if (forceMeasure || !sidebarDockingMetrics) {
+        sidebarDockingMetrics = measureSidebarDockingLayout();
+      }
+
+      if (!sidebarDockingMetrics) return;
+
+      var sidebarContainer = sidebarDockingMetrics.sidebarContainer;
+
+      if (sidebarDockingMetrics.isMobile) {
+        if (!forceMeasure && sidebarDockingMode === 'mobile') return;
         sidebarContainer.style.setProperty('position', 'static', 'important');
         sidebarContainer.style.setProperty('top', 'auto', 'important');
         sidebarContainer.style.setProperty('left', 'auto', 'important');
         sidebarContainer.style.setProperty('width', 'auto', 'important');
         sidebarContainer.style.setProperty('z-index', 'auto', 'important');
+        sidebarDockingMode = 'mobile';
         return;
       }
 
-      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
-      var containerRect = mainContainer.getBoundingClientRect();
-      var rightPanelRect = rightPanel.getBoundingClientRect();
-      var sidebarHeight = sidebarCard.offsetHeight;
+      var nextMode = scrollTop >= sidebarDockingMetrics.dockAt ? 'docked' : 'fixed';
 
-      var containerTopAbsolute = containerRect.top + scrollTop;
-      var rightBottomAbsolute = rightPanelRect.bottom + scrollTop;
-      var fixedLeft = Math.max(sidebarDockingConfig.fixedMinLeft, containerRect.left + sidebarDockingConfig.absoluteLeft);
-      var shouldDock = scrollTop + sidebarDockingConfig.fixedTop + sidebarHeight >= rightBottomAbsolute;
+      if (!forceMeasure && sidebarDockingMode === nextMode) return;
 
-      if (shouldDock) {
-        var absoluteTop = Math.max(0, rightBottomAbsolute - containerTopAbsolute - sidebarHeight);
+      if (nextMode === 'docked') {
         sidebarContainer.style.setProperty('position', 'absolute', 'important');
-        sidebarContainer.style.setProperty('top', absoluteTop + 'px', 'important');
+        sidebarContainer.style.setProperty('top', sidebarDockingMetrics.absoluteTop + 'px', 'important');
         sidebarContainer.style.setProperty('left', sidebarDockingConfig.absoluteLeft + 'px', 'important');
       } else {
         sidebarContainer.style.setProperty('position', 'fixed', 'important');
         sidebarContainer.style.setProperty('top', sidebarDockingConfig.fixedTop + 'px', 'important');
-        sidebarContainer.style.setProperty('left', fixedLeft + 'px', 'important');
+        sidebarContainer.style.setProperty('left', sidebarDockingMetrics.fixedLeft + 'px', 'important');
       }
 
       sidebarContainer.style.setProperty('width', sidebarDockingConfig.desktopWidth, 'important');
       sidebarContainer.style.setProperty('z-index', '20', 'important');
+      sidebarDockingMode = nextMode;
+
+      if (nextMode === 'docked') alignDockedSidebarBottom();
+    }
+
+    function alignDockedSidebarBottom() {
+      if (sidebarDockingAlignmentFrame) cancelAnimationFrame(sidebarDockingAlignmentFrame);
+
+      sidebarDockingAlignmentFrame = requestAnimationFrame(function() {
+        sidebarDockingAlignmentFrame = 0;
+        if (sidebarDockingMode !== 'docked') return;
+
+        var sidebarContainer = document.querySelector('.column.is-2_5');
+        var sidebarCard = document.querySelector('.sidebar-glass');
+        var servicesCard = document.querySelector('#services .section-content-glass');
+        if (!sidebarContainer || !sidebarCard || !servicesCard) return;
+
+        var bottomDelta = sidebarCard.getBoundingClientRect().bottom - servicesCard.getBoundingClientRect().bottom;
+        if (Math.abs(bottomDelta) < 0.5) return;
+
+        var currentTop = parseFloat(sidebarContainer.style.top) || 0;
+        var correctedTop = Math.max(0, currentTop - bottomDelta);
+        sidebarContainer.style.setProperty('top', correctedTop + 'px', 'important');
+        if (sidebarDockingMetrics) sidebarDockingMetrics.absoluteTop = correctedTop;
+      });
+    }
+
+    function scheduleSidebarDockingMeasure() {
+      if (sidebarDockingResizeFrame) cancelAnimationFrame(sidebarDockingResizeFrame);
+      sidebarDockingResizeFrame = requestAnimationFrame(function() {
+        sidebarDockingResizeFrame = 0;
+        updateSidebarDockingLayout(true);
+      });
+    }
+
+    if ('ResizeObserver' in window) {
+      var sidebarDockingObserver = new ResizeObserver(scheduleSidebarDockingMeasure);
+      var observedSidebarCard = document.querySelector('.sidebar-glass');
+      var observedServicesCard = document.querySelector('#services .section-content-glass');
+      if (observedSidebarCard) sidebarDockingObserver.observe(observedSidebarCard);
+      if (observedServicesCard) sidebarDockingObserver.observe(observedServicesCard);
+    }
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(scheduleSidebarDockingMeasure);
     }
 
     $(window).on('resize.sidebarDocking', debounce(function() {
-      updateSidebarDockingLayout();
-    }, 60));
-
-    $(document).on('scroll.sidebarDocking', debounce(function() {
-      updateSidebarDockingLayout();
-    }, 10));
+      scheduleSidebarDockingMeasure();
+    }, 80));
 
     $(window).on('load.sidebarDocking', function() {
-      updateSidebarDockingLayout();
+      updateSidebarDockingLayout(true);
     });
 
-    updateSidebarDockingLayout();
+    updateSidebarDockingLayout(true);
 
     // Smooth navigation
     $(document).ready(function() {
@@ -4357,7 +4447,7 @@
 
     // Initialize everything
     document.addEventListener('DOMContentLoaded', () => {
-      handleScrollAnimations();
+      initializeScrollAnimations();
       formatNewsItems();
       buildPublicationCatalog();
       formatSelectedPublicationsText();
@@ -4371,8 +4461,9 @@
         calculateBoundary();
         judgeScroll();
         if (typeof updateSidebarDockingLayout === 'function') {
-          updateSidebarDockingLayout();
+          updateSidebarDockingLayout(true);
         }
+        updateProgressBar();
       }, 100);
       
       // Remove typing cursor after animation completes
@@ -4385,12 +4476,21 @@
       }, 6000); // 1s delay + 4s animation + 1s buffer
     });
 
-    // Event listeners
-    window.addEventListener('scroll', () => {
-      handleScrollAnimations();
-      updateProgressBar();
-      handleScrollToTop();
-    });
+    // Keep all scroll-linked UI work inside one animation frame.
+    let scrollUpdateFrame = 0;
+    function scheduleScrollUpdate() {
+      if (scrollUpdateFrame) return;
+
+      scrollUpdateFrame = requestAnimationFrame(() => {
+        scrollUpdateFrame = 0;
+        judgeScroll();
+        updateSidebarDockingLayout(false);
+        updateProgressBar();
+        handleScrollToTop();
+      });
+    }
+
+    window.addEventListener('scroll', scheduleScrollUpdate, { passive: true });
 
     let newsResizeFrame;
     window.addEventListener('resize', () => {
