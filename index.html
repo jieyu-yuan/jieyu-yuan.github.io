@@ -9,7 +9,7 @@
   <title>Jieyu Yuan</title>
   <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
   <link rel="shortcut icon" type="image/x-icon" href="images/misc/logo.jpg">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Jost:wght@500;600;700&family=Lora:wght@600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
   <!-- Bulma Version 0.7.5-->
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.5/css/bulma.min.css" />
   <link href='css/style.css?_t=20200916' rel='stylesheet' type='text/css'>
@@ -39,28 +39,66 @@
         --scrollbar-thumb: rgba(194, 113, 79, 0.35);
         --menu-hover-bg: rgba(194, 113, 79, 0.12);
         --menu-active-bg: rgba(194, 113, 79, 0.18);
+        --project-source-color: #3f6f68;
+        --project-id-color: #6f5d91;
+        --selected-title-color: #8a4936;
+        --selected-venue-color: #24716c;
+        --key-title-gradient: linear-gradient(120deg, #294e73 0%, #4f7fae 30%, #79a9d3 50%, #4f7fae 70%, #294e73 100%);
+        --location-gradient: linear-gradient(120deg, #1f6b68 0%, #4d9b91 48%, #277f88 100%);
+        --intro-role-color: #9b543d;
+        --intro-affiliation-color: #356b98;
+        --intro-person-color: #24716c;
+        --topic-underwater-color: #2c64b0;
+        --topic-low-level-color: #9b6a22;
+        --topic-3d-color: #5f7f2a;
+        --topic-aigc-color: #9d3f86;
+        --topic-security-color: #b4473f;
+        --topic-underwater-gradient: linear-gradient(120deg, #2055a1 0%, #69a6e6 50%, #2055a1 100%);
+        --topic-low-level-gradient: linear-gradient(120deg, #875817 0%, #d8a84c 50%, #875817 100%);
+        --topic-3d-gradient: linear-gradient(120deg, #4f7426 0%, #9bcf55 50%, #4f7426 100%);
+        --topic-aigc-gradient: linear-gradient(120deg, #87366f 0%, #dc79be 50%, #87366f 100%);
+        --topic-security-gradient: linear-gradient(120deg, #9e3c36 0%, #e77767 50%, #9e3c36 100%);
       }
 
       [data-theme="dark"] {
-        --bg-primary: #172338;
-        --bg-secondary: rgba(23, 35, 56, 0.9);
-        --bg-glass: rgba(36, 53, 82, 0.78);
-        --text-primary: #e7eefb;
-        --text-secondary: #c5d4ea;
-        --text-muted: #a5b6cf;
-        --border-color: rgba(130, 165, 215, 0.3);
-        --shadow-color: rgba(10, 18, 32, 0.36);
-        --accent-color: #82a8dd;
-        --gradient-start: rgba(130, 168, 221, 0.2);
-        --gradient-end: rgba(23, 35, 56, 0.08);
-        --page-gradient-top: rgba(23, 35, 56, 0.05);
-        --page-gradient-mid: rgba(130, 168, 221, 0.14);
-        --page-gradient-bottom: rgba(10, 18, 32, 0.3);
-        --hover-bg: rgba(130, 168, 221, 0.12);
-        --card-bg: rgba(36, 53, 82, 0.62);
-        --scrollbar-thumb: rgba(130, 168, 221, 0.42);
-        --menu-hover-bg: rgba(130, 168, 221, 0.16);
-        --menu-active-bg: rgba(130, 168, 221, 0.24);
+        --bg-primary: #0b1922;
+        --bg-secondary: rgba(11, 27, 37, 0.93);
+        --bg-glass: rgba(19, 42, 54, 0.76);
+        --text-primary: #e9f1f3;
+        --text-secondary: #b8c9cd;
+        --text-muted: #82989e;
+        --border-color: rgba(109, 158, 171, 0.25);
+        --shadow-color: rgba(2, 10, 15, 0.44);
+        --accent-color: #74aebd;
+        --gradient-start: rgba(116, 174, 189, 0.2);
+        --gradient-end: rgba(11, 25, 34, 0.06);
+        --page-gradient-top: rgba(11, 25, 34, 0.04);
+        --page-gradient-mid: rgba(77, 128, 142, 0.13);
+        --page-gradient-bottom: rgba(2, 10, 15, 0.36);
+        --hover-bg: rgba(116, 174, 189, 0.11);
+        --card-bg: rgba(21, 45, 57, 0.72);
+        --scrollbar-thumb: rgba(116, 174, 189, 0.38);
+        --menu-hover-bg: rgba(116, 174, 189, 0.14);
+        --menu-active-bg: rgba(116, 174, 189, 0.21);
+        --project-source-color: #80b6a8;
+        --project-id-color: #a8b8d8;
+        --selected-title-color: #f2f7f8;
+        --selected-venue-color: #69c5b5;
+        --key-title-gradient: linear-gradient(120deg, #79a9d3 0%, #9cc8e9 30%, #c3e7f8 50%, #9cc8e9 70%, #79a9d3 100%);
+        --location-gradient: linear-gradient(120deg, #69c5b5 0%, #9bd8cf 48%, #74b8cb 100%);
+        --intro-role-color: #e2a98f;
+        --intro-affiliation-color: #8fc2ea;
+        --intro-person-color: #77cfc0;
+        --topic-underwater-color: #8fc5f3;
+        --topic-low-level-color: #edc277;
+        --topic-3d-color: #b7df72;
+        --topic-aigc-color: #ee9bd5;
+        --topic-security-color: #ff9a8e;
+        --topic-underwater-gradient: linear-gradient(120deg, #68a8df 0%, #c7e7ff 50%, #68a8df 100%);
+        --topic-low-level-gradient: linear-gradient(120deg, #d9a553 0%, #ffe2a6 50%, #d9a553 100%);
+        --topic-3d-gradient: linear-gradient(120deg, #8fca54 0%, #d8f6a4 50%, #8fca54 100%);
+        --topic-aigc-gradient: linear-gradient(120deg, #d779bd 0%, #ffd0ed 50%, #d779bd 100%);
+        --topic-security-gradient: linear-gradient(120deg, #ed766d 0%, #ffc0b6 50%, #ed766d 100%);
       }
 
       /* Smooth transitions for theme switching */
@@ -74,6 +112,259 @@
         overflow-x: hidden;
         font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         padding-top: 76px;
+      }
+
+      h1, h2, h3,
+      .quick-nav .nav-name,
+      .selected-title {
+        font-family: "Jost", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      .section-title {
+        margin: 0 !important;
+        font-family: "Jost", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 1.625rem !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        letter-spacing: 0;
+      }
+
+      @media screen and (max-width: 768px) {
+        .section-title {
+          font-size: 1.45rem !important;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        .section-title {
+          font-size: 1.35rem !important;
+        }
+      }
+
+      .profile-name {
+        display: inline-block;
+        color: var(--text-primary);
+        letter-spacing: 0;
+      }
+
+      .profile-name-latin {
+        font-family: "Lora", Georgia, serif;
+        font-size: 0.94em;
+        font-weight: 700;
+      }
+
+      .profile-name-cjk {
+        font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+        font-size: 0.92em;
+        font-weight: 700;
+      }
+
+      .nav-name-latin {
+        font-family: "Lora", Georgia, serif;
+        font-weight: 700;
+      }
+
+      .nav-name-cjk {
+        font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+        font-weight: 700;
+      }
+
+      .affiliation-gradient,
+      .location-gradient {
+        background-image: var(--key-title-gradient);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent !important;
+        -webkit-text-fill-color: transparent;
+        animation: titleGradientShift 6s ease-in-out infinite;
+      }
+
+      .affiliation-gradient {
+        display: inline-block;
+      }
+
+      .affiliation-gradient.nku {
+        animation-direction: reverse;
+        animation-delay: -3s;
+      }
+
+      .affiliation-at {
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+
+      .location-gradient {
+        background-image: var(--location-gradient);
+        animation-duration: 7s;
+        font-weight: 600;
+      }
+
+      .profile-meta {
+        display: grid;
+        gap: 0.14rem;
+        line-height: 1.45;
+      }
+
+      .profile-meta-row {
+        display: grid;
+        grid-template-columns: 1.3rem minmax(0, 1fr);
+        align-items: baseline;
+        column-gap: 0.38rem;
+        width: max-content;
+        max-width: 100%;
+      }
+
+      .profile-meta-icon {
+        display: inline-flex;
+        width: 1.3rem;
+        min-width: 0;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+      }
+
+      .profile-lab-row {
+        align-items: center;
+        color: inherit;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+
+      .profile-lab-name {
+        display: inline-flex;
+        flex-direction: column;
+        font-family: "Jost", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--text-secondary);
+        font-size: 0.82em;
+        font-weight: 600;
+        line-height: 1.2;
+        transition: color 0.2s ease;
+      }
+
+      .profile-lab-symbol {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.08em;
+        font-weight: 700;
+      }
+
+      .profile-lab-row:hover .profile-lab-logo,
+      .profile-lab-row:focus-visible .profile-lab-logo {
+        filter: brightness(1.08);
+        transform: translateY(-1px);
+      }
+
+      .profile-lab-row:hover .profile-lab-name,
+      .profile-lab-row:focus-visible .profile-lab-name {
+        color: var(--accent-color);
+      }
+
+      .profile-lab-logo {
+        display: block;
+        width: 1.3rem;
+        height: 1.3rem;
+        border-radius: 4px;
+        object-fit: cover;
+        transition: transform 0.2s ease, filter 0.2s ease;
+      }
+
+      .profile-affiliation-line {
+        display: inline-flex;
+        align-items: baseline;
+        justify-content: flex-start;
+        line-height: 1.45;
+      }
+
+      .profile-affiliation-line .affiliation-gradient,
+      .profile-affiliation-line .affiliation-at {
+        display: inline-flex;
+        align-items: center;
+        height: 1.2em;
+        line-height: 1.2;
+      }
+
+      .email-list {
+        display: block;
+        margin: 0.05em 0 0;
+      }
+
+      .email-line {
+        display: block;
+        line-height: 1.38;
+        white-space: nowrap;
+      }
+
+      .email-line a {
+        font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+        font-size: 0.9em;
+        font-weight: 500;
+        font-variant-ligatures: none;
+        letter-spacing: 0;
+      }
+
+      .intro-topic {
+        font-weight: 650;
+      }
+
+      .intro-topic-gradient {
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent !important;
+        -webkit-text-fill-color: transparent;
+        animation: titleGradientShift 6s ease-in-out infinite;
+      }
+
+      .intro-topic-underwater {
+        color: var(--topic-underwater-color);
+        background-image: var(--topic-underwater-gradient);
+        animation-duration: 7s;
+      }
+
+      .intro-topic-low-level {
+        color: var(--topic-low-level-color);
+        background-image: var(--topic-low-level-gradient);
+        animation-direction: reverse;
+        animation-duration: 6.5s;
+        animation-delay: -1s;
+      }
+
+      .intro-topic-3d {
+        color: var(--topic-3d-color);
+        background-image: var(--topic-3d-gradient);
+      }
+
+      .intro-topic-aigc {
+        color: var(--topic-aigc-color);
+        background-image: var(--topic-aigc-gradient);
+        animation-duration: 5.5s;
+        animation-delay: -2s;
+      }
+
+      .intro-topic-security {
+        color: var(--topic-security-color);
+        background-image: var(--topic-security-gradient);
+        animation-direction: reverse;
+        animation-duration: 7.5s;
+        animation-delay: -3s;
+      }
+
+      #research .section-header-row h2 {
+        color: var(--accent-color);
+      }
+
+      @keyframes titleGradientShift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .affiliation-gradient,
+        .intro-topic-gradient,
+        .location-gradient {
+          animation: none;
+          background-position: 50% 50%;
+        }
       }
 
       .quick-nav {
@@ -110,6 +401,29 @@
         flex: 0 0 auto;
       }
 
+      .quick-nav .nav-theme-toggle {
+        position: static;
+        width: 34px;
+        height: 34px;
+        flex: 0 0 34px;
+        padding: 0;
+        border-radius: 6px;
+        background: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+        margin-left: 2px;
+      }
+
+      .quick-nav .nav-theme-toggle:hover {
+        background: var(--hover-bg);
+        box-shadow: none;
+        transform: none;
+      }
+
+      .quick-nav .nav-theme-toggle i {
+        font-size: 17px;
+      }
+
       /* Progress bar */
       .progress-bar {
         position: fixed;
@@ -117,17 +431,13 @@
         left: 0;
         width: 0%;
         height: 3px;
-        background: linear-gradient(90deg, #667eea, #764ba2);
+        background: linear-gradient(90deg, var(--accent-color), var(--project-source-color));
         z-index: 10000;
         transition: width 0.1s ease;
       }
 
       /* Theme toggle button */
       .theme-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
         background: var(--bg-glass);
         backdrop-filter: blur(10px);
         border: 1px solid var(--border-color);
@@ -149,11 +459,16 @@
 
       .theme-toggle i {
         font-size: 20px;
-        color: #fbbf24 !important;  /* 统一黄色 */
+        color: var(--accent-color) !important;
       }
       .theme-toggle:hover i {
-        transform: scale(1.1) rotate(15deg);  /* 悬停旋转 */
-        text-shadow: 0 0 10px rgba(251, 191, 36, 0.6);  /* 发光 */
+        transform: scale(1.08) rotate(15deg);
+        text-shadow: 0 0 8px var(--shadow-color);
+      }
+
+      [data-theme="dark"] .particles {
+        opacity: 0.24;
+        filter: saturate(0.62);
       }
 
       /* Animated particles */
@@ -169,7 +484,7 @@
 
       .particle {
         position: absolute;
-        border-radius: 50%;
+        border-radius: 8px;
         pointer-events: none;
         animation: seawaterFloat 18s infinite linear;
       }
@@ -268,27 +583,31 @@
       /* Scroll to top button */
       .scroll-to-top {
         position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
+        right: max(18px, env(safe-area-inset-right));
+        bottom: max(18px, env(safe-area-inset-bottom));
+        z-index: 1002;
+        width: 44px;
+        height: 44px;
         background: var(--bg-glass);
         backdrop-filter: blur(10px);
         border: 1px solid var(--border-color);
-        border-radius: 50%;
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
         transition: all 0.3s ease;
         opacity: 0;
-        transform: translateY(100px);
-        z-index: 1000;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(10px) scale(0.86);
       }
 
       .scroll-to-top.show {
         opacity: 1;
-        transform: translateY(0);
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0) scale(1);
       }
 
       .scroll-to-top:hover {
@@ -296,15 +615,10 @@
         box-shadow: 0 6px 20px var(--shadow-color);
       }
 
-      .scroll-to-top i {
-        color: var(--text-primary);
-        font-size: 18px;
+      .scroll-to-top .top-icon {
+        color: var(--accent-color);
+        font-size: 20px;
         line-height: 1;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
       }
 
       .red {
@@ -319,7 +633,7 @@
       #intro {
        margin-top: 0em !important;
       }
-      
+
       .content h3 {
        margin-bottom: 1em!important;
        margin-top: 2em!important;
@@ -375,12 +689,266 @@
         transform: translateY(-1px);
       }
 
+      .selected-work-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin: 0 0 1.15rem;
+      }
+
+      #research .selected-work-filter {
+        --topic-filter-color: var(--accent-color);
+        padding: 5px 10px;
+        margin: 0;
+        border: 1px solid color-mix(in srgb, var(--topic-filter-color) 42%, var(--border-color)) !important;
+        border-radius: 4px;
+        background: color-mix(in srgb, var(--topic-filter-color) 7%, var(--card-bg)) !important;
+        box-shadow: none !important;
+        backdrop-filter: blur(6px);
+        font-size: 0.82rem;
+        line-height: 1.25;
+        color: var(--topic-filter-color) !important;
+        transform: none !important;
+      }
+
+      #research .selected-work-filter[data-category="all"] { --topic-filter-color: #8a4936; }
+      #research .selected-work-filter[data-category="underwater"] { --topic-filter-color: #117a7a; }
+      #research .selected-work-filter[data-category="low-level"] { --topic-filter-color: #b45d36; }
+      #research .selected-work-filter[data-category="3d"] { --topic-filter-color: #3a66a8; }
+      #research .selected-work-filter[data-category="watermark"] { --topic-filter-color: #a04470; }
+      #research .selected-work-filter[data-category="iqa"] { --topic-filter-color: #7653a6; }
+      #research .selected-work-filter[data-category="detection"] { --topic-filter-color: #3f7a57; }
+
+      [data-theme="dark"] #research .selected-work-filter[data-category="all"] { --topic-filter-color: #74aebd; }
+      [data-theme="dark"] #research .selected-work-filter[data-category="underwater"] { --topic-filter-color: #72d2c6; }
+      [data-theme="dark"] #research .selected-work-filter[data-category="low-level"] { --topic-filter-color: #f0ae84; }
+      [data-theme="dark"] #research .selected-work-filter[data-category="3d"] { --topic-filter-color: #91c2ed; }
+      [data-theme="dark"] #research .selected-work-filter[data-category="watermark"] { --topic-filter-color: #e29ac1; }
+      [data-theme="dark"] #research .selected-work-filter[data-category="iqa"] { --topic-filter-color: #c3a5e8; }
+      [data-theme="dark"] #research .selected-work-filter[data-category="detection"] { --topic-filter-color: #8bc59c; }
+
+      #research .selected-work-filter:hover {
+        color: var(--topic-filter-color) !important;
+        background: color-mix(in srgb, var(--topic-filter-color) 12%, var(--card-bg)) !important;
+        border-color: color-mix(in srgb, var(--topic-filter-color) 72%, var(--border-color)) !important;
+        box-shadow: none !important;
+        transform: none !important;
+      }
+
+      #research .selected-work-filter.active {
+        color: var(--topic-filter-color) !important;
+        background: color-mix(in srgb, var(--topic-filter-color) 17%, var(--card-bg)) !important;
+        border-color: var(--topic-filter-color) !important;
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--topic-filter-color) 28%, transparent) !important;
+        transform: none !important;
+      }
+
+      .publication-view-switch {
+        display: inline-grid;
+        grid-template-columns: repeat(2, max-content);
+        align-items: center;
+        justify-self: end;
+        position: relative;
+        padding: 3px;
+        margin: 0 0 0 auto;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        background: var(--hover-bg);
+      }
+
+      .publication-view-switch::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        left: 0;
+        width: var(--publication-indicator-width, 64px);
+        border-radius: 4px;
+        background: var(--card-bg);
+        box-shadow: 0 1px 4px var(--shadow-color), inset 0 0 0 1px var(--accent-color);
+        transform: translateX(var(--publication-indicator-x, 3px));
+        transition: width 0.26s ease, transform 0.26s ease, background-color 0.2s ease;
+        pointer-events: none;
+      }
+
+      .publication-view-tab {
+        position: relative;
+        z-index: 1;
+        min-height: 28px;
+        padding: 3px 7px;
+        border: 0;
+        border-radius: 4px;
+        background: transparent;
+        color: var(--text-muted);
+        font: inherit;
+        font-size: 0.8rem;
+        font-weight: 650;
+        line-height: 1.2;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .publication-view-tab:hover {
+        color: var(--accent-color);
+      }
+
+      .publication-view-tab.active {
+        color: var(--text-primary);
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .publication-panel-enter {
+        animation: publicationPanelEnter 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      @keyframes publicationPanelEnter {
+        from {
+          opacity: 0;
+          transform: translateY(4px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .publication-view-switch::before {
+          transition: none;
+        }
+
+        .publication-panel-enter {
+          animation: none;
+        }
+      }
+
+      .publication-full-panel[hidden],
+      .publication-selected-panel[hidden] {
+        display: none !important;
+      }
+
+      .publication-full-panel {
+        container-type: inline-size;
+      }
+
+      @container (min-width: 820px) {
+        #publications .publication-title-single-line {
+          white-space: nowrap;
+        }
+      }
+
       .publications-toolbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 12px;
         margin-bottom: 12px;
+      }
+
+      .publications-heading-row {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 0.5rem 0.9rem;
+      }
+
+      .publications-heading-row h2 {
+        margin: 0;
+      }
+
+      .publications-scholar-link {
+        display: inline-flex;
+        align-items: center;
+        font-family: "Jost", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.25;
+        font-weight: 700;
+        padding-bottom: 0.06em;
+        letter-spacing: 0;
+        text-decoration: none !important;
+        background: linear-gradient(90deg, #4285f4 0%, #4285f4 28%, #ea4335 42%, #fbbc05 64%, #34a853 84%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent !important;
+      }
+
+      .publications-scholar-link:hover {
+        filter: brightness(0.9) saturate(1.15);
+      }
+
+      .publications-title-group {
+        display: inline-flex;
+        align-items: baseline;
+        flex-wrap: nowrap;
+        gap: 0.35rem;
+        min-width: 0;
+        white-space: nowrap;
+      }
+
+      #publications .publication-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      #publications .publication-filters .filter-btn {
+        --year-filter-color: #8b6a58;
+        margin: 0;
+        padding: 5px 10px;
+        border: 1px solid color-mix(in srgb, var(--year-filter-color) 45%, #d8d4cf);
+        border-radius: 4px;
+        background: color-mix(in srgb, var(--year-filter-color) 14%, #ffffff);
+        color: var(--year-filter-color);
+        box-shadow: none;
+        backdrop-filter: none;
+        transform: none;
+        font-size: 0.82rem;
+        line-height: 1.25;
+        font-weight: 600;
+      }
+
+      #publications .publication-filters .filter-btn[data-year="all"] { --year-filter-color: #b35f41; }
+      #publications .publication-filters .filter-btn[data-year="2026"] { --year-filter-color: #2f817e; }
+      #publications .publication-filters .filter-btn[data-year="2025"] { --year-filter-color: #4d72a4; }
+      #publications .publication-filters .filter-btn[data-year="2024"] { --year-filter-color: #7a5d9e; }
+      #publications .publication-filters .filter-btn[data-year="before2024"] { --year-filter-color: #627764; }
+
+      #publications .publication-filters .filter-btn:hover {
+        background: color-mix(in srgb, var(--year-filter-color) 22%, #ffffff) !important;
+        border-color: var(--year-filter-color);
+        color: var(--year-filter-color);
+        box-shadow: none;
+        transform: none;
+      }
+
+      [data-theme="light"] #publications .publication-filters .filter-btn.active {
+        background: var(--year-filter-color) !important;
+        border-color: var(--year-filter-color);
+        color: #ffffff !important;
+        box-shadow: none;
+        transform: none;
+      }
+
+      [data-theme="dark"] #publications .publication-filters .filter-btn {
+        background: color-mix(in srgb, var(--year-filter-color) 24%, #142d39);
+        border-color: color-mix(in srgb, var(--year-filter-color) 58%, #315566);
+        color: color-mix(in srgb, var(--year-filter-color) 75%, #e9f1f3);
+      }
+
+      [data-theme="dark"] #publications .publication-filters .filter-btn:hover {
+        background: color-mix(in srgb, var(--year-filter-color) 34%, #142d39) !important;
+        border-color: var(--year-filter-color);
+        color: #e9f1f3;
+      }
+
+      [data-theme="dark"] #publications .publication-filters .filter-btn.active {
+        background: var(--year-filter-color) !important;
+        border-color: var(--year-filter-color);
+        color: #ffffff !important;
+        box-shadow: none;
+        transform: none;
       }
 
       .selected-caption {
@@ -414,17 +982,23 @@
         gap: 12px;
       }
 
-      .glass-section {
-        scroll-margin-top: 96px;
+      #research .section-header-row {
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 0.35rem;
       }
 
-      #intro.glass-section {
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        padding: 0.25rem 0.25rem 1rem 0.25rem !important;
+      #research .section-header-row h2 {
+        margin: 0;
+        font-size: 1.625rem;
+      }
+
+      #research .section-header-row .publication-view-switch {
+        margin-left: auto;
+      }
+
+      .glass-section {
+        scroll-margin-top: 96px;
       }
 
       #intro p {
@@ -435,6 +1009,21 @@
         color: var(--text-secondary) !important;
         font-weight: 500;
         text-decoration: none;
+      }
+
+      #intro .intro-role {
+        color: var(--intro-role-color);
+        font-weight: 650;
+      }
+
+      #intro .intro-affiliation {
+        color: var(--intro-affiliation-color) !important;
+        font-weight: 650;
+      }
+
+      #intro .intro-person {
+        color: var(--intro-person-color) !important;
+        font-weight: 650;
       }
 
       #intro hr {
@@ -451,44 +1040,29 @@
         border-top: 1.5px solid rgba(226, 138, 103, 0.46) !important;
       }
 
-      #publications.publications-collapsed {
-        display: none !important;
-      }
-
       /* Highlight first-author papers */
       .first-author-paper {
-        background: var(--card-bg) !important;
-        border-left: 4px solid rgba(74, 85, 104, 0.7) !important;
-        border-radius: 15px !important;
+        background: linear-gradient(90deg, var(--menu-active-bg), transparent 78%) !important;
+        border-left: 3px solid var(--accent-color) !important;
+        border-radius: 0 !important;
         position: relative;
         overflow: hidden;
       }
 
       /* Enhanced highlight for light mode */
       [data-theme="light"] .first-author-paper {
-        background: linear-gradient(135deg, rgba(74, 85, 104, 0.08) 0%, rgba(45, 55, 72, 0.06) 100%) !important;
-        border-left: 4px solid rgba(74, 85, 104, 0.8) !important;
+        background: linear-gradient(90deg, rgba(194, 113, 79, 0.1), transparent 78%) !important;
+        border-left: 3px solid var(--accent-color) !important;
       }
 
       /* Enhanced highlight for dark mode */
       [data-theme="dark"] .first-author-paper {
-        background: linear-gradient(135deg, rgba(74, 85, 104, 0.25) 0%, rgba(45, 55, 72, 0.15) 100%) !important;
-        border-left: 4px solid rgba(147, 197, 253, 0.8) !important;
+        background: linear-gradient(90deg, rgba(116, 174, 189, 0.16), transparent 78%) !important;
+        border-left: 3px solid var(--accent-color) !important;
       }
 
       .first-author-paper::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, rgba(74, 85, 104, 0.4), rgba(45, 55, 72, 0.4));
-        opacity: 0.8;
-      }
-
-      [data-theme="dark"] .first-author-paper::before {
-        background: linear-gradient(90deg, rgba(147, 197, 253, 0.6), rgba(59, 130, 246, 0.4));
+        display: none;
       }
 
       /* News scrollable styling */
@@ -533,7 +1107,7 @@
         border: 1px solid var(--border-color);
         border-radius: 20px;
         padding: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.6rem;
         box-shadow: 
           0 8px 32px var(--shadow-color),
           0 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -588,8 +1162,6 @@
         transform: scale(1.01);
       }
 
-      
-
       /* 恢复原来的column布局 */
       @media screen and (min-width: 769px) {
         .column.is-2_5 {
@@ -597,7 +1169,7 @@
           width: 28%;
           position: relative; /* 为侧边栏绝对定位提供参考 */
         }
-        
+
         .right-panel {
           margin-left: 0;
           width: auto;
@@ -614,29 +1186,29 @@
           top: auto !important;
           width: auto !important;
         }
-        
+
         .right-panel {
           margin-left: 0;
           padding-left: 0.75rem;
         }
-        
+
         /* 移动端显示Quick Links */
         #sidebar {
           display: block !important;
           visibility: visible !important;
         }
-        
+
         /* 移动端Quick Links样式优化 */
         .menu-list {
           display: flex;
           flex-wrap: wrap;
           gap: 5px;
         }
-        
+
         .menu-list li {
           flex: 0 0 auto;
         }
-        
+
         .menu-list a {
           padding: 8px 12px;
           font-size: 0.85rem;
@@ -644,7 +1216,7 @@
           background: var(--card-bg);
           border: 1px solid var(--border-color);
         }
-        
+
         /* 移动端侧边栏容器 */
         .column.is-2_5 {
           position: static !important;
@@ -653,14 +1225,18 @@
 
       /* News容器毛玻璃效果 */
       .news-glass {
-        background: var(--card-bg);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid var(--border-color);
-        border-radius: 15px;
-        padding: 15px;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        height: 190px;
         max-height: none;
-        overflow: visible;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overscroll-behavior: contain;
+        scrollbar-gutter: stable;
+        scrollbar-width: thin;
+        scrollbar-color: var(--scrollbar-thumb) transparent;
         margin: 0;
         position: relative;
       }
@@ -681,111 +1257,166 @@
         display: none;
       }
 
-      /* Show only manually pinned news items on homepage */
       #news .news-glass li {
-        display: none;
-      }
-
-      #news .news-glass li[data-pinned="true"] {
-        display: block;
+        display: grid;
+        grid-template-columns: max-content minmax(0, 1fr);
+        align-items: baseline;
+        gap: 0.5rem;
       }
 
       .news-glass ul {
-        margin: 0 !important;
+        width: min(100%, 760px);
+        margin: 0 auto !important;
         padding: 0 !important;
         list-style: none;
       }
 
       .news-glass li {
-        margin-bottom: 8px;
-        line-height: 1.4;
-        padding: 8px 12px;
-        background: var(--hover-bg);
-        border-radius: 8px;
-        border: 1px solid var(--border-color);
-        transition: all 0.2s ease;
+        margin: 0;
+        font-size: 0.94rem;
+        line-height: 1.5;
+        padding: 0.48rem 0.45rem 0.48rem 1.55rem;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+        transition: background-color 0.2s ease;
         position: relative;
         overflow: hidden;
         color: var(--text-secondary);
       }
 
-      /* News items styling for different themes */
-      [data-theme="light"] .news-glass li {
-        background: var(--card-bg) !important; /* 使用统一的卡片背景 */
-        border: 1px solid var(--border-color) !important; /* 使用统一的边框色 */
-        color: var(--text-secondary);
+      .news-glass li:last-child {
+        border-bottom: 0;
       }
 
-      [data-theme="dark"] .news-glass li {
-        background: var(--hover-bg);
-        border: 1px solid var(--border-color);
-        color: var(--text-secondary);
+      .news-glass li.news-last-visible {
+        border-bottom: 0;
       }
 
       .news-glass li::before {
-        content: '';
+        content: '➤';
         position: absolute;
-        left: 0;
-        top: 0;
-        width: 4px;
-        height: 100%;
-        background: var(--accent-color); 
-        transition: width 0.3s ease;
-        opacity: 0.6;
-      }
-
-      .news-glass li:hover::before {
-        width: 100%;
-        opacity: 0.08;
+        left: 0.48rem;
+        top: 0.52rem;
+        color: var(--accent-color);
+        font-size: 0.78rem;
+        line-height: 1.5;
+        opacity: 0.88;
       }
 
       .news-glass li:hover {
-        background: var(--menu-hover-bg) !important; /* 使用统一的hover背景 */
-        transform: translateX(2px);
-        border-color: var(--accent-color); /* hover时边框变为主题色 */
+        background: var(--menu-hover-bg);
+      }
+
+      .news-date {
+        color: var(--accent-color);
+        font-weight: 700;
+        font-size: 0.9rem;
+        letter-spacing: 0;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+
+      .news-copy {
+        min-width: 0;
+        color: var(--text-secondary);
+        line-height: 1.5;
+      }
+
+      #news .news-copy strong {
+        color: var(--accent-color) !important;
+        font-weight: 700;
       }
 
       .news-glass::-webkit-scrollbar {
-        width: 6px;
+        width: 7px;
+      }
+
+      .news-glass::-webkit-scrollbar-track {
+        background: transparent;
       }
 
       .news-glass::-webkit-scrollbar-thumb {
         background: var(--scrollbar-thumb);
-        border-radius: 3px;
+        background-clip: content-box;
+        border: 2px solid transparent;
+        border-radius: 999px;
+      }
+
+      .news-glass::-webkit-scrollbar-thumb:hover {
+        background: var(--accent-color);
+        background-clip: content-box;
       }
 
       /* 发表论文项目毛玻璃效果 */
       .publication-glass {
-        background: var(--card-bg);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        transition: all 0.3s ease;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 1rem 0.65rem;
+        margin: 0;
+        transition: background-color 0.2s ease;
+      }
+
+      .publication-glass + .publication-glass {
+        border-top: 1px solid var(--border-color);
       }
 
       .publication-glass:hover {
         background: var(--hover-bg);
-        transform: translateX(3px);
+      }
+
+      #publications .publication-item .content {
+        font-size: 0.78rem;
+        line-height: 1.4;
+      }
+
+      #publications .publication-item .content p {
+        line-height: inherit;
       }
 
       /* 研究工作项目毛玻璃效果 */
       .research-glass {
-        background: var(--card-bg);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid var(--border-color);
-        border-radius: 15px;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        transition: all 0.3s ease;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 0.85rem 0.35rem;
+        margin: 0;
+        transition: background-color 0.2s ease;
+      }
+
+      .research-glass + .research-glass {
+        border-top: 1px solid var(--border-color);
+      }
+
+      #research .publication-selected-panel .research-glass {
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+      }
+
+      [data-theme="light"] #research .publication-selected-panel .research-glass:nth-of-type(even) {
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      [data-theme="light"] #research .publication-selected-panel .research-glass:nth-of-type(odd) {
+        background: rgba(194, 113, 79, 0.026);
+      }
+
+      [data-theme="dark"] #research .publication-selected-panel .research-glass:nth-of-type(even) {
+        background: rgba(116, 174, 189, 0.07);
+      }
+
+      [data-theme="dark"] #research .publication-selected-panel .research-glass:nth-of-type(odd) {
+        background: rgba(116, 174, 189, 0.12);
+      }
+
+      #research .publication-selected-panel .research-glass:hover {
+        background: var(--hover-bg);
       }
 
       .research-glass:hover {
         background: var(--hover-bg);
-        transform: scale(1.01);
       }
 
       /* Research work text justification */
@@ -797,43 +1428,270 @@
       /* 教育经历项目毛玻璃效果 */
       .education-glass {
         background: var(--card-bg);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid var(--border-color);
-        border-radius: 18px;
-        padding: 0.5rem;
-        margin-bottom: 0.5rem;
-        transition: all 0.3s ease;
+        border: 0;
+        border-radius: 8px;
+        padding: 0.8rem 0.65rem;
+        margin: 0 0 0.7rem;
+        box-shadow: 0 5px 16px var(--shadow-color);
+        transition: background 0.32s ease, box-shadow 0.32s ease, transform 0.32s ease;
       }
 
-      .education-glass:hover {
-        background: var(--hover-bg);
+      .education-glass .columns {
+        align-items: center;
+      }
+
+      .education-logo-column {
+        flex: 0 0 120px !important;
+        width: 120px !important;
+        max-width: 120px !important;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+
+      .education-logo {
+        width: 78px;
+        height: 78px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        background: #ffffff;
+        box-sizing: border-box;
+      }
+
+      .education-logo img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        mix-blend-mode: normal;
+      }
+
+      [data-theme="dark"] .education-logo {
+        background: #d6e1e3;
+        border-color: rgba(116, 174, 189, 0.34);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+      }
+
+      [data-theme="dark"] .education-logo img {
+        mix-blend-mode: multiply;
+      }
+
+      .right-panel .glass-section {
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        padding: 0.5rem 0.25rem 1.25rem !important;
+        overflow: visible;
+      }
+
+      .right-panel .glass-section::before {
+        display: none;
+      }
+
+      .right-panel .glass-section:hover {
+        transform: none;
+        box-shadow: none !important;
+      }
+
+      #news .news-glass {
+        padding: 0.15rem 0.45rem 0.15rem 0;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      [data-theme="dark"] #news .news-glass {
+        background: transparent;
+        border-color: transparent;
+      }
+
+      @media screen and (max-width: 768px) {
+        .education-logo-column {
+          flex: 0 0 auto !important;
+          width: auto !important;
+          max-width: none !important;
+        }
+      }
+
+      .section-content-glass {
+        --card-hover-accent: var(--accent-color);
+        padding: 0.9rem 1rem;
+        background: var(--card-bg);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 0;
+        border-radius: 8px;
+        box-shadow: 0 5px 16px var(--shadow-color);
+        transition: background 0.32s ease, box-shadow 0.32s ease, transform 0.32s ease;
+      }
+
+      .education-glass,
+      .section-content-glass {
+        --card-hover-accent: var(--accent-color);
+      }
+
+      [data-theme="dark"] .education-glass,
+      [data-theme="dark"] .section-content-glass {
+        --card-hover-accent: var(--selected-venue-color);
+      }
+
+      .education-glass:hover,
+      .education-glass:focus-within,
+      .section-content-glass:hover,
+      .section-content-glass:focus-within {
+        background: linear-gradient(
+          135deg,
+          color-mix(in srgb, var(--card-bg) 88%, var(--card-hover-accent) 12%),
+          color-mix(in srgb, var(--bg-glass) 94%, var(--card-hover-accent) 6%)
+        );
+        box-shadow:
+          0 12px 28px color-mix(in srgb, var(--shadow-color) 66%, transparent),
+          0 3px 10px color-mix(in srgb, var(--shadow-color) 42%, transparent),
+          inset 0 1px 0 color-mix(in srgb, white 42%, transparent);
         transform: translateY(-2px);
       }
 
-      /* Subtle hierarchy for all modules: outer section vs inner content cards */
-      [data-theme="light"] .glass-section:not(#intro) {
-        background: rgba(255, 255, 255, 0.62) !important;
+      [data-theme="dark"] .education-glass:hover,
+      [data-theme="dark"] .education-glass:focus-within,
+      [data-theme="dark"] .section-content-glass:hover,
+      [data-theme="dark"] .section-content-glass:focus-within {
+        box-shadow:
+          0 14px 32px rgba(2, 10, 15, 0.38),
+          0 3px 10px rgba(2, 10, 15, 0.26),
+          inset 0 1px 0 rgba(197, 231, 239, 0.14);
       }
 
-      [data-theme="light"] #news .news-glass,
-      [data-theme="light"] #education .education-glass,
-      [data-theme="light"] #research .research-glass,
-      [data-theme="light"] #publications .publication-glass:not(.first-author-paper) {
-        background: rgba(255, 255, 255, 0.86) !important;
-        border-color: rgba(186, 148, 124, 0.24) !important;
+      @media (prefers-reduced-motion: reduce) {
+        .education-glass,
+        .section-content-glass {
+          transition: none;
+        }
+
+        .education-glass:hover,
+        .education-glass:focus-within,
+        .section-content-glass:hover,
+        .section-content-glass:focus-within {
+          transform: none;
+        }
       }
 
-      [data-theme="dark"] .glass-section:not(#intro) {
-        background: rgba(28, 43, 68, 0.52) !important;
+      .section-content-glass > ul {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
       }
 
-      [data-theme="dark"] #news .news-glass,
-      [data-theme="dark"] #education .education-glass,
-      [data-theme="dark"] #research .research-glass,
-      [data-theme="dark"] #publications .publication-glass:not(.first-author-paper) {
-        background: rgba(42, 61, 92, 0.78) !important;
-        border-color: rgba(130, 165, 215, 0.34) !important;
+      @media screen and (max-width: 768px) {
+        .section-content-glass {
+          padding: 0.75rem 0.8rem;
+        }
+      }
+
+      #projects li {
+        line-height: 1.7;
+        margin-bottom: 0.65rem;
+      }
+
+      #projects li:last-child {
+        margin-bottom: 0;
+      }
+
+      #awards li {
+        line-height: 1.65;
+        margin-bottom: 0.55rem;
+      }
+
+      #awards li:last-child {
+        margin-bottom: 0;
+      }
+
+      .award-year {
+        color: var(--accent-color);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        margin-right: 0.35rem;
+      }
+
+      .award-rank {
+        color: var(--project-source-color) !important;
+      }
+
+      .project-period {
+        color: var(--accent-color);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .project-source {
+        color: var(--text-primary);
+        font-weight: 700;
+      }
+
+      .project-id {
+        color: var(--project-id-color);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .project-role {
+        color: var(--accent-color) !important;
+      }
+
+      .service-group {
+        padding: 0.7rem 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      #services .section-content-glass {
+        padding-left: 2rem;
+      }
+
+      .service-group:first-child {
+        padding-top: 0;
+      }
+
+      .service-group:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .service-heading {
+        font-weight: 700;
+        color: var(--text-primary);
+        line-height: 1.4;
+        margin-bottom: 0.28rem;
+      }
+
+      .service-copy,
+      .service-entry {
+        color: var(--text-secondary);
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+
+      .service-entry + .service-entry {
+        margin-top: 0.2rem;
+      }
+
+      .service-year {
+        display: inline-block;
+        min-width: 3.3rem;
+        color: var(--accent-color);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+
+      @media screen and (max-width: 768px) {
+        #services .section-content-glass {
+          padding-left: 1.3rem;
+        }
       }
 
       /* 调整侧边栏布局 */
@@ -885,6 +1743,42 @@
 
       .social a:hover {
         transform: translateY(-3px) scale(1.1);
+      }
+
+      .sidebar-glass .social {
+        margin-bottom: 0.65rem;
+      }
+
+      .sidebar-welcome {
+        position: relative;
+        margin-top: 0 !important;
+        padding-top: 1rem;
+      }
+
+      .sidebar-welcome::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 46px;
+        height: 2px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, var(--accent-color), var(--selected-venue-color));
+        opacity: 0.58;
+        transform: translateX(-50%);
+      }
+
+      .slogon p {
+        display: inline-block;
+        margin: 0;
+        color: var(--accent-color);
+        background-image: linear-gradient(120deg, var(--accent-color), var(--selected-venue-color), var(--project-source-color));
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 650;
+        animation: titleGradientShift 7s ease-in-out infinite;
       }
 
       /* Social icons color adjustments for dark mode */
@@ -1102,9 +1996,9 @@
 
         /* Special styling for BibTeX text in dark mode */
         [data-theme="dark"] .bibtex-text {
-          background: rgba(45, 55, 72, 0.3);
-          color: #e2e8f0;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: rgba(10, 27, 36, 0.94);
+          color: var(--text-primary);
+          border: 1px solid var(--border-color);
         }
 
         .copy-btn {
@@ -1124,27 +2018,38 @@
 
         /* Representative papers 标签样式 */
         .representative-tag {
+          display: inline-block;
           padding: 4px 10px;
           border-radius: 12px;
+          border: 0;
           font-weight: 600;
           font-size: 0.85rem;
-          box-shadow: 0 2px 6px var(--shadow-color);
+          white-space: nowrap;
+          box-shadow: none;
           transition: all 0.3s ease;
-          /* border: 1px solid; */
+        }
+
+        .publications-note {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 0.5rem 0.7rem;
+        }
+
+        .publication-symbol {
+          font-weight: 800;
         }
 
         /* 浅色模式下的标签 - 与论文底纹对应 */
         [data-theme="light"] .representative-tag {
-          background: linear-gradient(135deg, rgba(74, 85, 104, 0.15) 0%, rgba(45, 55, 72, 0.12) 100%);
-          /* border-color: rgba(74, 85, 104, 0.8); */
-          color: rgba(74, 85, 104, 0.9); /* 深色文字确保可读性 */
+          background: rgba(194, 113, 79, 0.1);
+          color: var(--accent-color);
         }
 
         /* 深色模式下的标签 - 与论文底纹对应 */
         [data-theme="dark"] .representative-tag {
-          background: linear-gradient(135deg, rgba(74, 85, 104, 0.35) 0%, rgba(45, 55, 72, 0.25) 100%);
-          /* border-color: rgba(147, 197, 253, 0.8); */
-          color: rgba(147, 197, 253, 0.95); /* 浅蓝色文字 */
+          background: rgba(116, 174, 189, 0.16);
+          color: var(--accent-color);
         }
 
         /* Text color adjustments */
@@ -1233,22 +2138,149 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
-          .glass-section {
-            margin: 1rem;
-            padding: 1.5rem;
+          .section {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
           }
-          
+
+          .glass-section {
+            margin: 0.65rem 0;
+            padding: 1rem;
+          }
+
           .sidebar-glass {
-            margin: 1rem;
+            width: 100% !important;
+            max-width: 360px;
+            margin: 0.75rem auto 1.25rem !important;
+            padding: 0.75rem 1rem 1rem !important;
             position: static;
           }
-          
-          .theme-toggle {
-            top: 10px;
-            right: 10px;
-            width: 45px;
-            height: 45px;
+
+          .sidebar-glass > figure.image {
+            width: min(58vw, 220px) !important;
+            margin: 0 auto 0.8rem !important;
           }
+
+          .sidebar-glass > .content {
+            text-align: center;
+          }
+
+          .sidebar-glass > .content h2 {
+            margin: 0.35rem 0 0.85rem !important;
+            line-height: 1.08;
+            text-align: center !important;
+          }
+
+          .sidebar-glass .profile-meta {
+            display: inline-grid;
+            width: max-content;
+            max-width: 100%;
+            margin: 0 auto !important;
+            line-height: 1.45;
+            text-align: left !important;
+          }
+
+          .sidebar-glass .social {
+            width: min(240px, 100%);
+            margin: 1rem auto 0.5rem;
+            padding: 0 !important;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            gap: 0.75rem;
+          }
+
+          .sidebar-glass .social a {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 38px;
+          }
+
+          #intro p {
+            text-align: left !important;
+            text-indent: 0 !important;
+          }
+
+          .right-panel {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
+
+          #research .section-header-row {
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+          }
+
+          #research .section-header-row h2 {
+            margin-bottom: 0;
+            font-size: 1.45rem !important;
+            line-height: 1.2;
+            white-space: nowrap;
+          }
+
+          #research .section-header-row .publications-title-group {
+            margin-right: auto;
+          }
+
+          #research .section-header-row .publication-view-switch {
+            flex: 0 0 100%;
+            justify-self: start;
+            margin: 0.2rem 0 0;
+          }
+
+          #research .publication-view-tab {
+            min-height: 28px;
+            padding: 4px 9px;
+            font-size: 0.8rem;
+          }
+
+          #research .view-all-btn {
+            flex: 0 0 auto;
+            margin-left: auto;
+            padding: 5px 9px;
+            font-size: 0.76rem;
+            white-space: nowrap;
+          }
+
+          #research .research-glass {
+            padding: 0.75rem;
+          }
+
+          #research .research-glass article.columns > .column {
+            padding: 0.35rem !important;
+          }
+
+          @media (max-width: 370px) {
+            .sidebar-glass .social {
+              width: min(218px, 100%);
+              gap: 0.35rem;
+            }
+
+            #research {
+              padding-left: 0.75rem;
+              padding-right: 0.75rem;
+            }
+
+            #research .section-header-row h2 {
+              font-size: 1.35rem !important;
+            }
+
+            #research .view-all-label {
+              display: none;
+            }
+
+            #research .view-all-btn {
+              width: 34px;
+              height: 30px;
+              padding: 0;
+              text-align: center;
+            }
+          }
+
         }
 
         /* ===== PRISM-style layout + Luka tone overrides ===== */
@@ -1317,6 +2349,11 @@
           box-shadow: 0 4px 15px var(--shadow-color) !important;
         }
 
+        .quick-nav .menu-list a:focus-visible {
+          outline: 2px solid var(--accent-color);
+          outline-offset: 2px;
+        }
+
         #sidebar {
           display: none !important;
           visibility: hidden !important;
@@ -1326,13 +2363,9 @@
           display: none !important;
         }
 
-        .theme-toggle {
-          top: 82px !important;
-        }
-
         :root {
           --sidebar-fixed-width: clamp(248px, 20vw, 292px);
-          --sidebar-column-gap: clamp(68px, 9vw, 170px);
+          --sidebar-column-gap: clamp(44px, 5.5vw, 96px);
         }
 
         .container > .columns {
@@ -1389,50 +2422,100 @@
         }
 
         #research .research-glass .content p {
-          text-align: justify;
-          text-justify: inter-word;
+          text-align: left;
           line-height: 1.6;
           padding-right: 0.3rem;
         }
 
+        #research .research-glass {
+          container-type: inline-size;
+        }
+
+        #research .research-glass article.columns {
+          display: grid;
+          grid-template-columns: minmax(0, 32%) minmax(0, 68%);
+          align-items: center;
+          gap: clamp(0.75rem, 1.6cqw, 1rem);
+          margin: 0;
+        }
+
+        #research .research-glass article.columns > .column {
+          width: auto !important;
+          min-width: 0;
+          padding: 0.35rem !important;
+        }
+
+        #research .research-glass article.columns > .column.is-4 {
+          align-self: center;
+        }
+
         #research .research-glass .selected-title {
-          display: inline-block;
-          margin-bottom: 0.35rem;
+          display: block;
+          margin-bottom: 0.3rem;
           font-size: 1rem;
-          line-height: 1.45;
-          color: var(--text-primary) !important;
+          line-height: 1.4;
+          color: var(--selected-title-color) !important;
           font-weight: 700;
+          text-align: left;
+          text-wrap: wrap;
+          overflow-wrap: break-word;
+        }
+
+        #research .research-glass .selected-title-token {
+          white-space: nowrap;
         }
 
         #research .research-glass .selected-meta {
-          margin-bottom: 0.28rem;
-          color: var(--text-primary);
+          margin-bottom: 0.4rem;
+          color: var(--selected-venue-color);
           font-size: 0.93rem;
-          line-height: 1.45;
+          line-height: 1.4;
           font-weight: 700;
-          text-align: justify;
-          text-justify: inter-word;
+          text-align: left;
+          text-wrap: pretty;
           padding-right: 0.3rem;
         }
 
-        #research .research-glass .selected-meta-label {
-          color: var(--text-primary);
-          font-weight: 600;
-          margin-right: 6px;
-        }
-
         #research .research-glass .selected-tldr {
-          margin-top: 0.2rem;
+          margin: 0.15rem 0 0;
           color: var(--text-secondary);
-          font-size: 0.93rem;
-          line-height: 1.55;
-          text-align: justify;
-          text-justify: inter-word;
+          font-size: 0.88rem;
+          line-height: 1.5;
+          text-align: left;
           padding-right: 0.3rem;
         }
 
         #research .research-glass .selected-tldr .selected-meta-label {
           color: var(--accent-color);
+          font-weight: 700;
+          margin-right: 6px;
+        }
+
+        #research .research-glass .content > p {
+          margin-bottom: 0.38rem;
+        }
+
+        @container (max-width: 560px) {
+          #research .research-glass .selected-tldr {
+            display: none;
+          }
+        }
+
+        @container (min-width: 400px) and (max-width: 680px) {
+          #research .research-glass article.columns {
+            grid-template-columns: minmax(0, 38%) minmax(0, 62%);
+          }
+        }
+
+        @container (max-width: 399px) {
+          #research .research-glass article.columns {
+            display: block;
+          }
+
+          #research .research-glass .selected-title {
+            width: 100%;
+            text-wrap: wrap;
+          }
         }
 
         /* Make transparent thumbnails readable with a white backing card */
@@ -1465,7 +2548,7 @@
         }
 
         #research .research-links {
-          margin-top: 8px;
+          margin-top: 0;
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
@@ -1489,6 +2572,40 @@
           box-shadow: none;
           text-decoration: underline;
           color: var(--text-primary);
+        }
+
+        @media (min-width: 1200px) {
+          #research .research-glass {
+            padding-top: 0.72rem;
+            padding-bottom: 0.6rem;
+          }
+
+          #research .research-glass .selected-title {
+            margin-bottom: 0.24rem;
+            max-width: 100%;
+            font-size: 0.84rem;
+            line-height: 1.36;
+          }
+
+          #research .research-glass .selected-meta {
+            margin-bottom: 0.32rem;
+            font-size: 0.86rem;
+            line-height: 1.36;
+          }
+
+          #research .research-glass .selected-tldr {
+            font-size: 0.8rem;
+            line-height: 1.44;
+          }
+
+          #research .research-links {
+            margin-top: 0;
+            gap: 8px;
+          }
+
+          #research .research-links a {
+            font-size: 0.8rem;
+          }
         }
 
         .section {
@@ -1557,12 +2674,71 @@
             padding-left: 0.75rem !important;
           }
 
-          .theme-toggle {
-            top: 128px !important;
-            right: 10px;
+        }
+
+        @media (min-width: 769px) and (max-width: 900px) {
+          .column.is-2_5 {
+            width: 100% !important;
+          }
+
+          .sidebar-glass {
+            display: grid !important;
+            grid-template-columns: 250px minmax(0, 1fr);
+            grid-template-areas:
+              "portrait details"
+              "portrait social";
+            column-gap: 3.5rem;
+            row-gap: 1rem;
+            width: min(760px, calc(100% - 2rem)) !important;
+            margin: 0 auto 2rem !important;
+            padding: 1.5rem !important;
+            align-items: start;
+          }
+
+          .sidebar-glass > figure.image {
+            grid-area: portrait;
+            width: 250px !important;
+            height: 250px;
+            margin: 0 !important;
+            align-self: start;
+          }
+
+          .sidebar-glass > .content {
+            grid-area: details;
+            min-width: 0;
+          }
+
+          .sidebar-glass > .content h2 {
+            margin: 0 0 1rem !important;
+            line-height: 1.12;
+          }
+
+          .sidebar-glass .profile-meta {
+            margin: 0 !important;
+            line-height: 1.6;
+          }
+
+          .sidebar-glass .social {
+            grid-area: social;
+            width: min(280px, 100%);
+            margin: -1.5rem 0 0;
+            padding: 0 !important;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            align-self: end;
+          }
+
+          .sidebar-glass .slogon,
+          .sidebar-glass > div:last-child {
+            display: none;
+          }
+
+          .right-panel {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
           }
         }
-      
+
 </style>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
 </head>
@@ -1571,32 +2747,24 @@
 <body>
   <nav class="quick-nav" id="topQuickNav">
     <div class="quick-nav-inner">
-      <a href="#intro" class="nav-name">Jieyu Yuan（袁捷禹）</a>
+      <a href="#intro" class="nav-name"><span class="nav-name-latin">Jieyu Yuan</span><span class="nav-name-cjk">（袁捷禹）</span></a>
       <ul class="menu-list">
         <li><a href="#intro">About Me</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#research">Selected</a></li>
-        <li><a href="#publications">Publications</a></li>
+        <li><a href="#research">Publications</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#awards">Awards</a></li>
         <li><a href="#services">Services</a></li>
       </ul>
+      <button class="theme-toggle nav-theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle color theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
     </div>
   </nav>
 
   <!-- Progress bar -->
   <div class="progress-bar" id="progressBar"></div>
-  
-  <!-- Theme toggle button -->
-  <div class="theme-toggle" id="themeToggle">
-    <i class="fas fa-moon" id="themeIcon"></i>
-  </div>
-  
-  <!-- Scroll to top button -->
-  <div class="scroll-to-top" id="scrollToTop">
-    <i class="fas fa-arrow-up"></i>
-  </div>
   
   <!-- Animated particles -->
   <div class="particles" id="particles"></div>
@@ -1613,16 +2781,38 @@
               </figure>
             <div class="content">
               <h2 style="margin-top: 0.5em; text-align: left;">
-                <span class="typing-text">Jieyu Yuan</span><br/>
-                <span class="typing-text">袁捷禹</span>
+                <span class="typing-text profile-name profile-name-latin">Jieyu Yuan</span><br/>
+                <span class="typing-text profile-name profile-name-cjk">袁捷禹</span>
               </h2>
-              <p style="text-align: left;">
-                🏢 <b>VCIP@NKU</b><br/> 
-                📍 Tianjin, China<br/>
-                📧 Contact<br/>
-                <span class="email-line"><a href="mailto:jieyuyuan.cn@gmail.com">jieyuyuan.cn@gmail.com</a></span>
-                <span class="email-line"><a href="mailto:jieyuyuan.cn@nankai.edu.cn">jieyuyuan.cn@nankai.edu.cn</a></span>
-            </p>
+              <div class="profile-meta" style="text-align: left;">
+                <div class="profile-meta-row">
+                  <span class="profile-meta-icon" aria-hidden="true">🏢</span>
+                  <b class="profile-affiliation-line"><span class="affiliation-gradient">VCIP</span><span class="affiliation-at">@</span><span class="affiliation-gradient nku">NKU</span></b>
+                </div>
+                <a class="profile-meta-row profile-lab-row" href="https://pi-lab.xyz/" target="_blank" rel="noopener" aria-label="PI Lab at Nankai University" title="PI Lab">
+                  <span class="profile-meta-icon">
+                    <img class="profile-lab-logo" src="images/misc/pi-lab-logo.png" alt="PI Lab logo">
+                  </span>
+                  <span class="profile-lab-name">
+                    <span><span class="profile-lab-symbol">π</span>: Photography &amp; Imaging</span>
+                    <span>Research Group</span>
+                  </span>
+                </a>
+                <div class="profile-meta-row">
+                  <span class="profile-meta-icon" aria-hidden="true">📍</span>
+                  <span class="location-gradient">Tianjin, China</span>
+                </div>
+                <div class="profile-meta-row">
+                  <span class="profile-meta-icon" aria-hidden="true">📧</span>
+                  <span>
+                    <b>Email</b>
+                    <span class="email-list">
+                      <span class="email-line"><a href="mailto:jieyuyuan.cn@gmail.com">jieyuyuan.cn@gmail.com</a></span>
+                      <span class="email-line"><a href="mailto:jieyuyuan.cn@nankai.edu.cn">jieyuyuan.cn@nankai.edu.cn</a></span>
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
             <!-- social network icons -->
             <div class="social">
@@ -1647,15 +2837,14 @@
                 <li><a href="#intro">About Me </a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#research">Research Work</a></li>
-                <li><a href="#publications">Publications</a></li>
+                <li><a href="#research">Publications</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#awards">Awards</a></li>
                 <li><a href="#services">Services</a></li>
               </ul>
             </div>
 
-            <div class="slogon" style="margin-top: 10px; text-align: center;">
+            <div class="slogon sidebar-welcome" style="text-align: center;">
               <p>Welcome to my homepage!</p> 
             </div>
             <div style="margin-top: 10px; text-align: center;">
@@ -1669,61 +2858,62 @@
 
             <!--About Me-->
             <div class="glass-section fade-in-up" id="intro">
-              <h2>About Me 👋</h2>
+              <h2 class="section-title">About Me 👋</h2>
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
               <p style="text-indent: 2em; text-align: justify; line-height: 1.6;">
-                 I am currently Post-Doctoral Researcher in <a href="https://pi-lab.xyz/index.html" target="_blank">π Research Group@Nankai University</a>, worked with
-                <a href="https://li-chongyi.github.io/" target="_blank">Prof. Chongyi Li</a>. Before that, I obtained my PhD degree from Macau University of Science and Technology under the supervision of <a href="https://fie.must.edu.mo/id-1444/person/view/id-11446.html/" target="_blank">Prof. Zhanchuan Cai</a>. 
+                 I am currently a <span class="intro-role">Postdoctoral Researcher</span> in <a class="intro-affiliation" href="https://pi-lab.xyz/index.html" target="_blank">π Research Group@Nankai University</a>, working with
+                <a class="intro-person" href="https://li-chongyi.github.io/" target="_blank">Prof. Chongyi Li</a>. Before that, I obtained my PhD degree from <span class="intro-affiliation">Macau University of Science and Technology</span> under the supervision of <a class="intro-person" href="https://fie.must.edu.mo/id-1444/person/view/id-11446.html/" target="_blank">Prof. Zhanchuan Cai</a>.
               </p>
               <p style="text-indent: 2em; text-align: justify; line-height: 1.6;">
-                I am interested in Low-level Vision, 3D Vision, and Multimodal Large Language Models. Specifically, my research interests focus on underwater image enhancement and its applications in downstream tasks, underwater scene restoration, and remote sensing image processing. 
-                My current work mainly focuses on underwater 3D reconstruction and multimodal visual perception.
+                My research is rooted in <span class="intro-topic intro-topic-gradient intro-topic-low-level">Low-level Vision</span>, with a particular focus on underwater images and scenes. Over time, my research has moved beyond restoring individual images to understanding and generating visual scenes. My current work mainly focuses on <span class="intro-topic intro-topic-gradient intro-topic-underwater">Underwater Vision</span>, <span class="intro-topic intro-topic-gradient intro-topic-3d">3D Vision</span>, <span class="intro-topic intro-topic-gradient intro-topic-aigc">AIGC</span>, and <span class="intro-topic intro-topic-gradient intro-topic-security">Multimedia Security</span>.
               </p>
             </div>
 
             <!--News-->
             <div class="glass-section fade-in-up" id="news">
-              <h2>📰 News</h2>
+              <h2 class="section-title">📰 News</h2>
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
               <div class="news-glass">
                 <ul>
-                  <li><li data-pinned="true">➤ [05/2026]: Our work "3D-UIR" was accepted by IEEE TIP 2026!</li>
-                  <li><li data-pinned="true">➤ [03/2026]: One paper accepted by IEEE TCSVT 2026!</li>
-                  <li><li data-pinned="true">➤ [02/2026]: Our work "MarkCleaner" is available on arXiv!</li>
-                  <li><li data-pinned="true">➤ [10/2025]: One paper accepted by IEEE TGRS 2025!</li>
-                  <li>➤ [08/2025]: Our work "ViDA-UGC" is available on arXiv!</li>
-                  <li>➤ [07/2025]: One paper accepted by IEEE JOE 2025!</li>
+                  <li>➤ [09/2026]: Codes for <strong>"3D-USE" and "MarkCleaner"</strong> are released!</li>
+                  <li>➤ [08/2026]: Our work <strong>"3D-USE"</strong> is available on arXiv!</li>
+                  <li>➤ [08/2026]: Code for <strong>"W2WDiff"</strong> is released!</li>
+                  <li>➤ [05/2026]: <strong>"3D-UIR"</strong> has been accepted for publication in IEEE TIP!</li>
+                  <li>➤ [04/2026]: Code for <strong>"SLIM"</strong> is released!</li>
+                  <li>➤ [03/2026]: One paper accepted by <strong>IEEE TCSVT</strong> 2026!</li>
+                  <li>➤ [08/2025]: Our work <strong>"ViDA-UGC"</strong> is available on arXiv!</li>
+                  <li>➤ [07/2025]: One paper accepted by <strong>IEEE JOE</strong> 2025!</li>
                   <li>➤ [01/2025]: Selected as <strong>Outstanding Reviewer</strong> of IEEE JOE 2024!</li>
-                  <li>➤ [12/2024]: One paper accepted by IEEE TGRS 2024.</li>
-                  <li><li data-pinned="true">➤ [07/2024]: Joined π Research Group at Nankai University as a postdoc!</li>
-                  <li>➤ [06/2024]: ✨ Successfully defended my PhD thesis on June 5th! </li>
-                  <li>➤ [03/2024]: One paper accepted by IEEE TII 2024.</li>
-                  <li>➤ [12/2023]: One paper accepted by IEEE TGRS 2024.</li>
-                  <li>➤ [08/2023]: One paper accepted by IEEE TGRS 2023.</li>
-                  <li>➤ [06/2023]: One paper accepted by IEEE J.STARS 2023.</li>
-                  <li>➤ [03/2023]: One paper accepted by IEEE TII 2023.</li>
-                  <li>➤ [09/2021]: One paper accepted by IEEE TGRS 2021.</li>
-                  <li>➤ [10/2020]: One paper accepted by IEEE TGRS 2020.</li>
+                  <li>➤ [12/2024]: One paper accepted by <strong>IEEE TGRS</strong> 2024.</li>
+                  <li>➤ [07/2024]: Joined <strong>π Research Group</strong> at Nankai University as a postdoc!</li>
+                  <li>➤ [06/2024]: ✨ Successfully defended my <strong>PhD thesis</strong> on June 5th!</li>
+                  <li>➤ [03/2024]: One paper accepted by <strong>IEEE TII</strong> 2024.</li>
+                  <li>➤ [12/2023]: One paper accepted by <strong>IEEE TGRS</strong> 2024.</li>
+                  <li>➤ [08/2023]: One paper accepted by <strong>IEEE TGRS</strong> 2023.</li>
+                  <li>➤ [06/2023]: One paper accepted by <strong>IEEE J.STARS</strong> 2023.</li>
+                  <li>➤ [03/2023]: One paper accepted by <strong>IEEE TII</strong> 2023.</li>
+                  <li>➤ [09/2021]: One paper accepted by <strong>IEEE TGRS</strong> 2021.</li>
+                  <li>➤ [10/2020]: One paper accepted by <strong>IEEE TGRS</strong> 2020.</li>
                 </ul>
               </div>
             </div>
 
             <!--Education-->
             <div class="glass-section fade-in-up" id="education">
-              <h2 style="margin-bottom: 25px;">🎓 Education</h2>
+              <h2 class="section-title">🎓 Education</h2>
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 15px;">
 
               <div class="education-glass">
                 <article class="columns is-vcentered">
-                  <div class="column is-2" >
-                     <div class="image" style="width: 95px; margin: 0 auto;">
+                  <div class="column education-logo-column">
+                     <div class="image education-logo">
                       <img src="images/misc/nku.jpg" >
                     </div>
                   </div>
                   <div class="column">
                     <div class="content">
                       <p>
-                        <b>Post-Doctoral Researcher</b> | <b>π</b> Research Group, <b>NKU</b>, Tianjin, China<br>
+                        <b>Postdoctoral Researcher</b> | <b>π</b> Research Group, <b>NKU</b>, Tianjin, China<br>
                         Time: Jul 2024 - Present. Working with <a href="https://li-chongyi.github.io/" target="_blank">Prof. Chongyi Li</a>
                       </p>
                     </div>
@@ -1733,8 +2923,8 @@
               
               <div class="education-glass">
                 <article class="columns is-vcentered">
-                  <div class="column is-2" >
-                     <div class="image" style="width: 90px; margin: 0 auto;">
+                  <div class="column education-logo-column">
+                     <div class="image education-logo">
                       <img src="images/misc/must.png" >
                     </div>
                   </div>
@@ -1755,8 +2945,8 @@
 
               <div class="education-glass">
                 <article class="columns is-vcentered">
-                  <div class="column is-2" >
-                    <div class="image" style="width: 90px; margin: 0 auto;">
+                  <div class="column education-logo-column">
+                    <div class="image education-logo">
                       <img src="images/misc/bitzh.png" >
                     </div>
                   </div>      
@@ -1775,35 +2965,54 @@
             <!--Research Work-->
             <div class="glass-section fade-in-up" id="research">
               <div class="section-header-row">
-                <h2>📚 Representative Works</h2>
-                <a class="view-all-btn" href="#publications">View All →</a>
+                <div class="publications-title-group">
+                  <h2 class="section-title">📚 Publications</h2>
+                  <a class="publications-scholar-link" href="https://scholar.google.com/citations?authuser=2&user=451OzVIAAAAJ" target="_blank" rel="noopener">[Google Scholar]</a>
+                </div>
+                <div class="publication-view-switch" role="tablist" aria-label="Publication view">
+                  <button class="publication-view-tab active" type="button" role="tab" data-view="selected" aria-selected="true">Selected</button>
+                  <button class="publication-view-tab" type="button" role="tab" data-view="full" aria-selected="false">Full List</button>
+                </div>
               </div>
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
 
-              <div class="research-glass">
+              <div class="publication-selected-panel" data-publication-view-panel="selected">
+
+              <div class="selected-work-filters" role="group" aria-label="Filter selected works by topic">
+                <button class="filter-btn selected-work-filter active" data-category="all" aria-pressed="true">All</button>
+                <button class="filter-btn selected-work-filter" data-category="underwater" aria-pressed="false">Underwater</button>
+                <button class="filter-btn selected-work-filter" data-category="low-level" aria-pressed="false">Low-level</button>
+                <button class="filter-btn selected-work-filter" data-category="3d" aria-pressed="false">3D</button>
+                <button class="filter-btn selected-work-filter" data-category="watermark" aria-pressed="false">Watermark</button>
+                <button class="filter-btn selected-work-filter" data-category="iqa" aria-pressed="false">IQA</button>
+                <button class="filter-btn selected-work-filter" data-category="detection" aria-pressed="false">Detection</button>
+              </div>
+
+              <div class="research-glass key-work" data-publication-key="3duse" data-venue="arXiv preprint, 2026" data-categories="underwater low-level 3d">
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
-                      <img src="./images/research/markcleaner.png" style="width: 100%; height: auto; border-radius: 8px;">
+                      <img src="./images/research/3duse.png" alt="3D-USE overview" style="width: 100%; height: auto; border-radius: 8px;">
                     </figure>
                   </div>
                   <div class="column">
                     <div class="content">
                       <p>
-                        <b>MarkCleaner: High-Fidelity Watermark Removal via Imperceptible Micro-Geometric Perturbation</b><br>
-                        MarkCleaner achieves high-fidelity watermark removal by exploiting the geometric vulnerability of semantic watermarks via micro-geometric perturbations and 2D Gaussian Splatting.
+                        <b>3D-USE: From Image-Level to Scene-Level Underwater Enhancement</b><br>
+                        3D-USE transfers image-level underwater enhancement knowledge into a persistent 3D Gaussian scene, enabling visibility-enhanced and cross-view-consistent novel-view rendering without applying a 2D enhancement model at inference.
                       </p>
                       <div class="research-links">
-                        <a href="https://arxiv.org/abs/2602.01513" target="_blank">[Paper]</a>
-                        <a href="https://xiaoxikong.github.io/MarkCleaner/" target="_blank">[Project]</a>
-                        <a href="https://github.com/XiaoxiKong/MarkCleaner" target="_blank">[Code]</a>
+                        <a href="https://arxiv.org/abs/2608.28020" target="_blank">[Paper]</a>
+                        <a href="https://bilityniu.github.io/3D-USE/" target="_blank">[Project]</a>
+                        <a href="https://github.com/bilityniu/3D-USE" target="_blank">[Code]</a>
+                        <a href="#" onclick="showBibTeX('3duse'); return false;">[BibTeX]</a>
                       </div>
                     </div>
                   </div>
                 </article>
               </div>
 
-              <div class="research-glass">
+              <div class="research-glass key-work" data-publication-key="3duir" data-categories="underwater 3d">
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
@@ -1827,7 +3036,54 @@
                 </article>
               </div>
 
-              <div class="research-glass">
+              <div class="research-glass key-work" data-publication-key="markcleaner" data-categories="watermark">
+                <article class="columns is-vcentered">
+                  <div class="column is-4">
+                    <figure class="image">
+                      <img src="./images/research/markcleaner.png" style="width: 100%; height: auto; border-radius: 8px;">
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>MarkCleaner: High-Fidelity Watermark Removal via Imperceptible Micro-Geometric Perturbation</b><br>
+                        MarkCleaner achieves high-fidelity watermark removal by exploiting the geometric vulnerability of semantic watermarks via micro-geometric perturbations and 2D Gaussian Splatting.
+                      </p>
+                      <div class="research-links">
+                        <a href="https://arxiv.org/abs/2602.01513" target="_blank">[Paper]</a>
+                        <a href="https://xiaoxikong.github.io/MarkCleaner/" target="_blank">[Project]</a>
+                        <a href="https://github.com/XiaoxiKong/MarkCleaner" target="_blank">[Code]</a>
+                        <a href="#" onclick="showBibTeX('markcleaner'); return false;">[BibTeX]</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="research-glass key-work" data-publication-key="slim" data-categories="watermark">
+                <article class="columns is-vcentered">
+                  <div class="column is-4">
+                    <figure class="image">
+                      <img src="./images/research/slim.png" alt="SLIM framework overview" style="width: 100%; height: auto; border-radius: 8px;">
+                    </figure>
+                  </div>
+                  <div class="column">
+                    <div class="content">
+                      <p>
+                        <b>SLIM: Stable Latent Integration for Robust Watermark in Diffusion Model</b><br>
+                        SLIM embeds robust invisible watermarks into diffusion-generated images by integrating secret-conditioned latent perturbations through LoRA-adapted residuals during the final denoising steps, enabling reliable watermark recovery under common image distortions.
+                      </p>
+                      <div class="research-links">
+                        <a href="https://doi.org/10.1109/TCSVT.2026.3676184" target="_blank">[Paper]</a>
+                        <a href="https://github.com/XiaoxiKong/SLIM" target="_blank">[Code]</a>
+                        <a href="#" onclick="showBibTeX('slim'); return false;">[BibTeX]</a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="research-glass" data-publication-key="w2wdiff" data-categories="underwater low-level">
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
@@ -1852,7 +3108,7 @@
                 </article>
               </div>
 
-              <div class="research-glass">
+              <div class="research-glass" data-publication-key="vida-ugc" data-categories="iqa">
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
@@ -1863,21 +3119,21 @@
                     <div class="content">
                       <p>
                         <b>ViDA-UGC: Detailed Image Quality Analysis via Visual Distortion Assessment for UGC Images</b><br>
-                        To tackle the limitations of current explainable IQA methods in distinguishing UGC from AIGC and providing fine-grained quality analysis, we construct ViDA-UGC, the first large-scale UGC distortion assessment dataset with a distortion-oriented CoT annotation pipeline, and release ViDA-UGC-Bench as a reliable benchmark.
+                        ViDA-UGC introduces the first large-scale UGC distortion assessment dataset with distortion-oriented CoT annotations, together with ViDA-UGC-Bench for fine-grained, explainable quality analysis of UGC and AIGC images.
                       </p>
                       <div class="research-links">
                         <a href="https://arxiv.org/abs/2508.12605" target="_blank">[Paper]</a>
                         <a href="https://whycantfindaname.github.io/ViDA-UGC/" target="_blank">[Project]</a>
                         <a href="https://github.com/DYEvaLab/ViDA-MIPI-code" target="_blank">[Code]</a>
                         <a href="https://huggingface.co/datasets/DY-Evalab/ViDA-MIPI-dataset" target="_blank">[Data]</a>
-                        <a href="#" onclick="showBibTeX('ViDA-UGC'); return false;">[BibTeX]</a>
+                        <a href="#" onclick="showBibTeX('vida-ugc'); return false;">[BibTeX]</a>
                       </div>
                     </div>
                   </div>
                 </article>
               </div>
 
-              <div class="research-glass">
+              <div class="research-glass" data-publication-key="cdef" data-categories="underwater low-level">
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
@@ -1902,7 +3158,7 @@
                 </article>
               </div>
 
-              <div class="research-glass">
+              <div class="research-glass" data-publication-key="udmdet" data-selected-title="Underwater Blurred Object Detection via Distraction Mining" data-categories="underwater detection">
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
@@ -1913,7 +3169,7 @@
                     <div class="content">
                       <p>
                         <b>Underwater Blurred Object Detection via Distraction Mining</b><br>
-                        UDMDet tackles underwater object detection challenges by exploring degradation mechanisms rather than image enhancement, mining target-background differences through distraction-aware feature fusion and task-aligned detection heads to progressively separate confusing features and improve detection performance in blurry underwater environments.
+                        UDMDet improves blurred underwater object detection without relying on image enhancement, mining target-background distractions through distraction-aware feature fusion and task-aligned heads to separate confusing features.
                       </p>
                       <div class="research-links">
                         <a href="https://doi.org/10.1109/TII.2024.3383537" target="_blank">[Paper]</a>
@@ -1925,7 +3181,7 @@
                 </article>
               </div>
 
-              <div class="research-glass">
+              <div class="research-glass" data-publication-key="mfprn" data-selected-title="Multi-type Feature Perception and Refined Network for Spaceborne Infrared Ship Detection" data-categories="detection" data-tldr="MFPRN improves low-SNR infrared ship detection through dual-branch fusion of Fourier-based global perception and lightweight MLP long-range modeling, followed by cascaded proposal refinement to suppress background confusion and false alarms.">
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
@@ -1936,7 +3192,7 @@
                     <div class="content">
                       <p>
                         <b>Multi-type Feature Perception and Refined Network for Spaceborne Infrared Ship Detection</b><br>                
-                        MFPRN addresses satellite infrared ship detection challenges by enhancing information interaction during feature extraction through dual-branch feature fusion combining Fast Fourier convolution for comprehensive receptive fields and lightweight MLP for long-range dependencies, coupled with cascaded RPN to reduce false alarms in low SNR infrared imagery.
+                        MFPRN improves low-SNR infrared ship detection through dual-branch fusion of Fourier-based global perception and lightweight MLP long-range modeling, followed by cascaded proposal refinement to suppress background confusion and false alarms.
                       </p>
                       <div class="research-links">
                         <a href="https://doi.org/10.1109/TGRS.2023.3341215" target="_blank">[Paper]</a>
@@ -1948,7 +3204,7 @@
                 </article>
               </div>
 
-              <div class="research-glass">
+              <div class="research-glass" data-publication-key="tebcf" data-selected-title="Real-World Underwater Image Texture Enhancement Based on Blurriness and Color Fusion" data-categories="underwater low-level" data-venue="IEEE Transactions on Geoscience and Remote Sensing, 2021">
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
@@ -1959,7 +3215,7 @@
                     <div class="content">
                       <p>
                         <b>Real-World Underwater Image Texture Enhancement Based on Blurriness and Color Fusion</b><br>                 
-                        TEBCF focuses on underwater texture degradation caused by light scattering and absorption through multi-scale fusion of RGB contrast dehazing and CIELAB morphological enhancement, effectively recovering both global and local texture details while adaptively improving contrast, saturation, and sharpness.
+                        TEBCF restores real-world underwater texture through multi-scale fusion of RGB contrast dehazing and CIELAB morphological enhancement, recovering global and local details while improving contrast, saturation, and sharpness.
                       </p>
                       <div class="research-links">
                         <a href="https://doi.org/10.1109/TGRS.2021.3110575" target="_blank">[Paper]</a>
@@ -1971,7 +3227,7 @@
                 </article>
               </div>
 
-              <div class="research-glass">
+              <div class="research-glass" data-publication-key="cbm" data-selected-title="Underwater Image Vision Enhancement Based on Contour Bougie Morphology" data-categories="underwater low-level">
                 <article class="columns is-vcentered">
                   <div class="column is-4">
                     <figure class="image">
@@ -1993,19 +3249,10 @@
                   </div>
                 </article>
               </div>
-            </div>
+              </div>
 
-           <!--Publications-->
-           <div class="glass-section fade-in-up publications-collapsed" id="publications">
-            <h2>
-              📄 Publications
-              <span style="font-size: 1rem;margin-left: 1rem;position: relative;bottom: .2rem;">
-                <a href="https://scholar.google.com/citations?authuser=2&user=451OzVIAAAAJ" target="_blank" style="font-size: 20px;">
-                  [Google Scholar]
-                </a>
-              </span>
-            </h2>
-            <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
+           <!-- Full publication list -->
+           <div class="publication-full-panel" id="publications" data-publication-view-panel="full" hidden>
             <!-- Year filter buttons -->
             <div class="publication-filters" style="margin-bottom: 20px;">
               <button class="filter-btn active" data-year="all">All</button>
@@ -2016,22 +3263,33 @@
             </div>
 
             <p class="publications-note" style="font-size: 0.9em; color: var(--text-muted); margin-bottom: 20px;">
-              * Equal contribution.  # Corresponding author. <span class="representative-tag">✨ Representative papers are highlighted</span>
+              <span><strong class="publication-symbol">*</strong> Equal contribution. <strong class="publication-symbol">#</strong> Corresponding author.</span>
+              <span class="representative-tag">✨ Representative papers are highlighted</span>
             </p>
 
             <!--List of publications-->
 
-            <div class="publication-glass publication-item first-author-paper" data-year="2026">
+            <div class="publication-glass publication-item first-author-paper" data-publication-key="3duse" data-year="2026">
               <div class="content">
                 <p>
-                  <b><a href="https://arxiv.org/abs/2505.21238" target="_blank">3D-UIR: 3D Gaussian for Underwater 3D Scene Reconstruction via Physics Based Appearance-Medium Decoupling</a></b><br>
+                  <b><a href="https://arxiv.org/abs/2608.28020" target="_blank">3D-USE: From Image-Level to Scene-Level Underwater Enhancement</a></b><br>
+                  arXiv preprint arXiv:2608.28020, 2026<br>
+                  <b style="color: #2563eb;">Jieyu Yuan</b>, Yuanlin Zhang, Jihong Li, Chunle Guo, Huimin Lu, <b>Chongyi Li</b><sup>#</sup>.
+                </p>
+              </div>
+            </div>
+
+            <div class="publication-glass publication-item first-author-paper" data-publication-key="3duir" data-year="2026">
+              <div class="content">
+                <p>
+                  <b><a class="publication-title-single-line" href="https://arxiv.org/abs/2505.21238" target="_blank">3D-UIR: 3D Gaussian for Underwater 3D Scene Reconstruction via Physics Based Appearance-Medium Decoupling</a></b><br>
                   IEEE Transactions on Image Processing (IF=13.7, JCR Q1), 2026<br>
                   <b style="color: #2563eb;">Jieyu Yuan</b>, Yujun Li, Yuanlin Zhang, Chunle Guo, Xiongxin Tang, Ruixing Wang, <b>Chongyi Li</b><sup>#</sup>.
                 </p>
               </div>
             </div>
 
-            <div class="publication-glass publication-item" data-year="2026">
+            <div class="publication-glass publication-item" data-publication-key="slim" data-year="2026">
               <div class="content">
                 <p>
                   <b><a href="https://doi.org/10.1109/TCSVT.2026.3676184" target="_blank">SLIM: Stable Latent Integration for Robust Watermark in Diffusion Model</a></b><br>
@@ -2041,7 +3299,7 @@
               </div>
             </div>
 
-            <div class="publication-glass publication-item first-author-paper" data-year="2026">
+            <div class="publication-glass publication-item first-author-paper" data-publication-key="markcleaner" data-year="2026">
               <div class="content">
                 <p>
                   <b><a href="https://arxiv.org/abs/2602.01513" target="_blank">MarkCleaner: High-Fidelity Watermark Removal via Imperceptible Micro-Geometric Perturbation</a></b><br>
@@ -2051,17 +3309,27 @@
               </div>
             </div>
 
-            <div class="publication-glass publication-item" data-year="2026">
+            <div class="publication-glass publication-item" data-publication-key="underwater-nvs-overview" data-year="2026">
               <div class="content">
                 <p>
                   <b><a href="https://doi.org/10.11834/jig.250469" target="_blank">Overview and Prospects of Underwater Novel View Synthesis</a></b><br>
                   Journal of Image and Graphics, 2026<br>
-                  <b style="color: #2563eb;">Jieyu Yuan</b>, Qianqian Zhao, Yujun Li, Yuanlin Zhang, Chunle Guo, Chongyi Li.
+                  <b style="color: #2563eb;">Jieyu Yuan</b>, Qianqian Zhao, Yujun Li, Yuanlin Zhang, Chunle Guo, <b>Chongyi Li</b><sup>#</sup>.
                 </p>
               </div>
             </div>
 
-              <div class="publication-glass publication-item first-author-paper" data-year="2025">
+            <div class="publication-glass publication-item" data-publication-key="vlm-agentic-iqa" data-year="2026">
+              <div class="content">
+                <p>
+                  <b><a href="https://cvlai.net/ntire/2026/" target="_blank">A VLM-Driven Agentic System for Multi-Dimensional Pairwise Image Quality Comparison</a></b><br>
+                  IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops, 2026<br>
+                  Wenjie Liao, Shuhao Han, <b style="color: #2563eb;">Jieyu Yuan</b><sup>#</sup>, Chunle Guo, Chongyi Li.
+                </p>
+              </div>
+            </div>
+
+              <div class="publication-glass publication-item first-author-paper" data-publication-key="w2wdiff" data-year="2025">
               <div class="content">
                 <p>
                   <b><a href="https://ieeexplore.ieee.org/document/11230813" target="_blank">W2WDiff: Generalizing Underwater Diffusion Model via Unsupervised Underwater Conversion</a></b><br>
@@ -2071,7 +3339,7 @@
               </div>
             </div>
 
-              <div class="publication-glass publication-item" data-year="2025">
+              <div class="publication-glass publication-item" data-publication-key="underwater-light-field-survey" data-year="2025">
               <div class="content">
                 <p>
                   <b><a href="https://www.sciopen.com/article/10.26599/AIR.2025.9150051" target="_blank">Underwater Light Field Imaging: A Survey</a></b><br>
@@ -2081,7 +3349,7 @@
               </div>
             </div>
 
-              <div class="publication-glass publication-item" data-year="2025">
+              <div class="publication-glass publication-item" data-publication-key="fourier-diffusion-priors" data-year="2025">
               <div class="content">
                 <p>
                   <b><a href="https://ieeexplore.ieee.org/document/11189887" target="_blank">Fourier Domain Diffusion Priors for Robust Underwater Image Enhancement</a></b><br>
@@ -2092,17 +3360,18 @@
             </div>
 
 
-              <div class="publication-glass publication-item first-author-paper" data-year="2025">
+              <div class="publication-glass publication-item first-author-paper" data-publication-key="vida-ugc" data-year="2025">
               <div class="content">
                 <p>
                   <b><a href="https://arxiv.org/abs/2508.12605" target="_blank">ViDA-UGC: Detailed Image Quality Analysis via Visual Distortion Assessment for UGC Images</a></b><br>
                   arXiv preprint arXiv:2508.12605, 2025<br>
-                  Wenjie Liao, <b style="color: #2563eb;">Jieyu Yuan</b>, Yifang Xu, Chunle Guo, Zilong Zhang, Jihong Li, Jiachen Fu, Haotian Fan, Tao Li, Junhui Cui, <b>Chongyi Li</b><sup>#</sup>.
+                  Wenjie Liao, <b style="color: #2563eb;">Jieyu Yuan</b>, Yifang Xu, Chunle Guo, Zilong Zhang, Jihong Li,<br>
+                  Jiachen Fu, Haotian Fan, Tao Li, Junhui Cui, <b>Chongyi Li</b><sup>#</sup>.
                 </p>
               </div>
             </div>
 
-            <div class="publication-glass publication-item first-author-paper" data-year="2025">
+            <div class="publication-glass publication-item first-author-paper" data-publication-key="cdef" data-year="2025">
               <div class="content">
                 <p>
                   <b><a href="https://ieeexplore.ieee.org/document/11142469" target="_blank">Underwater Scene Enhancement via Adaptive Color Analysis and Multi-Space Fusion</a></b><br>
@@ -2112,7 +3381,7 @@
               </div>
             </div>
 
-            <div class="publication-glass publication-item" data-year="2024">
+            <div class="publication-glass publication-item" data-publication-key="dcgf" data-year="2024">
               <div class="content">
                 <p>
                   <b><a href="https://ieeexplore.ieee.org/document/10816000" target="_blank">DCGF: Diffusion-Color Guided Framework for Underwater Image Enhancement</a></b><br>
@@ -2122,7 +3391,7 @@
               </div>
             </div>
 
-            <div class="publication-glass publication-item first-author-paper" data-year="2024">
+            <div class="publication-glass publication-item first-author-paper" data-publication-key="udmdet" data-year="2024">
               <div class="content">
                 <p>
                   <b><a href="https://doi.org/10.1109/TII.2024.3383537" target="_blank">A Novel Underwater Detection Method for Ambiguous Object Finding via Distraction Mining</a></b><br>
@@ -2132,7 +3401,7 @@
               </div>
             </div>
 
-            <div class="publication-glass publication-item first-author-paper" data-year="before2024">
+            <div class="publication-glass publication-item first-author-paper" data-publication-key="mfprn" data-year="before2024">
               <div class="content">
                 <p>
                   <b><a href="https://doi.org/10.1109/TGRS.2023.3341215" target="_blank">A Multitype Feature Perception and Refined Network for Spaceborne Infrared Ship Detection</a></b><br>
@@ -2142,7 +3411,7 @@
               </div>
             </div>
 
-            <div class="publication-glass publication-item" data-year="before2024">
+            <div class="publication-glass publication-item" data-publication-key="ugif-net" data-year="before2024">
               <div class="content">
                 <p>
                   <b><a href="https://doi.org/10.1109/TGRS.2023.3293912" target="_blank">UGIF-Net: An Efficient Fully Guided Information Flow Network for Underwater Image Enhancement</a></b><br>
@@ -2152,7 +3421,7 @@
               </div>
             </div>
 
-            <div class="publication-glass publication-item" data-year="before2024">
+            <div class="publication-glass publication-item" data-publication-key="acce" data-year="before2024">
               <div class="content">
                 <p>
                   <b><a href="https://doi.org/10.1109/TGRS.2023.3339216" target="_blank">ACCE: An Adaptive Color Compensation and Enhancement Algorithm for Underwater Image</a></b><br>
@@ -2162,7 +3431,7 @@
               </div>
             </div>
 
-            <div class="publication-glass publication-item" data-year="before2024">
+            <div class="publication-glass publication-item" data-publication-key="uiesc" data-year="before2024">
               <div class="content">
                 <p>
                   <b><a href="https://doi.org/10.1109/TII.2023.3249794" target="_blank">UIESC: An Underwater Image Enhancement Framework via Self-attention and Contrastive Learning</a></b><br>
@@ -2172,7 +3441,7 @@
               </div>
             </div>
 
-            <div class="publication-glass publication-item" data-year="before2024">
+            <div class="publication-glass publication-item" data-publication-key="sar-ship-detection" data-year="before2024">
               <div class="content">
                 <p>
                   <b><a href="https://doi.org/10.1109/TGRS.2023.3267495" target="_blank">Automatic SAR Ship Detection Based on Multifeature Fusion Network in Spatial and Frequency Domains</a></b><br>
@@ -2182,7 +3451,7 @@
               </div>
             </div>
 
-            <div class="publication-glass publication-item" data-year="before2024">
+            <div class="publication-glass publication-item" data-publication-key="cloud-removal" data-year="before2024">
               <div class="content">
                 <p>
                   <b><a href="https://doi.org/10.1109/JSTARS.2023.3236384" target="_blank">A Novel Dense-Attention Network for Thick Cloud Removal by Reconstructing Semantic Information</a></b><br>
@@ -2192,17 +3461,17 @@
               </div>
             </div>
 
-            <div class="publication-glass publication-item first-author-paper" data-year="before2024">
+            <div class="publication-glass publication-item first-author-paper" data-publication-key="tebcf" data-year="before2024">
               <div class="content">
                 <p>
                   <b><a href="https://doi.org/10.1109/TGRS.2021.3110575" target="_blank">TEBCF: Real-World Underwater Image Texture Enhancement Model Based on Blurriness and Color Fusion</a></b><br>
-                  IEEE Transactions on Geoscience and Remote Sensing (IF=7.5, JCR Q1), 2021<br>
+                  IEEE Transactions on Geoscience and Remote Sensing (IF=7.5, JCR Q1), <b style="color: red;">ESI Highly Cited Paper</b>, 2021<br>
                   <b style="color: #2563eb;">Jieyu Yuan</b>, <b>Zhanchuan Cai</b><sup>#</sup>, Wei Cao.
                 </p>
               </div>
             </div>
 
-            <div class="publication-glass publication-item first-author-paper" data-year="before2024">
+            <div class="publication-glass publication-item first-author-paper" data-publication-key="cbm" data-year="before2024">
               <div class="content">
                 <p>
                   <b><a href="https://doi.org/10.1109/TGRS.2020.3033407" target="_blank">An Underwater Image Vision Enhancement Algorithm Based on Contour Bougie Morphology</a></b><br>
@@ -2212,44 +3481,65 @@
               </div>
             </div>
             </div>
+            </div>
 
             <!--Research Projects-->
             <div class="glass-section fade-in-up" id="projects">
-              <h2>💰 Research Projects</h2>
+              <h2 class="section-title">💰 Research Projects</h2>
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
-              <ul>
-                <li>2026/01-2028/12: Scene Representation for Underwater Scene via Gaussian Splatting. National Natural Science Foundation of China (Young Scientists Fund, C Class). Grant No. 62501312. <strong>Principal Investigator.</strong></li>
-                <li>2026/01-2027/12: Research on Multi-Source Enhancement and Object Detection Techniques in Underwater Heterogeneous Degraded Scenes. Postdoctoral Science Foundation – Tianjin Joint Support Program. Grant No. 2025T022TJ. <strong>Principal Investigator.</strong></li>
-                <li>2021/09-2023/06: Research on Spaceborne Infrared Imaging Target Detection and Recognition Technology. Macau Science and Technology Development Fund. Project Number: 0052/2020/AFJ. Co-Investigator.</li>
-                <li>2019/09-2021/06: Theoretical Methods and Application Research in Visual Media Processing. Macau Science and Technology Development Fund. Project Number: 0069/2019/A2. Co-Investigator.</li>
-                <li>2019/09-2021/06: Several Methods in Visual Media Intelligent Computing. State Key Laboratory of Virtual Reality Technology and Systems. Project Number: VRLAB2019C02. Co-Investigator.</li>
-              </ul>
+              <div class="section-content-glass">
+                <ul>
+                  <li><span class="project-period">2025-2027</span>：<span class="project-source">国家博士后海外引才专项</span>。<strong class="project-role">主持。</strong></li>
+                  <li><span class="project-period">2026/01-2028/12</span>：基于高斯泼溅的水下场景表征建模研究。<span class="project-source">国家自然科学基金青年科学基金项目（C类）</span>，项目编号：<span class="project-id">62501312</span>。<strong class="project-role">主持。</strong></li>
+                  <li><span class="project-period">2026/01-2027/09</span>：水下异质退化场景多源增强与目标检测技术研究。<span class="project-source">中国博士后科学基金天津联合资助项目</span>，项目编号：<span class="project-id">2025T022TJ</span>。<strong class="project-role">主持。</strong></li>
+                  <li><span class="project-period">2025/12-2027/09</span>：前馈网络驱动的水下三维场景清晰化与建模研究。<span class="project-source">中国博士后科学基金第78批面上资助</span>，项目编号：<span class="project-id">2025M781478</span>。<strong class="project-role">主持。</strong></li>
+                  <li><span class="project-period">2025/10-2028/09</span>：面向AI+文旅的沉浸式视频系统关键技术及应用研究，子课题：高自由度沉浸式视频采集与智能生成。<span class="project-source">天津市科技重大专项</span>，项目编号：<span class="project-id">25ZXRGGX00290</span>。<strong class="project-role">参与。</strong></li>
+                </ul>
+              </div>
             </div>
 
             <!--Awards-->
             <div class="glass-section fade-in-up" id="awards">
-              <h2>🏆 Awards and Honors</h2>
+              <h2 class="section-title">🏆 Awards and Honors</h2>
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
-              <ul>
-                <li>2025 Technical Committee Member to 17th ICSPS</li>
-                <li>2024 Outstanding Reviewers of JOE</li>
-                <li>2023 First Prize, "Huawei Cup" 20th China Graduate Mathematical Contest in Modeling</li>
-                <li>2022 Future Technology Star, Zhuhai Computer Society</li>
-                <li>2021 Postgraduate Scholarship (PGS), Macau University of Science and Technology</li>
-                <li>2019 Outstanding Student and Outstanding Graduate, Beijing Institute of Technology, Zhuhai</li>
-                <li>2018 Everbright Scholarship </li>
-                <li>2018 Anlingruishi Scholarship </li>
-                <li>2018 Second Prize, Blue Bridge Cup National Software and Information Technology Professional Talent Competition</li>
-                <li>2017 Second Prize, National Undergraduate Electronic Design Contest (Guangdong Division)</li>
-                <li>2017 Third Prize, 19th National Robot Competition</li>
-                <li>2017 Third Prize, China Robot Competition Martial Arts Arena - Unlimited 2vs2</li>
-              </ul>
+              <div class="section-content-glass">
+                <ul>
+                  <li><span class="award-year">2026</span> <strong class="award-rank">2nd Place</strong>, NTIRE 2026 RAIM Challenge, Track 1 (CVPR Workshop)</li>
+                  <li><span class="award-year">2023</span> <strong class="award-rank">1st Prize</strong>, "Huawei Cup" 20th China Graduate Mathematical Contest in Modeling</li>
+                  <li><span class="award-year">2021</span> <strong class="award-rank">Postgraduate Scholarship (PGS)</strong>, Macau University of Science and Technology</li>
+                  <li><span class="award-year">2018</span> <strong class="award-rank">Everbright Scholarship</strong></li>
+                  <li><span class="award-year">2018</span> <strong class="award-rank">Anlingruishi Scholarship</strong></li>
+                  <li><span class="award-year">2018</span> <strong class="award-rank">2nd Prize</strong>, Blue Bridge Cup National Software and Information Technology Professional Talent Competition</li>
+                  <li><span class="award-year">2017</span> <strong class="award-rank">2nd Prize</strong>, National Undergraduate Electronic Design Contest (Guangdong Division)</li>
+                </ul>
+              </div>
             </div>
 
             <div class="glass-section fade-in-up" id="services">
-              <h2>📚 Academic Services</h2>
+              <h2 class="section-title">🤝 Academic Services</h2>
               <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 20px;">
-              <b>Journal Reviewer</b>: TIP, IJCV, TGRS, TMM, TCSVT, TIM, EAAl and JoE
+              <div class="section-content-glass">
+                <div class="service-group">
+                  <div class="service-heading">Journal Reviewer</div>
+                  <div class="service-copy">IJCV, TIP, TMM, TCSVT, TGRS, TOMM, KBS, JoE</div>
+                </div>
+
+                <div class="service-group">
+                  <div class="service-heading">Conference Reviewer</div>
+                  <div class="service-copy">AAAI, ACM MM</div>
+                </div>
+
+                <div class="service-group">
+                  <div class="service-heading">Conference Services</div>
+                  <div class="service-entry"><span class="service-year">2026</span>Session Chair, ICoSR 2026</div>
+                  <div class="service-entry"><span class="service-year">2025</span>Technical Committee Member, 17th ICSPS</div>
+                </div>
+
+                <div class="service-group">
+                  <div class="service-heading">Reviewer Recognition</div>
+                  <div class="service-entry"><span class="service-year">2024</span>Outstanding Reviewer, IEEE Journal of Oceanic Engineering</div>
+                </div>
+              </div>
               <!-- <b>Journal Reviewer</b>:
               <ul>
                 <li>TIP, IJCV, TMM, TCSVT, TGRS, TIM, EAAl and JoE</li>
@@ -2266,11 +3556,14 @@
 
     <!-- Footer -->
     <footer class="container" >
-      <br><hr>
+      <hr>
       <div class="row" style="text-align: center">
-        <b style="color: var(--text-secondary) !important;">&copy; Jieyu Yuan | Last updated: April 2026</b>
+        <b style="color: var(--text-secondary) !important;">&copy; Jieyu Yuan | Last updated: September 2026</b>
       </div>
     </footer>
+    <button class="scroll-to-top" id="scrollToTop" type="button" aria-label="Back to top" title="Back to top">
+      <i class="fas fa-angle-up top-icon" aria-hidden="true"></i>
+    </button>
   </section>
 
   <!-- BibTeX Modal -->
@@ -2290,18 +3583,51 @@
     const themeIcon = document.getElementById('themeIcon');
     const body = document.body;
 
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    body.setAttribute('data-theme', currentTheme);
-    updateThemeIcon(currentTheme);
+    const systemTheme = window.matchMedia?.('(prefers-color-scheme: dark)');
+
+    function getStoredTheme() {
+      try {
+        return localStorage.getItem('theme');
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function getAutomaticTheme() {
+      if (systemTheme) {
+        return systemTheme.matches ? 'dark' : 'light';
+      }
+
+      const hour = new Date().getHours();
+      return hour >= 19 || hour < 7 ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme) {
+      body.setAttribute('data-theme', theme);
+      updateThemeIcon(theme);
+    }
+
+    const savedTheme = getStoredTheme();
+    let followsSystemTheme = !savedTheme;
+    applyTheme(savedTheme || getAutomaticTheme());
 
     themeToggle.addEventListener('click', () => {
       const currentTheme = body.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
+
+      followsSystemTheme = false;
+      applyTheme(newTheme);
+      try {
+        localStorage.setItem('theme', newTheme);
+      } catch (error) {
+        // Theme still applies for the current visit when storage is unavailable.
+      }
+    });
+
+    systemTheme?.addEventListener?.('change', (event) => {
+      if (followsSystemTheme) {
+        applyTheme(event.matches ? 'dark' : 'light');
+      }
     });
 
     function updateThemeIcon(theme) {
@@ -2337,27 +3663,33 @@
       });
     }
 
-    function normalizeSelectedSectionHeader() {
-      const headerRow = document.querySelector('#research .section-header-row');
-      if (!headerRow) return;
-      headerRow.innerHTML = '<h2>📚 Representative Works</h2><a class="view-all-btn" href="#publications">View All &rarr;</a>';
+    function formatNewsItems() {
+      const items = Array.from(document.querySelectorAll('#news .news-glass li'));
+      items.forEach((item) => {
+        const source = item.innerHTML.trim().replace(/^➤\s*/, '');
+        const match = source.match(/^(\[[^\]]+\]:)\s*(.*)$/s);
+        if (!match) return;
+        item.innerHTML = `<span class="news-date">${match[1]}</span><span class="news-copy">${match[2]}</span>`;
+      });
+
+      items.forEach((item) => item.classList.remove('news-last-visible'));
+      items.slice(0, 5).at(-1)?.classList.add('news-last-visible');
+      requestAnimationFrame(updateNewsViewportHeight);
+      document.fonts?.ready.then(() => requestAnimationFrame(updateNewsViewportHeight));
     }
 
-    function initializePinnedNews() {
-      const newsItems = Array.from(document.querySelectorAll('#news .news-glass li'));
-      if (!newsItems.length) return;
+    function updateNewsViewportHeight() {
+      const container = document.querySelector('#news .news-glass');
+      const visibleItems = Array.from(container?.querySelectorAll('li') || []).slice(0, 5);
+      if (!container || !visibleItems.length) return;
 
-      const hasManualPinned = newsItems.some((item) => item.getAttribute('data-pinned') === 'true');
-      if (hasManualPinned) return;
+      const containerRect = container.getBoundingClientRect();
+      const finalItemRect = visibleItems.at(-1).getBoundingClientRect();
+      const paddingBottom = parseFloat(getComputedStyle(container).paddingBottom) || 0;
+      const visibleHeight = finalItemRect.bottom - containerRect.top + paddingBottom;
 
-      // Default: if nothing is pinned manually, keep the latest 5 visible.
-      newsItems.forEach((item, index) => {
-        if (index < 5) {
-          item.setAttribute('data-pinned', 'true');
-        } else {
-          item.removeAttribute('data-pinned');
-        }
-      });
+      container.style.height = `${Math.ceil(visibleHeight)}px`;
+      container.style.maxHeight = 'none';
     }
 
     function normalizeTitleKey(title) {
@@ -2375,6 +3707,13 @@
         .replace(/'/g, '&#39;');
     }
 
+    function formatSelectedTitle(text) {
+      return escapeHtml(text).replace(
+        /([A-Za-z0-9]+(?:-[A-Za-z0-9]+)+)/g,
+        '<span class="selected-title-token">$1</span>'
+      );
+    }
+
     function extractFirstSentence(text) {
       const normalized = (text || '').replace(/\s+/g, ' ').trim();
       if (!normalized) return '-';
@@ -2390,31 +3729,44 @@
         .trim();
     }
 
-    function formatSelectedPublicationsText() {
-      const publicationMapByUrl = new Map();
-      const publicationMetaList = [];
+    let publicationCatalog = new Map();
 
-      document.querySelectorAll('#publications .publication-item .content p').forEach((paragraph) => {
-        const titleLink = paragraph.querySelector('b a');
-        const titleText = (titleLink ? titleLink.textContent : (paragraph.querySelector('b') || {}).textContent || '').trim();
-        if (!titleText) return;
+    function buildPublicationCatalog() {
+      const catalog = new Map();
+
+      document.querySelectorAll('#publications .publication-item').forEach((item) => {
+        const key = item.dataset.publicationKey;
+        const paragraph = item.querySelector('.content p');
+        const titleLink = paragraph?.querySelector('b a');
+        if (!key || !paragraph || !titleLink) return;
 
         const lines = paragraph.innerHTML
           .split(/<br\s*\/?>/i)
           .map((line) => line.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim())
           .filter(Boolean);
 
-        const meta = {
-          title: titleText,
-          titleKey: normalizeTitleKey(titleText),
-          venue: lines[1] || '-'
-        };
-
-        publicationMetaList.push(meta);
-
-        const href = titleLink ? titleLink.getAttribute('href') : '';
-        if (href) publicationMapByUrl.set(href, meta);
+        catalog.set(key, {
+          key,
+          title: titleLink.textContent.trim(),
+          titleKey: normalizeTitleKey(titleLink.textContent),
+          url: titleLink.getAttribute('href') || '',
+          venue: lines[1] || '-',
+          authors: lines.slice(2).join(' '),
+          yearGroup: item.dataset.year || '',
+          representative: item.classList.contains('first-author-paper'),
+          bibtex: publicationBibtexData[key] || ''
+        });
       });
+
+      publicationCatalog = catalog;
+    }
+
+    function formatSelectedPublicationsText() {
+      if (!publicationCatalog.size) buildPublicationCatalog();
+      const publicationMetaList = Array.from(publicationCatalog.values());
+      const publicationMapByUrl = new Map(
+        publicationMetaList.filter((item) => item.url).map((item) => [item.url, item])
+      );
 
       document.querySelectorAll('#research .research-glass').forEach((card) => {
         const summaryParagraph = card.querySelector('.content p');
@@ -2422,22 +3774,30 @@
         if (summaryParagraph.dataset.formatted === 'true') return;
 
         const titleNode = summaryParagraph.querySelector('b');
-        const titleText = titleNode ? titleNode.textContent.trim() : '';
-        if (!titleText) return;
+        const fallbackTitle = titleNode ? titleNode.textContent.trim() : '';
+        if (!fallbackTitle) return;
 
         const paperLink = Array.from(card.querySelectorAll('.research-links a')).find((link) => {
           return /\[paper\]/i.test((link.textContent || '').trim());
         });
 
         const paperHref = paperLink ? (paperLink.getAttribute('href') || '') : '';
+        const publicationKey = card.dataset.publicationKey || '';
 
-        let matchedMeta = paperHref ? publicationMapByUrl.get(paperHref) : null;
+        let matchedMeta = publicationKey ? publicationCatalog.get(publicationKey) : null;
+        if (!matchedMeta && paperHref) matchedMeta = publicationMapByUrl.get(paperHref);
         if (!matchedMeta) {
-          const titleKey = normalizeTitleKey(titleText);
+          const titleKey = normalizeTitleKey(fallbackTitle);
           matchedMeta = publicationMetaList.find((item) => {
             return item.titleKey === titleKey || item.titleKey.includes(titleKey) || titleKey.includes(item.titleKey);
           }) || null;
         }
+
+        if (paperLink && matchedMeta?.url) {
+          paperLink.setAttribute('href', matchedMeta.url);
+        }
+
+        const titleText = card.dataset.selectedTitle || matchedMeta?.title || fallbackTitle;
 
         const descriptionText = summaryParagraph.innerHTML
           .split(/<br\s*\/?>/i)
@@ -2447,15 +3807,119 @@
           .replace(/\s+/g, ' ')
           .trim();
 
-        const tldrText = extractFirstSentence(descriptionText);
-        const venueText = matchedMeta ? simplifyVenueText(matchedMeta.venue) : '-';
+        const venueText = card.dataset.venue || (matchedMeta
+          ? simplifyVenueText(matchedMeta.venue)
+          : '-');
+        const tldrText = card.dataset.tldr || extractFirstSentence(descriptionText);
 
         summaryParagraph.innerHTML = `
-          <span class="selected-title">${escapeHtml(titleText)}</span>
+          <span class="selected-title">${formatSelectedTitle(titleText)}</span>
           <div class="selected-meta">${escapeHtml(venueText)}</div>
           <div class="selected-tldr"><span class="selected-meta-label">TL;DR:</span>${escapeHtml(tldrText)}</div>
         `;
         summaryParagraph.dataset.formatted = 'true';
+      });
+    }
+
+    function initializeSelectedWorkFilters() {
+      const buttons = Array.from(document.querySelectorAll('#research .selected-work-filter'));
+      const cards = Array.from(document.querySelectorAll('#research .research-glass'));
+      if (!buttons.length || !cards.length) return;
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const selectedCategory = button.dataset.category || 'all';
+
+          buttons.forEach((item) => {
+            const isActive = item === button;
+            item.classList.toggle('active', isActive);
+            item.setAttribute('aria-pressed', String(isActive));
+          });
+
+          cards.forEach((card) => {
+            const categories = (card.dataset.categories || '').split(/\s+/).filter(Boolean);
+            card.hidden = selectedCategory !== 'all' && !categories.includes(selectedCategory);
+          });
+
+        });
+      });
+    }
+
+    function initializePublicationViewSwitch() {
+      const buttons = Array.from(document.querySelectorAll('#research .publication-view-tab'));
+      const selectedPanel = document.querySelector('#research [data-publication-view-panel="selected"]');
+      const fullPanel = document.querySelector('#research [data-publication-view-panel="full"]');
+      const switchElement = document.querySelector('#research .publication-view-switch');
+      if (!buttons.length || !selectedPanel || !fullPanel || !switchElement) return;
+
+      let currentView = 'selected';
+
+      const updateIndicator = (activeButton) => {
+        switchElement.style.setProperty('--publication-indicator-x', `${activeButton.offsetLeft}px`);
+        switchElement.style.setProperty('--publication-indicator-width', `${activeButton.offsetWidth}px`);
+      };
+
+      const setView = (view, animate = true) => {
+        const showFullList = view === 'full';
+        const targetPanel = showFullList ? fullPanel : selectedPanel;
+        const viewChanged = view !== currentView;
+        selectedPanel.hidden = showFullList;
+        fullPanel.hidden = !showFullList;
+
+        buttons.forEach((button) => {
+          const isActive = button.dataset.view === view;
+          button.classList.toggle('active', isActive);
+          button.setAttribute('aria-selected', String(isActive));
+          if (isActive) requestAnimationFrame(() => updateIndicator(button));
+        });
+
+        if (animate && viewChanged) {
+          targetPanel.classList.remove('publication-panel-enter');
+          void targetPanel.offsetWidth;
+          targetPanel.classList.add('publication-panel-enter');
+        }
+
+        currentView = view;
+
+        requestAnimationFrame(() => {
+          calculateBoundary();
+          judgeScroll();
+          if (typeof updateSidebarDockingLayout === 'function') updateSidebarDockingLayout();
+        });
+      };
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => setView(button.dataset.view || 'selected'));
+      });
+
+      window.addEventListener('resize', () => {
+        const activeButton = buttons.find((button) => button.classList.contains('active'));
+        if (activeButton) updateIndicator(activeButton);
+      });
+
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+          const activeButton = buttons.find((button) => button.classList.contains('active'));
+          if (activeButton) updateIndicator(activeButton);
+        });
+      }
+
+      setView('selected', false);
+    }
+
+    function initializePublicationYearFilters() {
+      const buttons = Array.from(document.querySelectorAll('#publications .publication-filters .filter-btn'));
+      const items = Array.from(document.querySelectorAll('#publications .publication-item'));
+      if (!buttons.length || !items.length) return;
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const selectedYear = button.dataset.year || 'all';
+          buttons.forEach((item) => item.classList.toggle('active', item === button));
+          items.forEach((item) => {
+            item.hidden = selectedYear !== 'all' && item.dataset.year !== selectedYear;
+          });
+        });
       });
     }
 
@@ -2706,55 +4170,12 @@
 
     updateSidebarDockingLayout();
 
-    // Publication filter functionality
+    // Smooth navigation
     $(document).ready(function() {
-      const publicationsSection = $('#publications');
-
-      function applyPublicationFilter(selectedYear) {
-        if (selectedYear === 'all') {
-          $('.publication-item').show();
-        } else {
-          $('.publication-item').hide();
-          $(`.publication-item[data-year="${selectedYear}"]`).show();
-        }
-      }
-
-      function expandPublications() {
-        if (!publicationsSection.hasClass('publications-collapsed')) return;
-        publicationsSection.removeClass('publications-collapsed');
-        const selectedYear = $('.filter-btn.active').data('year') || 'all';
-        applyPublicationFilter(selectedYear);
-      }
-      $('.filter-btn').click(function() {
-        const selectedYear = $(this).data('year');
-        
-        // Update button styles
-        $('.filter-btn').removeClass('active');
-        $(this).addClass('active');
-        
-        expandPublications();
-        applyPublicationFilter(selectedYear);
-      });
-
-      // 平滑滚动到指定位置
       $('.quick-nav .menu-list a').click(function(e) {
         e.preventDefault();
         const href = this.getAttribute('href');
-        if (href === '#publications') {
-          expandPublications();
-        }
         const target = $(href || '');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top - 96
-          }, 800);
-        }
-      });
-
-      $('#research').on('click', '.view-all-btn', function(e) {
-        e.preventDefault();
-        expandPublications();
-        const target = $('#publications');
         if (target.length) {
           $('html, body').animate({
             scrollTop: target.offset().top - 96
@@ -2764,7 +4185,26 @@
     });
 
     // BibTeX functionality
-    const bibtexData = {
+    const publicationBibtexData = {
+      '3duse': `@article{yuan20263duse,
+  title={3D-USE: From Image-Level to Scene-Level Underwater Enhancement},
+  author={Yuan, Jieyu and Zhang, Yuanlin and Li, Jihong and Guo, Chunle and Lu, Huimin and Li, Chongyi},
+  journal={arXiv preprint arXiv:2608.28020},
+  year={2026}
+}`,
+      'markcleaner': `@article{kong2026markcleaner,
+  title={MarkCleaner: High-Fidelity Watermark Removal via Imperceptible Micro-Geometric Perturbation},
+  author={Kong, Xiaoxi and Yuan, Jieyu and Chen, Pengdi and Zhang, Yuanlin and Li, Chongyi and Li, Bin},
+  journal={arXiv preprint arXiv:2602.01513},
+  year={2026}
+}`,
+      'slim': `@article{kong2026slim,
+  title={SLIM: Stable Latent Integration for Robust Watermark in Diffusion Model},
+  author={Kong, Xiaoxi and Chen, Pengdi and Li, Bin and Yuan, Jieyu and Cai, Zhanchuan and Wu, Hao and Liang, Lifeng},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology},
+  year={2026},
+  doi={10.1109/TCSVT.2026.3676184}
+}`,
           'w2wdiff': `@article{yuan2025w2wdiff,
     author={Zhang, Yuanlin and Yuan, Jieyu and Chen, Xiao and Tang, Xiongxin and Chen, Qiao and Wang, Yiquan and Li, Chongyi},
     journal={IEEE Transactions on Geoscience and Remote Sensing}, 
@@ -2775,7 +4215,7 @@
     pages={1-1},
     doi={10.1109/TGRS.2025.3629979}
 }`,
-            'ViDA-UGC': `@article{Liao2025vidaugc,
+            'vida-ugc': `@article{Liao2025vidaugc,
   title={ViDA-UGC: Detailed Image Quality Analysis via Visual Distortion Assessment for UGC Images},
   author={Wenjie Liao and Jieyu Yuan and Yifang Xu and Chunle Guo and Zilong Zhang and Jihong Li and Jiachen Fu and Haotian Fan and Tao Li and Junhui Cui and Chongyi Li},
   journal={arXiv preprint arXiv:2508.12605},
@@ -2842,8 +4282,11 @@
       const bibtexText = document.getElementById('bibtexText');
       const bibtexTitle = document.getElementById('bibtexTitle');
       
-      if (bibtexData[paperKey]) {
-        bibtexText.textContent = bibtexData[paperKey];
+      const publication = publicationCatalog.get(paperKey);
+      const bibtex = publication?.bibtex || publicationBibtexData[paperKey];
+
+      if (bibtex) {
+        bibtexText.textContent = bibtex;
         bibtexTitle.textContent = 'BibTeX Citation - ' + paperKey.toUpperCase();
         modal.style.display = 'block';
       }
@@ -2879,9 +4322,13 @@
     // Initialize everything
     document.addEventListener('DOMContentLoaded', () => {
       handleScrollAnimations();
-      normalizeSelectedSectionHeader();
-      initializePinnedNews();
+      formatNewsItems();
+      buildPublicationCatalog();
       formatSelectedPublicationsText();
+      initializeSelectedWorkFilters();
+      initializePublicationViewSwitch();
+      initializePublicationYearFilters();
+      handleScrollToTop();
       
       // 延迟初始化侧边栏位置，确保所有元素都已渲染
       setTimeout(() => {
@@ -2907,6 +4354,12 @@
       handleScrollAnimations();
       updateProgressBar();
       handleScrollToTop();
+    });
+
+    let newsResizeFrame;
+    window.addEventListener('resize', () => {
+      cancelAnimationFrame(newsResizeFrame);
+      newsResizeFrame = requestAnimationFrame(updateNewsViewportHeight);
     });
 
   </script>
