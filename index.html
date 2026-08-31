@@ -7,6 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="VmT9bDtOKMpKR3lioo1vMFWG_vXs7LpRDaYpz093RBU" />
   <title>Jieyu Yuan</title>
+  <script>
+    (function initializeThemeBeforePaint() {
+      const systemTheme = window.matchMedia?.('(prefers-color-scheme: dark)');
+      let sessionTheme = null;
+
+      try {
+        // Remove the old persistent override so automatic mode works again.
+        localStorage.removeItem('theme');
+        sessionTheme = sessionStorage.getItem('theme');
+      } catch (error) {
+        sessionTheme = null;
+      }
+
+      const hour = new Date().getHours();
+      const automaticTheme = systemTheme
+        ? (systemTheme.matches ? 'dark' : 'light')
+        : (hour >= 19 || hour < 7 ? 'dark' : 'light');
+      const initialTheme = sessionTheme === 'light' || sessionTheme === 'dark'
+        ? sessionTheme
+        : automaticTheme;
+
+      document.documentElement.setAttribute('data-theme', initialTheme);
+    })();
+  </script>
   <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
   <link rel="shortcut icon" type="image/x-icon" href="images/misc/logo.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Jost:wght@500;600;700&family=Lora:wght@600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
@@ -20,6 +44,7 @@
   <script defer src="font-awesome/js/fontawesome.min.js"></script>
     <style>
       :root {
+        color-scheme: light;
         --bg-primary: #faf9f7;
         --bg-secondary: rgba(250, 249, 247, 0.82);
         --bg-glass: rgba(255, 255, 255, 0.72);
@@ -61,6 +86,7 @@
       }
 
       [data-theme="dark"] {
+        color-scheme: dark;
         --bg-primary: #0b1922;
         --bg-secondary: rgba(11, 27, 37, 0.93);
         --bg-glass: rgba(19, 42, 54, 0.76);
@@ -3581,13 +3607,13 @@
     // Theme switching functionality
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    const body = document.body;
+    const themeRoot = document.documentElement;
 
     const systemTheme = window.matchMedia?.('(prefers-color-scheme: dark)');
 
-    function getStoredTheme() {
+    function getSessionTheme() {
       try {
-        return localStorage.getItem('theme');
+        return sessionStorage.getItem('theme');
       } catch (error) {
         return null;
       }
@@ -3603,35 +3629,45 @@
     }
 
     function applyTheme(theme) {
-      body.setAttribute('data-theme', theme);
+      themeRoot.setAttribute('data-theme', theme);
       updateThemeIcon(theme);
     }
 
-    const savedTheme = getStoredTheme();
+    const savedTheme = getSessionTheme();
     let followsSystemTheme = !savedTheme;
     applyTheme(savedTheme || getAutomaticTheme());
 
     themeToggle.addEventListener('click', () => {
-      const currentTheme = body.getAttribute('data-theme');
+      const currentTheme = themeRoot.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
       followsSystemTheme = false;
       applyTheme(newTheme);
       try {
-        localStorage.setItem('theme', newTheme);
+        sessionStorage.setItem('theme', newTheme);
       } catch (error) {
         // Theme still applies for the current visit when storage is unavailable.
       }
     });
 
-    systemTheme?.addEventListener?.('change', (event) => {
+    const handleSystemThemeChange = (event) => {
       if (followsSystemTheme) {
         applyTheme(event.matches ? 'dark' : 'light');
       }
-    });
+    };
+
+    if (systemTheme?.addEventListener) {
+      systemTheme.addEventListener('change', handleSystemThemeChange);
+    } else {
+      systemTheme?.addListener?.(handleSystemThemeChange);
+    }
 
     function updateThemeIcon(theme) {
       themeIcon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+      const mode = followsSystemTheme ? 'Automatic' : 'Manual';
+      const nextTheme = theme === 'dark' ? 'light' : 'dark';
+      themeToggle.title = `${mode} theme: ${theme}. Click for ${nextTheme} in this tab.`;
+      themeToggle.setAttribute('aria-label', `${mode} theme: ${theme}. Switch to ${nextTheme}.`);
     }
 
     // Animated particles
