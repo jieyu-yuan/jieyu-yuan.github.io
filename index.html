@@ -2480,7 +2480,7 @@
 
         #research .research-glass article.columns {
           display: grid;
-          grid-template-columns: minmax(0, 32%) minmax(0, 68%);
+          grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
           align-items: center;
           gap: clamp(0.75rem, 1.6cqw, 1rem);
           margin: 0;
@@ -2524,7 +2524,7 @@
         }
 
         #research .research-glass .selected-tldr {
-          margin: 0.15rem 0 0;
+          margin: 0.25rem 0 0.35rem;
           color: var(--text-secondary);
           font-size: 0.88rem;
           line-height: 1.5;
@@ -2542,21 +2542,64 @@
           margin-bottom: 0.38rem;
         }
 
+        #intro .research-interests {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(min(100%, max(30%, 14rem)), 1fr));
+          column-gap: 1.4rem;
+          margin: 1rem 0 0;
+          padding: 0;
+          list-style: none;
+          font-size: 0.9rem;
+          color: var(--text-secondary);
+        }
+
+        #intro .research-interests > li {
+          display: flex;
+          align-items: center;
+          gap: 0.65rem;
+          margin: 0;
+          padding: 0.5rem 0;
+          border-top: 1px solid var(--border-color);
+          font-weight: 550;
+        }
+
+        .research-interest-icon {
+          display: grid;
+          place-items: center;
+          flex: 0 0 1.75rem;
+          height: 1.75rem;
+          border-radius: 6px;
+          color: var(--interest-color);
+          background: color-mix(in srgb, var(--interest-color) 10%, transparent);
+        }
+
         @container (max-width: 560px) {
           #research .research-glass .selected-tldr {
             display: none;
           }
         }
 
-        @container (min-width: 400px) and (max-width: 680px) {
+        @container (min-width: 461px) and (max-width: 560px) {
           #research .research-glass article.columns {
-            grid-template-columns: minmax(0, 38%) minmax(0, 62%);
+            grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
           }
         }
 
-        @container (max-width: 399px) {
+        @container (min-width: 561px) and (max-width: 680px) {
+          #research .research-glass .selected-tldr {
+            font-size: 0.84rem;
+            line-height: 1.45;
+          }
+        }
+
+        @container (max-width: 460px) {
           #research .research-glass article.columns {
             display: block;
+          }
+
+          #research .research-glass article.columns > .column.is-4 {
+            max-width: 250px;
+            margin-inline: auto;
           }
 
           #research .research-glass .selected-title {
@@ -2914,6 +2957,32 @@
               <p style="text-indent: 2em; text-align: justify; line-height: 1.6;">
                 My research is rooted in <span class="intro-topic intro-topic-gradient intro-topic-low-level">Low-level Vision</span>, with a particular focus on underwater images and scenes. Over time, my research has moved beyond restoring individual images to understanding and generating visual scenes. My current work mainly focuses on <span class="intro-topic intro-topic-gradient intro-topic-underwater">Underwater Vision</span>, <span class="intro-topic intro-topic-gradient intro-topic-3d">3D Vision</span>, <span class="intro-topic intro-topic-gradient intro-topic-aigc">AIGC</span>, and <span class="intro-topic intro-topic-gradient intro-topic-security">Multimedia Security</span>.
               </p>
+              <ul class="research-interests" role="list" aria-label="Research interests">
+                <li style="--interest-color: var(--topic-underwater-color);">
+                  <span class="research-interest-icon" aria-hidden="true"><i class="fas fa-water"></i></span>
+                  <span>Underwater Vision</span>
+                </li>
+                <li style="--interest-color: var(--topic-3d-color);">
+                  <span class="research-interest-icon" aria-hidden="true"><i class="fas fa-cube"></i></span>
+                  <span>3D Scenes &amp; Rendering</span>
+                </li>
+                <li style="--interest-color: var(--topic-low-level-color);">
+                  <span class="research-interest-icon" aria-hidden="true"><i class="fas fa-camera"></i></span>
+                  <span>Computational Imaging</span>
+                </li>
+                <li style="--interest-color: var(--topic-aigc-color);">
+                  <span class="research-interest-icon" aria-hidden="true"><i class="fas fa-wand-magic-sparkles"></i></span>
+                  <span>AIGC &amp; World Models</span>
+                </li>
+                <li style="--interest-color: var(--intro-affiliation-color);">
+                  <span class="research-interest-icon" aria-hidden="true"><i class="fas fa-robot"></i></span>
+                  <span>VLMs &amp; AI Agents</span>
+                </li>
+                <li style="--interest-color: var(--topic-security-color);">
+                  <span class="research-interest-icon" aria-hidden="true"><i class="fas fa-fingerprint"></i></span>
+                  <span>Multimedia Security</span>
+                </li>
+              </ul>
             </div>
 
             <!--News-->
